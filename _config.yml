@@ -15,7 +15,7 @@ language: 'en-uk'
 # 언어 설정
 
 baseurl: /cpu-blog/
-# url : https://hanbyeongyeob.github.io
+url : https://hby0202.github.io
 
 # Website info
 title: CPU - IT Technical
@@ -76,14 +76,14 @@ feed:
 # or "master" otherwise
 safe: False
 lsi: False
-username: HanByengYeob
+username: hby0202
 repo: cpu-blog
 # repo: https://github.com/HanByeongYeob/HanByeongYeob.github.io
 branch: master
 relative_source: ../cpu-blog/
-destination: ../cpu-blog-output/
-production_url:  https://hanbyeongyeob.github.io/cpu-blog/
-source_url:  https://github.com/HanByeongYeob/cpu-blog/
+destination: ./output/
+production_url:  https://hby0202.github.io/cpu-blog/
+source_url:  https://github.com/hby0202/cpu-blog/
 
 exclude:
   - assets/css
