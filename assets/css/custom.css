@@ -24,7 +24,7 @@ ul.mylist li:hover, ol.mylist li:hover{
 
 /* 링크뒤쪽에 FontAwesome표현을 위한 custom CSS*/
 .post-full-content a[target="_blank"]::after{
-    content: '\f08e';
+    content: '\1f517';
     display: inline-block;
     margin: 0 2px 0 4px;
     line-height: 1;
