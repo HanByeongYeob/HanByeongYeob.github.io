@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://hby0202.github.io/cpu-blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://hby0202.github.io/cpu-blog/" rel="alternate" type="text/html" /><updated>2024-06-11T02:24:56+00:00</updated><id>https://hby0202.github.io/cpu-blog/feed.xml</id><title type="html">CPU - IT Technical</title><subtitle>CPU 동호회 IT 기반 공유 블로그</subtitle><entry><title type="html">github-page 만들기</title><link href="https://hby0202.github.io/cpu-blog/it2024-github-page" rel="alternate" type="text/html" title="github-page 만들기" /><published>2024-05-31T00:00:00+00:00</published><updated>2024-05-31T00:00:00+00:00</updated><id>https://hby0202.github.io/cpu-blog/it2024-github-page</id><content type="html" xml:base="https://hby0202.github.io/cpu-blog/it2024-github-page">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;it2024 강좌는 여러 절로 구성되어 있습니다.&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-github-page&quot;&gt;github-page 만들기&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;rubyinstaller-devkit-3.1.5-1-x64.exe 다운로드
+ ※ ruby는 3.2이상은 오류 발생하므로 3.2이하 버전으로 설치&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;ubyinstaller-devkit-3.1.5-1-x64.exe 설치&lt;/li&gt;
+  &lt;li&gt;cmd &amp;gt; gem install bundler&lt;/li&gt;
+  &lt;li&gt;template 다운로드&lt;/li&gt;
+  &lt;li&gt;template 위치 &amp;gt; Gemfile에 gem ‘wdm’, ‘&amp;gt;= 0.1.0’ 붙여놓기&lt;/li&gt;
+  &lt;li&gt;template 위치 &amp;gt; bundle install&lt;/li&gt;
+  &lt;li&gt;bundle add webrick&lt;/li&gt;
+  &lt;li&gt;bundle exec jekyll serve&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;해당 과정을 설치하면 local에 template을 올릴 수 있음&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;_config.yml을 설정 한 후 destination을 설정
+ ※ bundle exec jekyll serve을 실행하면 destination에 build 된 소스 생성&lt;/li&gt;
+  &lt;li&gt;destination 경로의 소스를 github에 push하면 git-page 사용&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>한병엽</name></author><category term="IT2024" /><summary type="html">it2024 강좌는 여러 절로 구성되어 있습니다. github-page 만들기</summary></entry></feed>
