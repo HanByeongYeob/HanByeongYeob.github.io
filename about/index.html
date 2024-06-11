@@ -46,7 +46,7 @@
     <meta property="og:site_name" content="CPU - IT Technical" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="MarkDown 사용법" />
-    <meta property="og:description" content="# 게시물 등록 방법 1. _post 폴더에 작성하기 원하는 태그 폴더에 파일을 만든다. ex) _post > it2024 2. 파일명은 다음 규칙에 따른다. 년도-월-일-태그명-타이틀명.md ex) 2024-05-24-it2024-title.md 3. md 파일 상단에는 다음 내용을 필수 작성 후 MarkDown 작성법에 따라 게시글을 작성한다. `---` `layout: post` `current: post` `cover: assets/images/welcome.jpg` `navigation: True` `title: 게시글" />
+    <meta property="og:description" content="# 게시물 등록 방법 1. _post 폴더에 작성하기 원하는 태그 폴더에 파일을 만든다. ex) _post > it2024 2. 파일명은 다음 규칙에 따른다. 년도-월-일-태그명-타이틀명.md ex) 2024-05-24-it2024-title.md 3. md 파일 상단에는 다음 내용을 필수 작성 후 MarkDown 작성법에 따라 게시글을 작성한다. --- ``` layout: post current: post cover: assets/images/welcome.jpg navigation: True title:" />
     <meta property="og:url" content="https://hby0202.github.io/cpu-blog/about/" />
     <meta property="og:image" content="https://hby0202.github.io/cpu-blog/assets/images/blog-cover.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
@@ -55,7 +55,7 @@
     <meta property="article:modified_time" content="" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="MarkDown 사용법" />
-    <meta name="twitter:description" content="# 게시물 등록 방법 1. _post 폴더에 작성하기 원하는 태그 폴더에 파일을 만든다. ex) _post > it2024 2. 파일명은 다음 규칙에 따른다. 년도-월-일-태그명-타이틀명.md ex) 2024-05-24-it2024-title.md 3. md 파일 상단에는 다음 내용을 필수 작성 후 MarkDown 작성법에 따라 게시글을 작성한다. `---` `layout: post` `current: post` `cover: assets/images/welcome.jpg` `navigation: True` `title: 게시글" />
+    <meta name="twitter:description" content="# 게시물 등록 방법 1. _post 폴더에 작성하기 원하는 태그 폴더에 파일을 만든다. ex) _post > it2024 2. 파일명은 다음 규칙에 따른다. 년도-월-일-태그명-타이틀명.md ex) 2024-05-24-it2024-title.md 3. md 파일 상단에는 다음 내용을 필수 작성 후 MarkDown 작성법에 따라 게시글을 작성한다. --- ``` layout: post current: post cover: assets/images/welcome.jpg navigation: True title:" />
     <meta name="twitter:url" content="https://hby0202.github.io/cpu-blog/" />
     <meta name="twitter:image" content="https://hby0202.github.io/cpu-blog/assets/images/blog-cover.jpg" />
     <meta name="twitter:label1" content="Written by" />
@@ -85,7 +85,7 @@
         "@type": "WebPage",
         "@id": "https://hby0202.github.io/cpu-blog/about/"
     },
-    "description": "# 게시물 등록 방법 1. _post 폴더에 작성하기 원하는 태그 폴더에 파일을 만든다. ex) _post > it2024 2. 파일명은 다음 규칙에 따른다. 년도-월-일-태그명-타이틀명.md ex) 2024-05-24-it2024-title.md 3. md 파일 상단에는 다음 내용을 필수 작성 후 MarkDown 작성법에 따라 게시글을 작성한다. `---` `layout: post` `current: post` `cover: assets/images/welcome.jpg` `navigation: True` `title: 게시글"
+    "description": "# 게시물 등록 방법 1. _post 폴더에 작성하기 원하는 태그 폴더에 파일을 만든다. ex) _post > it2024 2. 파일명은 다음 규칙에 따른다. 년도-월-일-태그명-타이틀명.md ex) 2024-05-24-it2024-title.md 3. md 파일 상단에는 다음 내용을 필수 작성 후 MarkDown 작성법에 따라 게시글을 작성한다. --- ``` layout: post current: post cover: assets/images/welcome.jpg navigation: True title:"
 }
     </script>
 
@@ -166,26 +166,27 @@ into the {body} of the default.hbs template -->
   <li>파일명은 다음 규칙에 따른다.<br />
  년도-월-일-태그명-타이틀명.md<br />
  ex) 2024-05-24-it2024-title.md</li>
-  <li>md 파일 상단에는 다음 내용을 필수 작성 후 MarkDown 작성법에 따라 게시글을 작성한다.<br />
-<code class="language-plaintext highlighter-rouge">---</code><br />
-<code class="language-plaintext highlighter-rouge">layout: post</code><br /> 
-<code class="language-plaintext highlighter-rouge">current: post</code><br />
-<code class="language-plaintext highlighter-rouge">cover:  assets/images/welcome.jpg</code><br />
-<code class="language-plaintext highlighter-rouge">navigation: True</code><br />
-<code class="language-plaintext highlighter-rouge">title: 게시글 제목</code><br />
-<code class="language-plaintext highlighter-rouge">date: 2024-05-31 09:00:00 +0900</code><br />
-<code class="language-plaintext highlighter-rouge">tags: [it2024]</code><br />
-<code class="language-plaintext highlighter-rouge">class: post-template</code><br />
-<code class="language-plaintext highlighter-rouge">subclass: 'post'</code><br />
-<code class="language-plaintext highlighter-rouge">author: hby</code><br />
-<code class="language-plaintext highlighter-rouge">---</code>
-<br />
+  <li>
+    <h2 id="md-파일-상단에는-다음-내용을-필수-작성-후-markdown-작성법에-따라-게시글을-작성한다">md 파일 상단에는 다음 내용을 필수 작성 후 MarkDown 작성법에 따라 게시글을 작성한다.<br /></h2>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>layout: post
+current: post
+cover:  assets/images/welcome.jpg
+navigation: True
+title: 게시글 제목
+date: 2024-05-31 09:00:00 +0900
+tags: [it2024]
+class: post-template
+subclass: 'post'
+author: hby
+</code></pre></div>    </div>
+    <hr />
+    <p><br /></p>
     <ul>
-      <li>layout, current, cover, navigation, class, subclass 변경 X</li>
-      <li>title : 게시글 제목</li>
-      <li>date : 게시글 작성 날짜</li>
-      <li>tags : 원하는 태그</li>
-      <li>author : 작성자(자신의 이니셜)
+      <li>layout, current, cover, navigation, class, subclass 변경 X<br /></li>
+      <li>title : 게시글 제목<br /></li>
+      <li>date : 게시글 작성 날짜<br /></li>
+      <li>tags : 원하는 태그<br /></li>
+      <li>author : 작성자(자신의 이니셜)<br />
 <br /><br /><br /></li>
     </ul>
   </li>
@@ -194,109 +195,122 @@ into the {body} of the default.hbs template -->
 <h1 id="markdown-작성법">MarkDown 작성법</h1>
 <ol>
   <li>제목 (Headings)<br />
-제목은 #을 사용하여 작성합니다. #의 개수에 따라 제목의 수준이 달라집니다.<br />
-<code class="language-plaintext highlighter-rouge"># 제목 1</code><br />
-<code class="language-plaintext highlighter-rouge">## 제목 2</code><br />
-<code class="language-plaintext highlighter-rouge">### 제목 3</code><br />
-<code class="language-plaintext highlighter-rouge">#### 제목 4</code><br />
-<code class="language-plaintext highlighter-rouge">##### 제목 5</code><br />
-<code class="language-plaintext highlighter-rouge">##### 제목 6</code><br /></li>
+제목은 #을 사용하여 작성합니다. #의 개수에 따라 제목의 수준이 달라집니다.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># 제목 1
+## 제목 2
+### 제목 3
+#### 제목 4
+##### 제목 5
+##### 제목 6
+</code></pre></div>    </div>
+  </li>
 </ol>
 
-<hr />
-
+<p>#</p>
 <ol>
   <li>강조 (Emphasis)<br />
-텍스트를 굵게 또는 기울임으로 강조할 수 있습니다.<br />
-<code class="language-plaintext highlighter-rouge">**굵은 글씨** 또는 __굵은 글씨__</code><br />
-<code class="language-plaintext highlighter-rouge">*기울임 글씨* 또는 _기울임 글씨_</code><br />
-<code class="language-plaintext highlighter-rouge">***굵고 기울임 글씨*** 또는 ___고 기울임 글씨___</code><br /></li>
+텍스트를 굵게 또는 기울임으로 강조할 수 있습니다.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>**굵은 글씨** 또는 __굵은 글씨__
+*기울임 글씨* 또는 _기울임 글씨_
+***굵고 기울임 글씨*** 또는 ___고 기울임 글씨___
+</code></pre></div>    </div>
+  </li>
 </ol>
 
-<hr />
-
+<p>#</p>
 <ol>
   <li>리스트 (Lists)<br />
-순서 있는 리스트와 순서 없는 리스트를 작성할 수 있습니다.<br />
-<code class="language-plaintext highlighter-rouge">1. 첫 번째 아이템</code><br />
-<code class="language-plaintext highlighter-rouge">2. 두 번째 아이템</code><br />
-<code class="language-plaintext highlighter-rouge">3. 세 번째 아이템</code><br /></li>
+순서 있는 리스트와 순서 없는 리스트를 작성할 수 있습니다.
+```</li>
+  <li>첫 번째 아이템</li>
+  <li>두 번째 아이템</li>
+  <li>세 번째 아이템</li>
 </ol>
 
-<p><code class="language-plaintext highlighter-rouge">- 첫 번째 아이템</code><br />
-<code class="language-plaintext highlighter-rouge">- 두 번째 아이템</code><br />
-<code class="language-plaintext highlighter-rouge">- 세 번째 아이템</code><br /></p>
+<ul>
+  <li>첫 번째 아이템</li>
+  <li>두 번째 아이템</li>
+  <li>
+    <p>세 번째 아이템</p>
+  </li>
+  <li>첫 번째 아이템</li>
+  <li>두 번째 아이템</li>
+  <li>세 번째 아이템
+```</li>
+</ul>
 
-<p><code class="language-plaintext highlighter-rouge">* 첫 번째 아이템</code><br />
-<code class="language-plaintext highlighter-rouge">* 두 번째 아이템</code><br />
-<code class="language-plaintext highlighter-rouge">* 세 번째 아이템</code><br /></p>
-
-<hr />
-
+<p>#</p>
 <ol>
   <li>링크 (Links)<br />
-링크를 삽입할 때는 대괄호와 괄호를 사용합니다.<br />
-<code class="language-plaintext highlighter-rouge">[링크 텍스트](https://www.example.com)</code><br /></li>
+링크를 삽입할 때는 대괄호와 괄호를 사용합니다.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[링크 텍스트](https://www.example.com)
+</code></pre></div>    </div>
+  </li>
 </ol>
 
-<hr />
-
+<p>#</p>
 <ol>
   <li>이미지 (Images)<br />
-이미지를 삽입할 때는 링크와 비슷하지만, 앞에 !를 붙입니다.<br />
-<code class="language-plaintext highlighter-rouge">![대체 텍스트](https://www.example.com/image.jpg)</code><br /></li>
+이미지를 삽입할 때는 링크와 비슷하지만, 앞에 !를 붙입니다.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>![대체 텍스트](https://www.example.com/image.jpg)
+</code></pre></div>    </div>
+  </li>
 </ol>
 
-<hr />
-
+<p>#</p>
 <ol>
   <li>코드 (Code)<br />
-한 줄의 코드는 백틱(`)으로 감쌉니다. 여러 줄의 코드는 세 개의 백틱(```)으로 감쌉니다.<br />
-`한 줄 코드`</li>
+한 줄의 코드는 백틱()으로 감쌉니다. 여러 줄의 코드는 세 개의 백틱(\)으로 감쌉니다.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>`한 줄 코드`
+\한 줄 코드\
+ ```여러줄 코드```
+</code></pre></div>    </div>
+  </li>
 </ol>
 
-<p>여러 줄의 코드<br />
-```markdown<br /></p>
-
-<hr />
-
+<p>#</p>
 <ol>
   <li>블록 인용 (Blockquotes)<br />
-블록 인용은 &gt;를 사용합니다.<br />
-<code class="language-plaintext highlighter-rouge">&gt; 이것은 인용입니다.</code><br />
-<code class="language-plaintext highlighter-rouge">&gt; </code><br />
-<code class="language-plaintext highlighter-rouge">&gt;  여러 줄의 인용입니다.</code><br /></li>
+블록 인용은 &gt;를 사용합니다.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; 이것은 인용입니다.
+&gt; 
+&gt;  여러 줄의 인용입니다.
+</code></pre></div>    </div>
+  </li>
 </ol>
 
-<hr />
-
+<p>#</p>
 <ol>
   <li>수평선 (Horizontal Rules)<br />
-수평선은 —, ***, ___ 등을 사용합니다.<br />
-<code class="language-plaintext highlighter-rouge">---</code><br />
-<code class="language-plaintext highlighter-rouge">***</code><br />
-<code class="language-plaintext highlighter-rouge">___</code><br /></li>
+수평선은 —, ***, ___ 등을 사용합니다.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+***
+___
+</code></pre></div>    </div>
+  </li>
 </ol>
 
-<hr />
-
+<p>#</p>
 <ol>
   <li>표 (Tables)<br />
-표는 |와 -를 사용합니다.<br />
-<code class="language-plaintext highlighter-rouge">| 헤더 1 | 헤더 2 |</code><br />
-<code class="language-plaintext highlighter-rouge">| ------ | ------ |</code><br />
-<code class="language-plaintext highlighter-rouge">| 셀 1   | 셀 2   |</code><br />
-<code class="language-plaintext highlighter-rouge">| 셀 3   | 셀 4   |</code><br /></li>
+표는 |와 -를 사용합니다.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>| 헤더 1 | 헤더 2 |
+| ------ | ------ |
+| 셀 1   | 셀 2   |
+| 셀 3   | 셀 4   |
+</code></pre></div>    </div>
+  </li>
 </ol>
 
-<hr />
-
+<p>#</p>
 <ol>
   <li>체크리스트 (Task Lists)<br />
-체크리스트는 - [ ] (미완료)와 - [x] (완료)를 사용합니다.<br />
-<code class="language-plaintext highlighter-rouge">- [ ] 할 일 1</code><br />
-<code class="language-plaintext highlighter-rouge">- [x] 할 일 2</code><br />
-<code class="language-plaintext highlighter-rouge">- [ ] 할 일 3</code><br /></li>
+체크리스트는 - [ ] (미완료)와 - [x] (완료)를 사용합니다.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- [ ] 할 일 1
+- [x] 할 일 2
+- [ ] 할 일 3
+</code></pre></div>    </div>
+  </li>
 </ol>
 
             </section>
