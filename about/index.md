@@ -98,6 +98,160 @@ author: hby
 \한 줄 코드\
  ```여러줄 코드```
 ```
+* rouge를 이용한 코드 작성
+```
+~~~javascript
+function syntaxHighling(code){
+    var foo = 'Hello World';
+    var bar = 100;
+}
+~~~
+지원가능 언어
+abap
+actionscript, as, as3
+apache
+apiblueprint, apiblueprint, apib
+applescript, applescript
+awk
+biml
+brainfuck
+bsl
+c
+ceylon
+cfscript, cfc
+clojure, clj, cljs
+cmake
+coffeescript, coffee, coffee-script
+common_lisp, cl, common-lisp, elisp, emacs-lisp
+conf, config, configuration
+console, terminal, shell_session, shell-session
+coq
+cpp, c++
+crystal, cr
+csharp, c#, cs
+css
+d, dlang
+dart
+diff, patch, udiff
+digdag
+docker, dockerfile
+dot
+eiffel
+elixir, elixir, exs
+elm
+erb, eruby, rhtml
+erlang, erl
+escape, esc
+factor
+fortran
+fsharp
+gherkin, cucumber, behat
+glsl
+go, go, golang
+gradle
+graphql
+groovy
+hack, hack, hh
+haml, HAML
+handlebars, hbs, mustache
+haskell, hs
+hcl
+html
+http
+hylang, hy
+idlang
+igorpro
+ini
+io
+irb, pry
+java
+javascript, js
+jinja, django
+json
+json-doc
+jsonnet
+jsp
+jsx, jsx, react
+julia, jl
+kotlin
+lasso, lassoscript
+liquid
+literate_coffeescript, litcoffee
+literate_haskell, lithaskell, lhaskell, lhs
+llvm
+lua
+m68k
+magik
+make, makefile, mf, gnumake, bsdmake
+markdown, md, mkd
+mathematica, wl
+matlab, m
+moonscript, moon
+mosel
+mxml
+nasm
+nginx
+nim, nimrod
+nix, nixos
+objective_c, objc, obj-c, obj_c, objectivec
+ocaml
+pascal
+perl, pl
+php, php, php3, php4, php5
+plaintext, text
+plist, plist
+powershell, posh, microsoftshell, msshell
+praat
+prolog, prolog
+prometheus, prometheus
+properties
+protobuf, proto
+puppet, pp
+python, py
+q, kdb+
+qml, qml
+r, r, R, s, S
+racket
+ruby, rb
+rust, rs, rust, no_run, rs, no_run, rust, ignore, rs, ignore, rust, should_panic, rs, should_panic
+sass
+scala, scala
+scheme
+scss
+sed
+shell, bash, zsh, ksh, sh
+sieve
+slim
+smalltalk, st, squeak
+smarty, smarty
+sml, ml
+sqf
+sql
+supercollider
+swift
+tap, tap
+tcl
+terraform, tf
+tex, TeX, LaTeX, latex
+toml
+tsx
+tulip, tulip
+turtle
+twig
+typescript, ts
+vala
+vb, visualbasic
+verilog
+vhdl
+viml, vim, vimscript, ex
+vue, vuejs
+wollok
+xml
+xojo, realbasic
+yaml, yml
+```
+
+
 
 # 
 7. 블록 인용 (Blockquotes)<br>
@@ -135,3 +289,5 @@ ___
 - [x] 할 일 2
 - [ ] 할 일 3
 ```
+#
+11. rouge를 이용한 코드 작성
