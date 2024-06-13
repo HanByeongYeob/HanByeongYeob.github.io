@@ -1020,39 +1020,49 @@ All this is done for any sub-level being entered.
 </code></pre></div></div>
 
 <ol>
-  <li>_layouts의 default.html에 해당 코드 추가<br />
-~~~html</li>
+  <li>_layouts의 default.html에 해당 코드 추가<br /></li>
 </ol>
-<link rel="stylesheet" type="text/css" href="/cpu-blog/assets/built/custom.css" />
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-# 웹 폰트변경
-1. _layouts의 default.html에 해당 코드 추가&lt;br&gt;
-* 나무고딕폰트&lt;br&gt;
-~~~html
-&lt;link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css"&gt;
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">href=</span><span class="s">"/cpu-blog/assets/built/custom.css"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<h1 id="웹-폰트변경">웹 폰트변경</h1>
+<ol>
+  <li>_layouts의 default.html에 해당 코드 추가<br />
+    <ul>
+      <li>나무고딕폰트<br /></li>
+    </ul>
+  </li>
+</ol>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://fonts.googleapis.com/earlyaccess/nanumgothic.css"</span><span class="nt">&gt;</span>
 </code></pre></div></div>
 
 <ul>
-  <li>font-awsome폰트<br />
-~~~html</li>
+  <li>font-awsome폰트<br /></li>
 </ul>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2. assets &gt; css 폴더의 screen.css에 .post-full-content의 style 변경&lt;br&gt;
-    * font-family에 'Nanum Gothic' 추가
-~~~css
-.post-full-content {
-    position: relative;
-    margin: 0 auto;
-    padding: 70px 100px 0;
-    min-height: 230px;
-    font-family: 'Georgia', 'Nanum Gothic', serif;
-    font-size: 2.2rem;
-    line-height: 1.6em;
-    background: #fff;
-}
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"</span><span class="nt">&gt;</span>
 </code></pre></div></div>
+<ol>
+  <li>assets &gt; css 폴더의 screen.css에 .post-full-content의 style 변경<br />
+    <ul>
+      <li>font-family에 ‘Nanum Gothic’ 추가
+        <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.post-full-content</span> <span class="p">{</span>
+ <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
+ <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="nb">auto</span><span class="p">;</span>
+ <span class="nl">padding</span><span class="p">:</span> <span class="m">70px</span> <span class="m">100px</span> <span class="m">0</span><span class="p">;</span>
+ <span class="nl">min-height</span><span class="p">:</span> <span class="m">230px</span><span class="p">;</span>
+ <span class="nl">font-family</span><span class="p">:</span> <span class="s2">'Georgia'</span><span class="p">,</span> <span class="s2">'Nanum Gothic'</span><span class="p">,</span> <span class="nb">serif</span><span class="p">;</span>
+ <span class="nl">font-size</span><span class="p">:</span> <span class="m">2.2rem</span><span class="p">;</span>
+ <span class="nl">line-height</span><span class="p">:</span> <span class="m">1.6em</span><span class="p">;</span>
+ <span class="nl">background</span><span class="p">:</span> <span class="m">#fff</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+</ol>
 
 <h1 id="rouge를-이용한-syntaxhilighting">rouge를 이용한 syntaxhilighting</h1>
 <ol>
@@ -1070,54 +1080,55 @@ All this is done for any sub-level being entered.
 <code class="language-plaintext highlighter-rouge">rougify style monokai.sublime &gt; assets/css/syntax.css</code></li>
     </ul>
   </li>
-  <li>_layouts의 default.html에 해당 코드 추가<br />
-~~~html</li>
+  <li>_layouts의 default.html에 해당 코드 추가<br /></li>
 </ol>
-<link rel="stylesheet" type="text/css" href="/cpu-blog/assets/built/syntax.css" />
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-# Node js 설치
-1. [node js 설치 페이지](https://nodejs.org/en/download/prebuilt-installer) 에 접속&lt;br&gt;
-2. node-v11.15.0 버전 설치
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">href=</span><span class="s">"/cpu-blog/assets/built/syntax.css"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
 
-# gulp js 파일 작성
-~~~javascript
-var gulp = require('gulp');
+<h1 id="node-js-설치">Node js 설치</h1>
+<ol>
+  <li><a href="https://nodejs.org/en/download/prebuilt-installer">node js 설치 페이지</a> 에 접속<br /></li>
+  <li>node-v11.15.0 버전 설치</li>
+</ol>
 
-// gulp plugins and utils
-var gutil = require('gulp-util');
-var postcss = require('gulp-postcss');
-var sourcemaps = require('gulp-sourcemaps');
-var imagemin = require('gulp-imagemin');
+<h1 id="gulp-js-파일-작성">gulp js 파일 작성</h1>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">gulp</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">gulp</span><span class="dl">'</span><span class="p">);</span>
 
-// postcss plugins
-var autoprefixer = require('autoprefixer');
-var colorFunction = require('postcss-color-function');
-var cssnano = require('cssnano');
-var customProperties = require('postcss-custom-properties');
-var easyimport = require('postcss-easy-import');
+<span class="c1">// gulp plugins and utils</span>
+<span class="kd">var</span> <span class="nx">gutil</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">gulp-util</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">postcss</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">gulp-postcss</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">sourcemaps</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">gulp-sourcemaps</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">imagemin</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">gulp-imagemin</span><span class="dl">'</span><span class="p">);</span>
 
-gulp.task('images', function(){
-    return gulp.src('assets/images/*')
-    .pipe(imagemin())
-    .pipe(gulp.dest('assets/built/images/'))
-});
+<span class="c1">// postcss plugins</span>
+<span class="kd">var</span> <span class="nx">autoprefixer</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">autoprefixer</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">colorFunction</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">postcss-color-function</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">cssnano</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">cssnano</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">customProperties</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">postcss-custom-properties</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">easyimport</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">postcss-easy-import</span><span class="dl">'</span><span class="p">);</span>
 
-gulp.task('css', function () {
-    var processors = [
-        easyimport,
-        customProperties,
-        colorFunction(),
-        autoprefixer({browsers: ['last 2 versions']}),
-        cssnano()
-    ];
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="dl">'</span><span class="s1">images</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="dl">'</span><span class="s1">assets/images/*</span><span class="dl">'</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">imagemin</span><span class="p">())</span>
+    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="dl">'</span><span class="s1">assets/built/images/</span><span class="dl">'</span><span class="p">))</span>
+<span class="p">});</span>
 
-    return gulp.src('assets/css/*.css')
-        .pipe(sourcemaps.init())
-        .pipe(postcss(processors))
-        .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('assets/built/'))
-});
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="dl">'</span><span class="s1">css</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">processors</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="nx">easyimport</span><span class="p">,</span>
+        <span class="nx">customProperties</span><span class="p">,</span>
+        <span class="nx">colorFunction</span><span class="p">(),</span>
+        <span class="nx">autoprefixer</span><span class="p">({</span><span class="na">browsers</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">last 2 versions</span><span class="dl">'</span><span class="p">]}),</span>
+        <span class="nx">cssnano</span><span class="p">()</span>
+    <span class="p">];</span>
+
+    <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="dl">'</span><span class="s1">assets/css/*.css</span><span class="dl">'</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">sourcemaps</span><span class="p">.</span><span class="nx">init</span><span class="p">())</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">postcss</span><span class="p">(</span><span class="nx">processors</span><span class="p">))</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">sourcemaps</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">'</span><span class="s1">.</span><span class="dl">'</span><span class="p">))</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="dl">'</span><span class="s1">assets/built/</span><span class="dl">'</span><span class="p">))</span>
+<span class="p">});</span>
 </code></pre></div></div>
 
 <h1 id="packagejson-수정">package.json 수정</h1>
