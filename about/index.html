@@ -37,7 +37,15 @@
     </script>
     <script type="text/javascript" src="/cpu-blog/assets/js/jquery.fitvids.js"></script>
     <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
-
+    
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {1
+        hljs.highlightBlock(block);
+      });
+    });</script>
     <!--[if IE]>
         <style>
             p, ol, ul{
@@ -59,7 +67,7 @@
     <meta property="og:site_name" content="CPU - IT Technical" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="MarkDown 사용법" />
-    <meta property="og:description" content="# 게시물 등록 방법 1. _post 폴더에 작성하기 원하는 태그 폴더에 파일을 만든다. ex) _post > it2024 2. 파일명은 다음 규칙에 따른다. 년도-월-일-태그명-타이틀명.md ex) 2024-05-24-it2024-title.md 3. md 파일 상단에는 다음 내용을 필수 작성 후 MarkDown 작성법에 따라 게시글을 작성한다. --- ``` layout: post current: post cover: assets/images/welcome.jpg navigation: True title:" />
+    <meta property="og:description" content="# 게시물 등록 방법 1. _post 폴더에 작성하기 원하는 태그 폴더에 파일을 만든다. ex) _post > it2024 2. 파일명은 다음 규칙에 따른다. 년도-월-일-태그명-타이틀명.md ex) 2024-05-24-it2024-title.md 3. md 파일 상단에는 다음 내용을 필수 작성 후 MarkDown 작성법에 따라 게시글을 작성한다. ``` --- layout: post current: post cover: assets/images/welcome.jpg navigation: True title:" />
     <meta property="og:url" content="https://hby0202.github.io/cpu-blog/about/" />
     <meta property="og:image" content="https://hby0202.github.io/cpu-blog/assets/images/blog-cover.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
@@ -68,7 +76,7 @@
     <meta property="article:modified_time" content="" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="MarkDown 사용법" />
-    <meta name="twitter:description" content="# 게시물 등록 방법 1. _post 폴더에 작성하기 원하는 태그 폴더에 파일을 만든다. ex) _post > it2024 2. 파일명은 다음 규칙에 따른다. 년도-월-일-태그명-타이틀명.md ex) 2024-05-24-it2024-title.md 3. md 파일 상단에는 다음 내용을 필수 작성 후 MarkDown 작성법에 따라 게시글을 작성한다. --- ``` layout: post current: post cover: assets/images/welcome.jpg navigation: True title:" />
+    <meta name="twitter:description" content="# 게시물 등록 방법 1. _post 폴더에 작성하기 원하는 태그 폴더에 파일을 만든다. ex) _post > it2024 2. 파일명은 다음 규칙에 따른다. 년도-월-일-태그명-타이틀명.md ex) 2024-05-24-it2024-title.md 3. md 파일 상단에는 다음 내용을 필수 작성 후 MarkDown 작성법에 따라 게시글을 작성한다. ``` --- layout: post current: post cover: assets/images/welcome.jpg navigation: True title:" />
     <meta name="twitter:url" content="https://hby0202.github.io/cpu-blog/" />
     <meta name="twitter:image" content="https://hby0202.github.io/cpu-blog/assets/images/blog-cover.jpg" />
     <meta name="twitter:label1" content="Written by" />
@@ -98,7 +106,7 @@
         "@type": "WebPage",
         "@id": "https://hby0202.github.io/cpu-blog/about/"
     },
-    "description": "# 게시물 등록 방법 1. _post 폴더에 작성하기 원하는 태그 폴더에 파일을 만든다. ex) _post > it2024 2. 파일명은 다음 규칙에 따른다. 년도-월-일-태그명-타이틀명.md ex) 2024-05-24-it2024-title.md 3. md 파일 상단에는 다음 내용을 필수 작성 후 MarkDown 작성법에 따라 게시글을 작성한다. --- ``` layout: post current: post cover: assets/images/welcome.jpg navigation: True title:"
+    "description": "# 게시물 등록 방법 1. _post 폴더에 작성하기 원하는 태그 폴더에 파일을 만든다. ex) _post > it2024 2. 파일명은 다음 규칙에 따른다. 년도-월-일-태그명-타이틀명.md ex) 2024-05-24-it2024-title.md 3. md 파일 상단에는 다음 내용을 필수 작성 후 MarkDown 작성법에 따라 게시글을 작성한다. ``` --- layout: post current: post cover: assets/images/welcome.jpg navigation: True title:"
 }
     </script>
 
@@ -179,9 +187,9 @@ into the {body} of the default.hbs template -->
   <li>파일명은 다음 규칙에 따른다.<br />
  년도-월-일-태그명-타이틀명.md<br />
  ex) 2024-05-24-it2024-title.md</li>
-  <li>
-    <h2 id="md-파일-상단에는-다음-내용을-필수-작성-후-markdown-작성법에-따라-게시글을-작성한다">md 파일 상단에는 다음 내용을 필수 작성 후 MarkDown 작성법에 따라 게시글을 작성한다.<br /></h2>
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>layout: post
+  <li>md 파일 상단에는 다음 내용을 필수 작성 후 MarkDown 작성법에 따라 게시글을 작성한다.<br />
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+layout: post
 current: post
 cover:  assets/images/welcome.jpg
 navigation: True
@@ -191,8 +199,8 @@ tags: [it2024]
 class: post-template
 subclass: 'post'
 author: hby
+---
 </code></pre></div>    </div>
-    <hr />
     <p><br /></p>
     <ul>
       <li>layout, current, cover, navigation, class, subclass 변경 X<br /></li>
@@ -286,7 +294,9 @@ function syntaxHighling(code){
  var bar = 100;
 }
 ~~~
-지원가능 언어
+</code></pre></div>        </div>
+        <p><br /></p>
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>지원가능 언어
 abap
 actionscript, as, as3
 apache
@@ -477,9 +487,7 @@ ___
 - [x] 할 일 2
 - [ ] 할 일 3
 </code></pre></div>    </div>
-    <p>#</p>
   </li>
-  <li>rouge를 이용한 코드 작성</li>
 </ol>
 
             </section>
@@ -552,14 +560,6 @@ $(function() {
         </div>
     
 
-    <!-- highlight.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/prism.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
-    <script>$(document).ready(function() {
-      $('pre code').each(function(i, block) {1
-        hljs.highlightBlock(block);
-      });
-    });</script>
 
     <!-- Paginator increased to "infinit" in _config.yml -->
     <!-- if paginator.posts  -->

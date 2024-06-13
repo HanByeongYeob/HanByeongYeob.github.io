@@ -37,7 +37,15 @@
     </script>
     <script type="text/javascript" src="/cpu-blog/assets/js/jquery.fitvids.js"></script>
     <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
-
+    
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {1
+        hljs.highlightBlock(block);
+      });
+    });</script>
     <!--[if IE]>
         <style>
             p, ol, ul{
@@ -205,848 +213,846 @@ into the {body} of the default.hbs template -->
 <ol>
   <li>assets &gt; css에 custom.css 파일 추가<br />
 css 내용 작성<br />
-custom.css 예시
-~~~css
-/* Search 결과화면ㅇ르 위한 CSS 설정 시작 */
-ul.mylist li, ol.mylist li {
- padding: 5px 0px 5px 5px;
- margin-bottom: 5px;
- border-bottom: 1px solid #efefef;
- font-size: 12px;
-}</li>
+custom.css 예시<br /></li>
 </ol>
 
-<p>ul.mylist li:last-child, ol.mylist li:last-child{
-    border-bottom: 0px;
-}</p>
-
-<p>ul.mylist li, ol.mylist li{
-    -webkit-transition: background-color 0.3s linear;
-    -moz-transition: background-color 0.3s linear;
-    -ms-transition: background-color 0.3s linear;
-    -o-transition: background-color 0.3s linear;
-    transition: background-color 0.3s linear;
-}</p>
-
-<p>ul.mylist li:hover, ol.mylist li:hover{
-    background-color: #f6f0b6;
-}</p>
-
-<p>/* 링크뒤쪽에 FontAwesome표현을 위한 custom CSS*/
-.post-full-content a[target=”_blank”]::after{
-    content: ‘\1f517’;
-    display: inline-block;
-    margin: 0 2px 0 4px;
-    line-height: 1;
-    font-family: “FontAwesome”;
-    font-size: 2rem;
-    font-weight: normal;
-    font-style: normal;
-}</p>
-
-<p>/* 강좌 table of contents(목차)를 위한 custom css */
-span.table-of-contents-list {
-    margin: 0px;
-    padding: 0px;
-    max-width: 250px;
-    width: 100%;
-    border-bottom: 1px solid #efefef;
-    font-size: 18px;
-    font-weight: bold;
-    color: #ce180b;
-    font-family: Georgia, ‘Nanum Gothic’, serif !important;
-}</p>
-
-<p>ul.table-of-contents-list, ol.table-of-contents-list{
-    list-style: none;
-    margin: 0px;
-    padding: 0px;
-    max-width: 250px;
-    width: 100%;
-    font-family: Georgia, ‘Nanum Gothic’, serif !important;
-}</p>
-
-<p>ul.table-of-contents-list li, ol.table-of-contents-list li{
-    padding: 0px 0px 5px 5px;
-    margin-bottom: 5px;
-    font-size: 15px;</p>
-
-<p>}</p>
-
-<p>ul.table-of-contents-list li a, ol.table-of-contents-list li a{
-    text-decoration: none;
-    color: color(var(–midgrey) l(-25%));
-    font-weight: bold;
-}</p>
-
-<p>ul.table-of-contents-list li a:hover, ol.table-of-contents-list li a:hover{
-    color: #c2255c;
-    text-decoration: none;
-    font-weight: bold;
-}</p>
-
-<p>ul.table-of-contents-list li:last-child, ol.table-of-contents-list li:last-child{
-    border-bottom: 0px;
-}</p>
-
-<p>ul.table-of-contents-list li:before, ol.table-of-contents-list li:before{
-    content: ‘\2022’;
-    display: inline-block;
-    margin: 0 2px 0 4px;
-    line-height: 1;
-    font-family: “FontAwesome”;
-    font-size: 2rem;
-    font-weight: normal;
-    font-style: normal;
-    vertical-align: middle;
-    padding: 5px 5px 6px 0px;
-}</p>
-
-<p>/* 가로방향의 리스트를위한 custom css */
-ul.font-awesome-list, ol.font-awesome-list{
-    list-style: none;
-    margin: 0px;
-    padding: 0px;
-    max-width: 250px;
-    width: 100%;
-}</p>
-
-<p>ul.font-awesome-list li, ol.font-awesome-list li{
-    padding: 5px 0px 5px 5px;
-    margin-bottom: 5px;
-    border-bottom: 1px solid #efefef;
-    font-size: 18px;
-}</p>
-
-<p>ul.font-awesome-list li span.icon-name, ol.font-awesome-list li span.icon-name{
-    padding: 0px 10px;
-}</p>
-
-<p>ul.font-awesome-list li span.icon-value, ol.font-awesome-list li span.icon-value{
-    padding: 0px 10px;
-    color: #c2255c;
-    font-size: 15px;
-}</p>
-
-<p>ul.font-awesome-list li, ol.font-awesome-list li{
-    -webkit-transition: background-color 0.3s linear;
-    -moz-transition: background-color 0.3s linear;
-    -ms-transition: background-color 0.3s linear;
-    -o-transition: background-color 0.3s linear;
-    transition: background-color 0.3s linear;
-}</p>
-
-<p>ul.font-awesome-list li:hover, ol.font-awesome-list li:hover{
-    background-color: #f6f6f6;
-}</p>
-
-<p>/* tl; dr 이미지를 위한 custom style. 각 글의 첫 이미지로 등작 - 사용하지 않음 */
-.myTLDRstyle{
-    display: inline !important;
-    margin-bottom: -0.5em !important;
-    width: 100%;
-}</p>
-
-<p>/* 각 포스트의 시작Introduction을 위한 fontAwesome */
-strong.post_introduction::before{
-    content: ‘\f086’;
-    display: inline-block;
-    margin: 0 2px 0 4px;
-    line-height: 1;
-    font-family: “FontAwesome”;
-    font-size: 3rem;
-    font-weight: normal;
-    font-style: normal;
-    vertical-align: middle;
-    padding: 0px 5px 6px 0px;
-    color: teal;
-}</p>
-
-<p>/* 포스트의 subtitle을 위한 fontAwesome */
-strong.subtitle_introduction::before{
-    content: ‘\f0a4’;
-    display: inline-block;
-    margin: 0 2px 0 4px;
-    line-height: 1;
-    font-family: “FontAwesome”;
-    font-size: 3rem;
-    font-weight: normal;
-    font-style: normal;
-    vertical-align: middle;
-    padding: 0px 5px 6px 0px;
-    color: teal;
-}</p>
-
-<p>/* 포스트의 subtitle안에 단락제목을 위한 fontAwesome */
-strong.subtitle2_fontAwesome::before{
-    content: ‘\f13a’;
-    display: inline-block;
-    margin: 0 2px 0 4px;
-    line-height: 1;
-    font-family: “FontAwesome”;
-    font-size: 3rem;
-    font-weight: normal;
-    font-style: normal;
-    vertical-align: middle;
-    padding: 0px 5px 6px 0px;
-    color: teal;
-}</p>
-
-<p>/* 강좌 최하단 Reference를 위한 custom css */
-span.lecture-reference{
-    margin: 0px;
-    padding: 0px;
-    max-width: 250px;
-    width: 100%;
-    border-bottom: 0px solid #efefef;
-    font-size: 18px;
-    font-weight: bold;
-    color: #0e16ce
-}</p>
-
-<p>/* All Tags 화면을 위한 폰트 크기 설정 custom css */
-.alltags{
-    font-size: 18px;
-    font-weight: bold;
-    color:#ce112a
-}</p>
-
-<p>ul.lecture-reference{
-    list-style: none;
-    margin: 0px;
-    padding: 0px;
-    max-width: 250px;
-    width: 100%;
-}</p>
-
-<p>ul.lecture-reference li{
-    padding: 0px 0px 5px 5px;
-    margin-bottom: 5px;
-    font-size: 15px;
-    font-weight: bold;
-}</p>
-
-<p>ul.lecture-reference li a{
-    text-decoration: none;
-    color: color(var(–midgrey) l(-25%));
-}</p>
-
-<p>ul.lecture-reference li a:hover {
-    color: #c2255c;
-    text-decoration: none;
-    font-weight: bold;
-}</p>
-
-<p>ul.lecture-reference li:last-child{
-    border-bottom: 0px;
-}</p>
-
-<p>ul.lecture-reference li:before{
-    content: ‘\F02b’;
-    display: inline-block;
-    margin: 0 2px 0 4px;
-    line-height: 1;
-    font-family: “FontAwesome”;
-    font-size: 2rem;
-    font-weight: normal;
-    font-style: normal;
-    vertical-align: middle;
-    padding: 0px 5px 6px 0px;
-}</p>
-
-<p>/* 이미지 출처를표현하기 위한 custom css*/
-img-reference {
-    font-size: 1.5rem !important;
-    text-align: center;
-    font-weight: bold;
-    margin-top: -40px;
-    margin-bottom: 30px;
-}</p>
-
-<p>/* 메뉴 표현을 위한 css*/</p>
-
-<h1 id="-dl-menu-inout">/* DL Menu In/Out</h1>
-<p>*/
-@-webkit-keyframes MenuAnimOut {
-    100% {
-        -webkit-transform: translateZ(300px);
-        opacity: 0;
-    }
-}</p>
-
-<p>@-moz-keyframes MenuAnimOut {
-    100% {
-        -moz-transform: translateZ(300px);
-        opacity: 0;
-    }
-}</p>
-
-<p>@keyframes MenuAnimOut {
-    100% {
-        transform: translateZ(300px);
-        opacity: 0;
-    }
-}</p>
-
-<p>@-webkit-keyframes MenuAnimIn {
-    0% {
-        -webkit-transform: translateZ(300px);
-        opacity: 0;
-    }
-    100% {
-        -webkit-transform: translateZ(0px);
-        opacity: 1;
-    }
-}</p>
-
-<p>@-moz-keyframes MenuAnimIn {
-    0% {
-        -moz-transform: translateZ(300px);
-        opacity: 0;
-    }
-    100% {
-        -moz-transform: translateZ(0px);
-        opacity: 1;
-    }
-}</p>
-
-<p>@keyframes MenuAnimIn {
-    0% {
-        transform: translateZ(300px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateZ(0px);
-        opacity: 1;
-    }
-}</p>
-
-<p>@-webkit-keyframes SubMenuAnimIn {
-    0% {
-        -webkit-transform: translateZ(-300px);
-        opacity: 0;
-    }
-    100% {
-        -webkit-transform: translateZ(0px);
-        opacity: 1;
-    }
-}</p>
-
-<p>@-moz-keyframes SubMenuAnimIn {
-    0% {
-        -moz-transform: translateZ(-300px);
-        opacity: 0;
-    }
-    100% {
-        -moz-transform: translateZ(0px);
-        opacity: 1;
-    }
-}</p>
-
-<p>@keyframes SubMenuAnimIn {
-    0% {
-        transform: translateZ(-300px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateZ(0px);
-        opacity: 1;
-    }
-}</p>
-
-<p>@-webkit-keyframes SubMenuAnimOut {
-    0% {
-        -webkit-transform: translateZ(0px);
-        opacity: 1;</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>}
-100% {
-    -webkit-transform: translateZ(-300px);
-    opacity: 0;
-} }
-</code></pre></div></div>
-
-<p>@-moz-keyframes SubMenuAnimOut {
-    0% {
-        -moz-transform: translateZ(-0px);
-        opacity: 1;
-    }
-    100% {
-        -moz-transform: translateZ(-300px);
-        opacity: 0;
-    }
-}</p>
-
-<p>@keyframes SubMenuAnimOut {
-    0% {
-        transform: translateZ(-0px);
-        opacity: 1;
-    }
-    100% {
-        transform: translateZ(-300px);
-        opacity: 0;
-    }
-}</p>
-
-<p>.dl-menuwrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    -webkit-perspective: 1000px;
-    -moz-perspective: 1000px;
-    perspective: 1000px;
-    -webkit-perspective-origin: 50% 200%;
-    -moz-perspective-origin: 50% 200%;
-    perspective-origin: 50% 200%;
-    /* Hide the inner submenus */
-}</p>
-
-<p>@media only screen and (min-width: 48em){
-    .dl-menuwrapper {
-        position: fixed;
-        max-width: 175px;
-        top: 25px;
-        left: 25px;
-    }
-}
-.dl-menuwrapper.dl-menuopen{
-    width: 100%;
-    height: 100%;
-}
-.dl-menuwrapper button {
-    top: 0;
-    left: 0;
-    background: #222222;
-    border: none;
-    width: 48px;
-    height: 45px;
-    text-indent: -900em;
-    overflow: hidden;
-    position: relative;
-    cursor: pointer;
-    outline: none;
-    border-radius: 0 0 3px 0;
-    opacity: 0.6;
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
-    transition: 0.4s ease-in-out;
-}</p>
-
-<p>.dl-menuwrapper button:hover{
-    opacity: 1;
-}
-@media only screen and (min-width: 48em){
-    .dl-menuwrapper button {
-        border-radius: 3px;
-    }
-}</p>
-
-<p>.dl-menuwrapper button:hover,
-.dl-menuwrapper button.dl-active,
-.dl-menuwrapper ul{
-    background: #aaa;
-}</p>
-
-<p>.dl-menuwrapper button::after{
-    content: ‘’;
-    position: absolute;
-    width: 68px;
-    height: 5px;
-    background: #fff;
-    top: 10px;
-    left: 16%;
-    box-shadow: 0 10px 0 #fff, 0 20px 0 #fff;
-}</p>
-
-<p>.dl-menuwrapper ul {
-    padding: 0;
-    list-style: none;
-    -webkit-transform-style: preserve-3d;
-    -moz-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-}</p>
-
-<p>.dl-menuwrapper li {
-    position: relative;
-}</p>
-
-<p>.dl-menuwrapper li h4{
-    margin: 0;
-    padding: 15px 20px 0;
-    color: rgba(255, 255, 255, 0.9);
-}</p>
-
-<p>.dl-menuwrapper li p{
-    margin: 0;
-    padding: 15px 20px;
-    font-size: 14px;
-    font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.8);
-    font-weight: 300;
-}</p>
-
-<p>.dl-menuwrapper li p a{
-    display: inline;
-    padding: 0;
-    font-size: 14px;
-}</p>
-
-<p>.dl-menuwrapper li a{
-    display: block;
-    position: relative;
-    padding: 15px 20px;
-    font-size: 14px;
-    line-height: 20px;
-    font-weight: 400;
-    color: #fff;
-}</p>
-
-<p>.dl-menuwrapper li.dl-back a{
-    padding-left: 30px;
-    background: rgba(0, 0, 0, 0.0);
-}</p>
-
-<p>.dl-menuwrapper li.dl-back:after, .dl-menuwrapper li a:not(:only-child):after{
-    position: absolute;
-    top: 0;
-    line-height: 50px;
-    font-family: “fontawesome”;
-    color: #fff;
-    speak-as: none;
-    -webkit-font-smoothing: antialiased;
-    content: ‘\f105’;
-}</p>
-
-<p>.dl-menuwrapper li.dl-back:after{
-    left: 10px;
-    color: rgba(212, 204, 198, 0.5);
-    -webkit-transform: rotate(180deg);
-    -moz-transform: rotate(180deg);
-    transform: rotate(180deg);
-}</p>
-
-<p>.dl-menuwrapper li &gt; a:after{
-    right: 10px;
-    color: rgba(0, 0, 0, 0.15);
-}</p>
-
-<p>.dl-menuwrapper .dl-menu{
-    margin: 5px 0 0 0;
-    position: relative;
-    width: 100%;
-    max-height: 90%;
-    overflow-y: auto;
-    overflow-x: hidden;
-    opacity: 0;
-    pointer-events: none;
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
-    -webkit-transform: translateY(10ox);
-    -moz-transform: translateY(10ox);
-    transform: translateY(10ox);
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    backface-visibility: hidden;
-    z-index: inherit;
-}</p>
-
-<p>@media only screen and (min-width: 48em){
-    .dl-menuwrapper .dl-menu{
-        border-radius: 3px;
-    }
-}</p>
-
-<p>.dl-menuwrapper .dl-menu.dl-menu-toggle{
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-}</p>
-
-<p>.dl-menuwrapper .dl-menu.dl-menuopen{
-    opacity: 1;
-    pointer-events: auto;
-    background-color: #062c33;
-    -webkit-transform: translateY(0px);
-    -moz-transform: translateY(0px);
-    transform: translateY(0px);
-}</p>
-
-<p>.dl-menuwrapper .dl-submenu{
-    border-radius: 3px;
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.0);
-}</p>
-
-<p>.dl-menuwrapper .dl-submenu .btn, .dl-menuwrapper .dl-submenu .read-more-header a{
-    margin-bottom: 0;
-}</p>
-
-<p>.dl-menuwrapper li .dl-submenu{
-    display: none;
-}</p>
-
-<p>/*
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* Search 결과화면을 위한 CSS 설정 시작 */</span>
+<span class="nt">ul</span><span class="nc">.mylist</span> <span class="nt">li</span><span class="o">,</span> <span class="nt">ol</span><span class="nc">.mylist</span> <span class="nt">li</span> <span class="p">{</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">5px</span> <span class="m">0px</span> <span class="m">5px</span> <span class="m">5px</span><span class="p">;</span>
+    <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span>
+    <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#efefef</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">12px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">ul</span><span class="nc">.mylist</span> <span class="nt">li</span><span class="nd">:last-child</span><span class="o">,</span> <span class="nt">ol</span><span class="nc">.mylist</span> <span class="nt">li</span><span class="nd">:last-child</span><span class="p">{</span>
+    <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">0px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">ul</span><span class="nc">.mylist</span> <span class="nt">li</span><span class="o">,</span> <span class="nt">ol</span><span class="nc">.mylist</span> <span class="nt">li</span><span class="p">{</span>
+    <span class="nl">-webkit-transition</span><span class="p">:</span> <span class="n">background-color</span> <span class="m">0.3s</span> <span class="n">linear</span><span class="p">;</span>
+    <span class="nl">-moz-transition</span><span class="p">:</span> <span class="n">background-color</span> <span class="m">0.3s</span> <span class="n">linear</span><span class="p">;</span>
+    <span class="nl">-ms-transition</span><span class="p">:</span> <span class="n">background-color</span> <span class="m">0.3s</span> <span class="n">linear</span><span class="p">;</span>
+    <span class="nl">-o-transition</span><span class="p">:</span> <span class="n">background-color</span> <span class="m">0.3s</span> <span class="n">linear</span><span class="p">;</span>
+    <span class="nl">transition</span><span class="p">:</span> <span class="n">background-color</span> <span class="m">0.3s</span> <span class="n">linear</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">ul</span><span class="nc">.mylist</span> <span class="nt">li</span><span class="nd">:hover</span><span class="o">,</span> <span class="nt">ol</span><span class="nc">.mylist</span> <span class="nt">li</span><span class="nd">:hover</span><span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="m">#f6f0b6</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* 링크뒤쪽에 FontAwesome표현을 위한 custom CSS*/</span>
+<span class="nc">.post-full-content</span> <span class="nt">a</span><span class="o">[</span><span class="nt">target</span><span class="o">=</span><span class="s1">"_blank"</span><span class="o">]</span><span class="nd">::after</span><span class="p">{</span>
+    <span class="nl">content</span><span class="p">:</span> <span class="s2">'\1f517'</span><span class="p">;</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="n">inline-block</span><span class="p">;</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="m">2px</span> <span class="m">0</span> <span class="m">4px</span><span class="p">;</span>
+    <span class="nl">line-height</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+    <span class="nl">font-family</span><span class="p">:</span> <span class="s1">"FontAwesome"</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">2rem</span><span class="p">;</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">normal</span><span class="p">;</span>
+    <span class="nl">font-style</span><span class="p">:</span> <span class="nb">normal</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* 강좌 table of contents(목차)를 위한 custom css */</span>
+<span class="nt">span</span><span class="nc">.table-of-contents-list</span> <span class="p">{</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">0px</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">0px</span><span class="p">;</span>
+    <span class="nl">max-width</span><span class="p">:</span> <span class="m">250px</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+    <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#efefef</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">18px</span><span class="p">;</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">bold</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="m">#ce180b</span><span class="p">;</span>
+    <span class="nl">font-family</span><span class="p">:</span> <span class="n">Georgia</span><span class="p">,</span> <span class="s2">'Nanum Gothic'</span><span class="p">,</span> <span class="nb">serif</span> <span class="cp">!important</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">ul</span><span class="nc">.table-of-contents-list</span><span class="o">,</span> <span class="nt">ol</span><span class="nc">.table-of-contents-list</span><span class="p">{</span>
+    <span class="nl">list-style</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">0px</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">0px</span><span class="p">;</span>
+    <span class="nl">max-width</span><span class="p">:</span> <span class="m">250px</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+    <span class="nl">font-family</span><span class="p">:</span> <span class="n">Georgia</span><span class="p">,</span> <span class="s2">'Nanum Gothic'</span><span class="p">,</span> <span class="nb">serif</span> <span class="cp">!important</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">ul</span><span class="nc">.table-of-contents-list</span> <span class="nt">li</span><span class="o">,</span> <span class="nt">ol</span><span class="nc">.table-of-contents-list</span> <span class="nt">li</span><span class="p">{</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">0px</span> <span class="m">0px</span> <span class="m">5px</span> <span class="m">5px</span><span class="p">;</span>
+    <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">15px</span><span class="p">;</span>
+
+<span class="p">}</span>
+
+<span class="nt">ul</span><span class="nc">.table-of-contents-list</span> <span class="nt">li</span> <span class="nt">a</span><span class="o">,</span> <span class="nt">ol</span><span class="nc">.table-of-contents-list</span> <span class="nt">li</span> <span class="nt">a</span><span class="p">{</span>
+    <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="n">color</span><span class="p">(</span><span class="n">var</span><span class="p">(</span><span class="n">--midgrey</span><span class="p">)</span> <span class="n">l</span><span class="p">(</span><span class="m">-25%</span><span class="p">));</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">bold</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">ul</span><span class="nc">.table-of-contents-list</span> <span class="nt">li</span> <span class="nt">a</span><span class="nd">:hover</span><span class="o">,</span> <span class="nt">ol</span><span class="nc">.table-of-contents-list</span> <span class="nt">li</span> <span class="nt">a</span><span class="nd">:hover</span><span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="m">#c2255c</span><span class="p">;</span>
+    <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">bold</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">ul</span><span class="nc">.table-of-contents-list</span> <span class="nt">li</span><span class="nd">:last-child</span><span class="o">,</span> <span class="nt">ol</span><span class="nc">.table-of-contents-list</span> <span class="nt">li</span><span class="nd">:last-child</span><span class="p">{</span>
+    <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">0px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">ul</span><span class="nc">.table-of-contents-list</span> <span class="nt">li</span><span class="nd">:before</span><span class="o">,</span> <span class="nt">ol</span><span class="nc">.table-of-contents-list</span> <span class="nt">li</span><span class="nd">:before</span><span class="p">{</span>
+    <span class="nl">content</span><span class="p">:</span> <span class="s2">'\2022'</span><span class="p">;</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="n">inline-block</span><span class="p">;</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="m">2px</span> <span class="m">0</span> <span class="m">4px</span><span class="p">;</span>
+    <span class="nl">line-height</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+    <span class="nl">font-family</span><span class="p">:</span> <span class="s1">"FontAwesome"</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">2rem</span><span class="p">;</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">normal</span><span class="p">;</span>
+    <span class="nl">font-style</span><span class="p">:</span> <span class="nb">normal</span><span class="p">;</span>
+    <span class="nl">vertical-align</span><span class="p">:</span> <span class="nb">middle</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">5px</span> <span class="m">5px</span> <span class="m">6px</span> <span class="m">0px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* 가로방향의 리스트를위한 custom css */</span>
+<span class="nt">ul</span><span class="nc">.font-awesome-list</span><span class="o">,</span> <span class="nt">ol</span><span class="nc">.font-awesome-list</span><span class="p">{</span>
+    <span class="nl">list-style</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">0px</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">0px</span><span class="p">;</span>
+    <span class="nl">max-width</span><span class="p">:</span> <span class="m">250px</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">ul</span><span class="nc">.font-awesome-list</span> <span class="nt">li</span><span class="o">,</span> <span class="nt">ol</span><span class="nc">.font-awesome-list</span> <span class="nt">li</span><span class="p">{</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">5px</span> <span class="m">0px</span> <span class="m">5px</span> <span class="m">5px</span><span class="p">;</span>
+    <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span>
+    <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#efefef</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">18px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">ul</span><span class="nc">.font-awesome-list</span> <span class="nt">li</span> <span class="nt">span</span><span class="nc">.icon-name</span><span class="o">,</span> <span class="nt">ol</span><span class="nc">.font-awesome-list</span> <span class="nt">li</span> <span class="nt">span</span><span class="nc">.icon-name</span><span class="p">{</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">0px</span> <span class="m">10px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">ul</span><span class="nc">.font-awesome-list</span> <span class="nt">li</span> <span class="nt">span</span><span class="nc">.icon-value</span><span class="o">,</span> <span class="nt">ol</span><span class="nc">.font-awesome-list</span> <span class="nt">li</span> <span class="nt">span</span><span class="nc">.icon-value</span><span class="p">{</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">0px</span> <span class="m">10px</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="m">#c2255c</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">15px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">ul</span><span class="nc">.font-awesome-list</span> <span class="nt">li</span><span class="o">,</span> <span class="nt">ol</span><span class="nc">.font-awesome-list</span> <span class="nt">li</span><span class="p">{</span>
+    <span class="nl">-webkit-transition</span><span class="p">:</span> <span class="n">background-color</span> <span class="m">0.3s</span> <span class="n">linear</span><span class="p">;</span>
+    <span class="nl">-moz-transition</span><span class="p">:</span> <span class="n">background-color</span> <span class="m">0.3s</span> <span class="n">linear</span><span class="p">;</span>
+    <span class="nl">-ms-transition</span><span class="p">:</span> <span class="n">background-color</span> <span class="m">0.3s</span> <span class="n">linear</span><span class="p">;</span>
+    <span class="nl">-o-transition</span><span class="p">:</span> <span class="n">background-color</span> <span class="m">0.3s</span> <span class="n">linear</span><span class="p">;</span>
+    <span class="nl">transition</span><span class="p">:</span> <span class="n">background-color</span> <span class="m">0.3s</span> <span class="n">linear</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">ul</span><span class="nc">.font-awesome-list</span> <span class="nt">li</span><span class="nd">:hover</span><span class="o">,</span> <span class="nt">ol</span><span class="nc">.font-awesome-list</span> <span class="nt">li</span><span class="nd">:hover</span><span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="m">#f6f6f6</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* tl; dr 이미지를 위한 custom style. 각 글의 첫 이미지로 등작 - 사용하지 않음 */</span>
+<span class="nc">.myTLDRstyle</span><span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">inline</span> <span class="cp">!important</span><span class="p">;</span>
+    <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">-0.5em</span> <span class="cp">!important</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* 각 포스트의 시작Introduction을 위한 fontAwesome */</span>
+<span class="nt">strong</span><span class="nc">.post_introduction</span><span class="nd">::before</span><span class="p">{</span>
+    <span class="nl">content</span><span class="p">:</span> <span class="s2">'\f086'</span><span class="p">;</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="n">inline-block</span><span class="p">;</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="m">2px</span> <span class="m">0</span> <span class="m">4px</span><span class="p">;</span>
+    <span class="nl">line-height</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+    <span class="nl">font-family</span><span class="p">:</span> <span class="s1">"FontAwesome"</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">3rem</span><span class="p">;</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">normal</span><span class="p">;</span>
+    <span class="nl">font-style</span><span class="p">:</span> <span class="nb">normal</span><span class="p">;</span>
+    <span class="nl">vertical-align</span><span class="p">:</span> <span class="nb">middle</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">0px</span> <span class="m">5px</span> <span class="m">6px</span> <span class="m">0px</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">teal</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* 포스트의 subtitle을 위한 fontAwesome */</span>
+<span class="nt">strong</span><span class="nc">.subtitle_introduction</span><span class="nd">::before</span><span class="p">{</span>
+    <span class="nl">content</span><span class="p">:</span> <span class="s2">'\f0a4'</span><span class="p">;</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="n">inline-block</span><span class="p">;</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="m">2px</span> <span class="m">0</span> <span class="m">4px</span><span class="p">;</span>
+    <span class="nl">line-height</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+    <span class="nl">font-family</span><span class="p">:</span> <span class="s1">"FontAwesome"</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">3rem</span><span class="p">;</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">normal</span><span class="p">;</span>
+    <span class="nl">font-style</span><span class="p">:</span> <span class="nb">normal</span><span class="p">;</span>
+    <span class="nl">vertical-align</span><span class="p">:</span> <span class="nb">middle</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">0px</span> <span class="m">5px</span> <span class="m">6px</span> <span class="m">0px</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">teal</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* 포스트의 subtitle안에 단락제목을 위한 fontAwesome */</span>
+<span class="nt">strong</span><span class="nc">.subtitle2_fontAwesome</span><span class="nd">::before</span><span class="p">{</span>
+    <span class="nl">content</span><span class="p">:</span> <span class="s2">'\f13a'</span><span class="p">;</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="n">inline-block</span><span class="p">;</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="m">2px</span> <span class="m">0</span> <span class="m">4px</span><span class="p">;</span>
+    <span class="nl">line-height</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+    <span class="nl">font-family</span><span class="p">:</span> <span class="s1">"FontAwesome"</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">3rem</span><span class="p">;</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">normal</span><span class="p">;</span>
+    <span class="nl">font-style</span><span class="p">:</span> <span class="nb">normal</span><span class="p">;</span>
+    <span class="nl">vertical-align</span><span class="p">:</span> <span class="nb">middle</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">0px</span> <span class="m">5px</span> <span class="m">6px</span> <span class="m">0px</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">teal</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* 강좌 최하단 Reference를 위한 custom css */</span>
+<span class="nt">span</span><span class="nc">.lecture-reference</span><span class="p">{</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">0px</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">0px</span><span class="p">;</span>
+    <span class="nl">max-width</span><span class="p">:</span> <span class="m">250px</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+    <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">0px</span> <span class="nb">solid</span> <span class="m">#efefef</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">18px</span><span class="p">;</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">bold</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="m">#0e16ce</span>
+<span class="p">}</span>
+
+<span class="c">/* All Tags 화면을 위한 폰트 크기 설정 custom css */</span>
+<span class="nc">.alltags</span><span class="p">{</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">18px</span><span class="p">;</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">bold</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span><span class="m">#ce112a</span>
+<span class="p">}</span>
+
+<span class="nt">ul</span><span class="nc">.lecture-reference</span><span class="p">{</span>
+    <span class="nl">list-style</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">0px</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">0px</span><span class="p">;</span>
+    <span class="nl">max-width</span><span class="p">:</span> <span class="m">250px</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">ul</span><span class="nc">.lecture-reference</span> <span class="nt">li</span><span class="p">{</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">0px</span> <span class="m">0px</span> <span class="m">5px</span> <span class="m">5px</span><span class="p">;</span>
+    <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">15px</span><span class="p">;</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">bold</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">ul</span><span class="nc">.lecture-reference</span> <span class="nt">li</span> <span class="nt">a</span><span class="p">{</span>
+    <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="n">color</span><span class="p">(</span><span class="n">var</span><span class="p">(</span><span class="n">--midgrey</span><span class="p">)</span> <span class="n">l</span><span class="p">(</span><span class="m">-25%</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="nt">ul</span><span class="nc">.lecture-reference</span> <span class="nt">li</span> <span class="nt">a</span><span class="nd">:hover</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="m">#c2255c</span><span class="p">;</span>
+    <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">bold</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">ul</span><span class="nc">.lecture-reference</span> <span class="nt">li</span><span class="nd">:last-child</span><span class="p">{</span>
+    <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">0px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">ul</span><span class="nc">.lecture-reference</span> <span class="nt">li</span><span class="nd">:before</span><span class="p">{</span>
+    <span class="nl">content</span><span class="p">:</span> <span class="s2">'\F02b'</span><span class="p">;</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="n">inline-block</span><span class="p">;</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="m">2px</span> <span class="m">0</span> <span class="m">4px</span><span class="p">;</span>
+    <span class="nl">line-height</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+    <span class="nl">font-family</span><span class="p">:</span> <span class="s1">"FontAwesome"</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">2rem</span><span class="p">;</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">normal</span><span class="p">;</span>
+    <span class="nl">font-style</span><span class="p">:</span> <span class="nb">normal</span><span class="p">;</span>
+    <span class="nl">vertical-align</span><span class="p">:</span> <span class="nb">middle</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">0px</span> <span class="m">5px</span> <span class="m">6px</span> <span class="m">0px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* 이미지 출처를표현하기 위한 custom css*/</span>
+<span class="nt">img-reference</span> <span class="p">{</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">1.5rem</span> <span class="cp">!important</span><span class="p">;</span>
+    <span class="nl">text-align</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">bold</span><span class="p">;</span>
+    <span class="nl">margin-top</span><span class="p">:</span> <span class="m">-40px</span><span class="p">;</span>
+    <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">30px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* 메뉴 표현을 위한 css*/</span>
+
+<span class="c">/* DL Menu In/Out
+=======================================================================================================================================
+*/</span>
+<span class="k">@-webkit-keyframes</span> <span class="n">MenuAnimOut</span> <span class="p">{</span>
+    <span class="err">100</span><span class="o">%</span> <span class="p">{</span>
+        <span class="nl">-webkit-transform</span><span class="p">:</span> <span class="n">translateZ</span><span class="p">(</span><span class="m">300px</span><span class="p">);</span>
+        <span class="nl">opacity</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">@-moz-keyframes</span> <span class="n">MenuAnimOut</span> <span class="p">{</span>
+    <span class="err">100</span><span class="o">%</span> <span class="p">{</span>
+        <span class="nl">-moz-transform</span><span class="p">:</span> <span class="n">translateZ</span><span class="p">(</span><span class="m">300px</span><span class="p">);</span>
+        <span class="nl">opacity</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">@keyframes</span> <span class="n">MenuAnimOut</span> <span class="p">{</span>
+    <span class="err">100</span><span class="o">%</span> <span class="p">{</span>
+        <span class="nl">transform</span><span class="p">:</span> <span class="n">translateZ</span><span class="p">(</span><span class="m">300px</span><span class="p">);</span>
+        <span class="nl">opacity</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">@-webkit-keyframes</span> <span class="n">MenuAnimIn</span> <span class="p">{</span>
+    <span class="err">0</span><span class="o">%</span> <span class="p">{</span>
+        <span class="nl">-webkit-transform</span><span class="p">:</span> <span class="n">translateZ</span><span class="p">(</span><span class="m">300px</span><span class="p">);</span>
+        <span class="nl">opacity</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="err">100</span><span class="o">%</span> <span class="p">{</span>
+        <span class="nl">-webkit-transform</span><span class="p">:</span> <span class="n">translateZ</span><span class="p">(</span><span class="m">0px</span><span class="p">);</span>
+        <span class="nl">opacity</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">@-moz-keyframes</span> <span class="n">MenuAnimIn</span> <span class="p">{</span>
+    <span class="err">0</span><span class="o">%</span> <span class="p">{</span>
+        <span class="nl">-moz-transform</span><span class="p">:</span> <span class="n">translateZ</span><span class="p">(</span><span class="m">300px</span><span class="p">);</span>
+        <span class="nl">opacity</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="err">100</span><span class="o">%</span> <span class="p">{</span>
+        <span class="nl">-moz-transform</span><span class="p">:</span> <span class="n">translateZ</span><span class="p">(</span><span class="m">0px</span><span class="p">);</span>
+        <span class="nl">opacity</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">@keyframes</span> <span class="n">MenuAnimIn</span> <span class="p">{</span>
+    <span class="err">0</span><span class="o">%</span> <span class="p">{</span>
+        <span class="nl">transform</span><span class="p">:</span> <span class="n">translateZ</span><span class="p">(</span><span class="m">300px</span><span class="p">);</span>
+        <span class="nl">opacity</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="err">100</span><span class="o">%</span> <span class="p">{</span>
+        <span class="nl">transform</span><span class="p">:</span> <span class="n">translateZ</span><span class="p">(</span><span class="m">0px</span><span class="p">);</span>
+        <span class="nl">opacity</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">@-webkit-keyframes</span> <span class="n">SubMenuAnimIn</span> <span class="p">{</span>
+    <span class="err">0</span><span class="o">%</span> <span class="p">{</span>
+        <span class="nl">-webkit-transform</span><span class="p">:</span> <span class="n">translateZ</span><span class="p">(</span><span class="m">-300px</span><span class="p">);</span>
+        <span class="nl">opacity</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="err">100</span><span class="o">%</span> <span class="p">{</span>
+        <span class="nl">-webkit-transform</span><span class="p">:</span> <span class="n">translateZ</span><span class="p">(</span><span class="m">0px</span><span class="p">);</span>
+        <span class="nl">opacity</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">@-moz-keyframes</span> <span class="n">SubMenuAnimIn</span> <span class="p">{</span>
+    <span class="err">0</span><span class="o">%</span> <span class="p">{</span>
+        <span class="nl">-moz-transform</span><span class="p">:</span> <span class="n">translateZ</span><span class="p">(</span><span class="m">-300px</span><span class="p">);</span>
+        <span class="nl">opacity</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="err">100</span><span class="o">%</span> <span class="p">{</span>
+        <span class="nl">-moz-transform</span><span class="p">:</span> <span class="n">translateZ</span><span class="p">(</span><span class="m">0px</span><span class="p">);</span>
+        <span class="nl">opacity</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">@keyframes</span> <span class="n">SubMenuAnimIn</span> <span class="p">{</span>
+    <span class="err">0</span><span class="o">%</span> <span class="p">{</span>
+        <span class="nl">transform</span><span class="p">:</span> <span class="n">translateZ</span><span class="p">(</span><span class="m">-300px</span><span class="p">);</span>
+        <span class="nl">opacity</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="err">100</span><span class="o">%</span> <span class="p">{</span>
+        <span class="nl">transform</span><span class="p">:</span> <span class="n">translateZ</span><span class="p">(</span><span class="m">0px</span><span class="p">);</span>
+        <span class="nl">opacity</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">@-webkit-keyframes</span> <span class="n">SubMenuAnimOut</span> <span class="p">{</span>
+    <span class="err">0</span><span class="o">%</span> <span class="p">{</span>
+        <span class="nl">-webkit-transform</span><span class="p">:</span> <span class="n">translateZ</span><span class="p">(</span><span class="m">0px</span><span class="p">);</span>
+        <span class="nl">opacity</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+        
+    <span class="p">}</span>
+    <span class="err">100</span><span class="o">%</span> <span class="p">{</span>
+        <span class="nl">-webkit-transform</span><span class="p">:</span> <span class="n">translateZ</span><span class="p">(</span><span class="m">-300px</span><span class="p">);</span>
+        <span class="nl">opacity</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">@-moz-keyframes</span> <span class="n">SubMenuAnimOut</span> <span class="p">{</span>
+    <span class="err">0</span><span class="o">%</span> <span class="p">{</span>
+        <span class="nl">-moz-transform</span><span class="p">:</span> <span class="n">translateZ</span><span class="p">(</span><span class="m">-0px</span><span class="p">);</span>
+        <span class="nl">opacity</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="err">100</span><span class="o">%</span> <span class="p">{</span>
+        <span class="nl">-moz-transform</span><span class="p">:</span> <span class="n">translateZ</span><span class="p">(</span><span class="m">-300px</span><span class="p">);</span>
+        <span class="nl">opacity</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">@keyframes</span> <span class="n">SubMenuAnimOut</span> <span class="p">{</span>
+    <span class="err">0</span><span class="o">%</span> <span class="p">{</span>
+        <span class="nl">transform</span><span class="p">:</span> <span class="n">translateZ</span><span class="p">(</span><span class="m">-0px</span><span class="p">);</span>
+        <span class="nl">opacity</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="err">100</span><span class="o">%</span> <span class="p">{</span>
+        <span class="nl">transform</span><span class="p">:</span> <span class="n">translateZ</span><span class="p">(</span><span class="m">-300px</span><span class="p">);</span>
+        <span class="nl">opacity</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nc">.dl-menuwrapper</span> <span class="p">{</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+    <span class="nl">top</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">left</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">z-index</span><span class="p">:</span> <span class="m">1000</span><span class="p">;</span>
+    <span class="nl">-webkit-perspective</span><span class="p">:</span> <span class="m">1000px</span><span class="p">;</span>
+    <span class="nl">-moz-perspective</span><span class="p">:</span> <span class="m">1000px</span><span class="p">;</span>
+    <span class="nl">perspective</span><span class="p">:</span> <span class="m">1000px</span><span class="p">;</span>
+    <span class="nl">-webkit-perspective-origin</span><span class="p">:</span> <span class="m">50%</span> <span class="m">200%</span><span class="p">;</span>
+    <span class="nl">-moz-perspective-origin</span><span class="p">:</span> <span class="m">50%</span> <span class="m">200%</span><span class="p">;</span>
+    <span class="nl">perspective-origin</span><span class="p">:</span> <span class="m">50%</span> <span class="m">200%</span><span class="p">;</span>
+    <span class="c">/* Hide the inner submenus */</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="n">only</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">48em</span><span class="p">){</span>
+    <span class="nc">.dl-menuwrapper</span> <span class="p">{</span>
+        <span class="nl">position</span><span class="p">:</span> <span class="nb">fixed</span><span class="p">;</span>
+        <span class="nl">max-width</span><span class="p">:</span> <span class="m">175px</span><span class="p">;</span>
+        <span class="nl">top</span><span class="p">:</span> <span class="m">25px</span><span class="p">;</span>
+        <span class="nl">left</span><span class="p">:</span> <span class="m">25px</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nc">.dl-menuwrapper.dl-menuopen</span><span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.dl-menuwrapper</span> <span class="nt">button</span> <span class="p">{</span>
+    <span class="nl">top</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">left</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="m">#222222</span><span class="p">;</span>
+    <span class="nl">border</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">48px</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">45px</span><span class="p">;</span>
+    <span class="nl">text-indent</span><span class="p">:</span> <span class="m">-900em</span><span class="p">;</span>
+    <span class="nl">overflow</span><span class="p">:</span> <span class="nb">hidden</span><span class="p">;</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
+    <span class="nl">cursor</span><span class="p">:</span> <span class="nb">pointer</span><span class="p">;</span>
+    <span class="nl">outline</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+    <span class="nl">border-radius</span><span class="p">:</span> <span class="m">0</span> <span class="m">0</span> <span class="m">3px</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">opacity</span><span class="p">:</span> <span class="m">0.6</span><span class="p">;</span>
+    <span class="nl">box-shadow</span><span class="p">:</span> <span class="m">0</span> <span class="m">12px</span> <span class="m">24px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.4</span><span class="p">);</span>
+    <span class="nl">transition</span><span class="p">:</span> <span class="m">0.4s</span> <span class="n">ease-in-out</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.dl-menuwrapper</span> <span class="nt">button</span><span class="nd">:hover</span><span class="p">{</span>
+    <span class="nl">opacity</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">@media</span> <span class="n">only</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">48em</span><span class="p">){</span>
+    <span class="nc">.dl-menuwrapper</span> <span class="nt">button</span> <span class="p">{</span>
+        <span class="nl">border-radius</span><span class="p">:</span> <span class="m">3px</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nc">.dl-menuwrapper</span> <span class="nt">button</span><span class="nd">:hover</span><span class="o">,</span>
+<span class="nc">.dl-menuwrapper</span> <span class="nt">button</span><span class="nc">.dl-active</span><span class="o">,</span>
+<span class="nc">.dl-menuwrapper</span> <span class="nt">ul</span><span class="p">{</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="m">#aaa</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.dl-menuwrapper</span> <span class="nt">button</span><span class="nd">::after</span><span class="p">{</span>
+    <span class="nl">content</span><span class="p">:</span> <span class="s2">''</span><span class="p">;</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">68px</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="m">#fff</span><span class="p">;</span>
+    <span class="nl">top</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+    <span class="nl">left</span><span class="p">:</span> <span class="m">16%</span><span class="p">;</span>
+    <span class="nl">box-shadow</span><span class="p">:</span> <span class="m">0</span> <span class="m">10px</span> <span class="m">0</span> <span class="m">#fff</span><span class="p">,</span> <span class="m">0</span> <span class="m">20px</span> <span class="m">0</span> <span class="m">#fff</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.dl-menuwrapper</span> <span class="nt">ul</span> <span class="p">{</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">list-style</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+    <span class="nl">-webkit-transform-style</span><span class="p">:</span> <span class="n">preserve-3d</span><span class="p">;</span>
+    <span class="nl">-moz-transform-style</span><span class="p">:</span> <span class="n">preserve-3d</span><span class="p">;</span>
+    <span class="nl">transform-style</span><span class="p">:</span> <span class="n">preserve-3d</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.dl-menuwrapper</span> <span class="nt">li</span> <span class="p">{</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.dl-menuwrapper</span> <span class="nt">li</span> <span class="nt">h4</span><span class="p">{</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">15px</span> <span class="m">20px</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">0.9</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nc">.dl-menuwrapper</span> <span class="nt">li</span> <span class="nt">p</span><span class="p">{</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">15px</span> <span class="m">20px</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">14px</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">0.875rem</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">0.8</span><span class="p">);</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="m">300</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.dl-menuwrapper</span> <span class="nt">li</span> <span class="nt">p</span> <span class="nt">a</span><span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">inline</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">14px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.dl-menuwrapper</span> <span class="nt">li</span> <span class="nt">a</span><span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">15px</span> <span class="m">20px</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">14px</span><span class="p">;</span>
+    <span class="nl">line-height</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="m">400</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="m">#fff</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.dl-menuwrapper</span> <span class="nt">li</span><span class="nc">.dl-back</span> <span class="nt">a</span><span class="p">{</span>
+    <span class="nl">padding-left</span><span class="p">:</span> <span class="m">30px</span><span class="p">;</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.0</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nc">.dl-menuwrapper</span> <span class="nt">li</span><span class="nc">.dl-back</span><span class="nd">:after</span><span class="o">,</span> <span class="nc">.dl-menuwrapper</span> <span class="nt">li</span> <span class="nt">a</span><span class="nd">:not</span><span class="o">(</span><span class="nd">:only-child</span><span class="o">)</span><span class="nd">:after</span><span class="p">{</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+    <span class="nl">top</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">line-height</span><span class="p">:</span> <span class="m">50px</span><span class="p">;</span>
+    <span class="nl">font-family</span><span class="p">:</span> <span class="s1">"fontawesome"</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="m">#fff</span><span class="p">;</span>
+    <span class="nl">speak-as</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+    <span class="nl">-webkit-font-smoothing</span><span class="p">:</span> <span class="n">antialiased</span><span class="p">;</span>
+    <span class="nl">content</span><span class="p">:</span> <span class="s2">'\f105'</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.dl-menuwrapper</span> <span class="nt">li</span><span class="nc">.dl-back</span><span class="nd">:after</span><span class="p">{</span>
+    <span class="nl">left</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">212</span><span class="p">,</span> <span class="m">204</span><span class="p">,</span> <span class="m">198</span><span class="p">,</span> <span class="m">0.5</span><span class="p">);</span>
+    <span class="nl">-webkit-transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">180deg</span><span class="p">);</span>
+    <span class="nl">-moz-transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">180deg</span><span class="p">);</span>
+    <span class="nl">transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">180deg</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nc">.dl-menuwrapper</span> <span class="nt">li</span> <span class="o">&gt;</span> <span class="nt">a</span><span class="nd">:after</span><span class="p">{</span>
+    <span class="nl">right</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.15</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nc">.dl-menuwrapper</span> <span class="nc">.dl-menu</span><span class="p">{</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">5px</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+    <span class="nl">max-height</span><span class="p">:</span> <span class="m">90%</span><span class="p">;</span>
+    <span class="nl">overflow-y</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+    <span class="nl">overflow-x</span><span class="p">:</span> <span class="nb">hidden</span><span class="p">;</span>
+    <span class="nl">opacity</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">pointer-events</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+    <span class="nl">box-shadow</span><span class="p">:</span> <span class="m">0</span> <span class="m">12px</span> <span class="m">24px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.4</span><span class="p">);</span>
+    <span class="nl">-webkit-transform</span><span class="p">:</span> <span class="n">translateY</span><span class="p">(</span><span class="m">10</span><span class="n">ox</span><span class="p">);</span>
+    <span class="nl">-moz-transform</span><span class="p">:</span> <span class="n">translateY</span><span class="p">(</span><span class="m">10</span><span class="n">ox</span><span class="p">);</span>
+    <span class="nl">transform</span><span class="p">:</span> <span class="n">translateY</span><span class="p">(</span><span class="m">10</span><span class="n">ox</span><span class="p">);</span>
+    <span class="nl">-webkit-backface-visibility</span><span class="p">:</span> <span class="nb">hidden</span><span class="p">;</span>
+    <span class="nl">-moz-backface-visibility</span><span class="p">:</span> <span class="nb">hidden</span><span class="p">;</span>
+    <span class="nl">backface-visibility</span><span class="p">:</span> <span class="nb">hidden</span><span class="p">;</span>
+    <span class="nl">z-index</span><span class="p">:</span> <span class="nb">inherit</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="n">only</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">48em</span><span class="p">){</span>
+    <span class="nc">.dl-menuwrapper</span> <span class="nc">.dl-menu</span><span class="p">{</span>
+        <span class="nl">border-radius</span><span class="p">:</span> <span class="m">3px</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nc">.dl-menuwrapper</span> <span class="nc">.dl-menu.dl-menu-toggle</span><span class="p">{</span>
+    <span class="nl">-webkit-transition</span><span class="p">:</span> <span class="n">all</span> <span class="m">0.3s</span> <span class="n">ease</span><span class="p">;</span>
+    <span class="nl">-moz-transition</span><span class="p">:</span> <span class="n">all</span> <span class="m">0.3s</span> <span class="n">ease</span><span class="p">;</span>
+    <span class="nl">transition</span><span class="p">:</span> <span class="n">all</span> <span class="m">0.3s</span> <span class="n">ease</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.dl-menuwrapper</span> <span class="nc">.dl-menu.dl-menuopen</span><span class="p">{</span>
+    <span class="nl">opacity</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+    <span class="nl">pointer-events</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="m">#062c33</span><span class="p">;</span>
+    <span class="nl">-webkit-transform</span><span class="p">:</span> <span class="n">translateY</span><span class="p">(</span><span class="m">0px</span><span class="p">);</span>
+    <span class="nl">-moz-transform</span><span class="p">:</span> <span class="n">translateY</span><span class="p">(</span><span class="m">0px</span><span class="p">);</span>
+    <span class="nl">transform</span><span class="p">:</span> <span class="n">translateY</span><span class="p">(</span><span class="m">0px</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nc">.dl-menuwrapper</span> <span class="nc">.dl-submenu</span><span class="p">{</span>
+    <span class="nl">border-radius</span><span class="p">:</span> <span class="m">3px</span><span class="p">;</span>
+    <span class="nl">box-shadow</span><span class="p">:</span> <span class="m">0</span> <span class="m">12px</span> <span class="m">24px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.0</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nc">.dl-menuwrapper</span> <span class="nc">.dl-submenu</span> <span class="nc">.btn</span><span class="o">,</span> <span class="nc">.dl-menuwrapper</span> <span class="nc">.dl-submenu</span> <span class="nc">.read-more-header</span> <span class="nt">a</span><span class="p">{</span>
+    <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.dl-menuwrapper</span> <span class="nt">li</span> <span class="nc">.dl-submenu</span><span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="c">/*
 When a submenu is opend, we will hide all li siblings
-For that we give a class to the parent menu called “dl-subview”
+For that we give a class to the parent menu called "dl-subview"
 We also hide the submenu link.
-The opened submenu will get the class “dle-subviewopen”
+The opened submenu will get the class "dle-subviewopen"
 All this is done for any sub-level being entered.
-*/
-.dl-menu.dl-subview li, .dl-menu.dl-subview li.dl-subviewopen &gt; a, .dl-menu.dl-subview li.del-subview &gt; a{
-    display: none;
-    background-color: #062c33;
-}</p>
+*/</span>
+<span class="nc">.dl-menu.dl-subview</span> <span class="nt">li</span><span class="o">,</span> <span class="nc">.dl-menu.dl-subview</span> <span class="nt">li</span><span class="nc">.dl-subviewopen</span> <span class="o">&gt;</span> <span class="nt">a</span><span class="o">,</span> <span class="nc">.dl-menu.dl-subview</span> <span class="nt">li</span><span class="nc">.del-subview</span> <span class="o">&gt;</span> <span class="nt">a</span><span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="m">#062c33</span><span class="p">;</span>
+<span class="p">}</span>
 
-<p>.dl-menu.dl-menu.dl-subview li.dl-subview,
-.dl-menu.dl-menu.dl-subview li.dl-subview .dl-submenu,
-.dl-menu.dl-menu.dl-subview li.dl-subviewopen,
-.dl-menu.dl-menu.dl-subview li.dl-subviewopen &gt; .dl-submenu
-.dl-menu.dl-menu.dl-subview li.dl-subviewopen &gt; .dl-submenu &gt; li {
-    display: block;
-    background-color: #062c33;
-}</p>
+<span class="nc">.dl-menu.dl-menu.dl-subview</span> <span class="nt">li</span><span class="nc">.dl-subview</span><span class="o">,</span>
+<span class="nc">.dl-menu.dl-menu.dl-subview</span> <span class="nt">li</span><span class="nc">.dl-subview</span> <span class="nc">.dl-submenu</span><span class="o">,</span>
+<span class="nc">.dl-menu.dl-menu.dl-subview</span> <span class="nt">li</span><span class="nc">.dl-subviewopen</span><span class="o">,</span>
+<span class="nc">.dl-menu.dl-menu.dl-subview</span> <span class="nt">li</span><span class="nc">.dl-subviewopen</span> <span class="o">&gt;</span> <span class="nc">.dl-submenu</span>
+<span class="nc">.dl-menu.dl-menu.dl-subview</span> <span class="nt">li</span><span class="nc">.dl-subviewopen</span> <span class="o">&gt;</span> <span class="nc">.dl-submenu</span> <span class="o">&gt;</span> <span class="nt">li</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="m">#062c33</span><span class="p">;</span>
+<span class="p">}</span>
 
-<p>/* Animation classes ofr moving out and in */
-.dl-menu.dl-animate-out {
-    -webkit-animation: MenuAnimOut 0.4s ease;
-    -moz-animation: MenuAnimOut 0.4s ease;
-    animation: MenuAnimOut 0.4s ease;
-}</p>
+<span class="c">/* Animation classes ofr moving out and in */</span>
+<span class="nc">.dl-menu.dl-animate-out</span> <span class="p">{</span>
+    <span class="nl">-webkit-animation</span><span class="p">:</span> <span class="n">MenuAnimOut</span> <span class="m">0.4s</span> <span class="n">ease</span><span class="p">;</span>
+    <span class="nl">-moz-animation</span><span class="p">:</span> <span class="n">MenuAnimOut</span> <span class="m">0.4s</span> <span class="n">ease</span><span class="p">;</span>
+    <span class="nl">animation</span><span class="p">:</span> <span class="n">MenuAnimOut</span> <span class="m">0.4s</span> <span class="n">ease</span><span class="p">;</span>
+<span class="p">}</span>
 
-<p>.dl-menu.dl-animate-in {
-    -webkit-animation: MenuAnimIn 0.4s ease;
-    -moz-animation: MenuAnimIn 0.4s ease;
-    animation: MenuAnimIn 0.4s ease;
-}</p>
 
-<p>.dl-menuwrapper &gt; .dl-submenu.dl-animate-in {
-    -webkit-animation: SubMenuAnimIn 0.4s ease;
-    -moz-animation: SubMenuAnimIn 0.4s ease;
-    animation: SubMenuAnimIn 0.4s ease;
-}</p>
+<span class="nc">.dl-menu.dl-animate-in</span> <span class="p">{</span>
+    <span class="nl">-webkit-animation</span><span class="p">:</span> <span class="n">MenuAnimIn</span> <span class="m">0.4s</span> <span class="n">ease</span><span class="p">;</span>
+    <span class="nl">-moz-animation</span><span class="p">:</span> <span class="n">MenuAnimIn</span> <span class="m">0.4s</span> <span class="n">ease</span><span class="p">;</span>
+    <span class="nl">animation</span><span class="p">:</span> <span class="n">MenuAnimIn</span> <span class="m">0.4s</span> <span class="n">ease</span><span class="p">;</span>
+<span class="p">}</span>
 
-<p>.dl-menuwrapper &gt; .dl-submenu.dl-animate-out {
-    -webkit-animation: SubMenuAnimOut 0.4s ease;
-    -moz-animation: SubMenuAnimOut 0.4s ease;
-    animation: SubMenuAnimOut 0.4s ease;
-}</p>
+<span class="nc">.dl-menuwrapper</span> <span class="o">&gt;</span> <span class="nc">.dl-submenu.dl-animate-in</span> <span class="p">{</span>
+    <span class="nl">-webkit-animation</span><span class="p">:</span> <span class="n">SubMenuAnimIn</span> <span class="m">0.4s</span> <span class="n">ease</span><span class="p">;</span>
+    <span class="nl">-moz-animation</span><span class="p">:</span> <span class="n">SubMenuAnimIn</span> <span class="m">0.4s</span> <span class="n">ease</span><span class="p">;</span>
+    <span class="nl">animation</span><span class="p">:</span> <span class="n">SubMenuAnimIn</span> <span class="m">0.4s</span> <span class="n">ease</span><span class="p">;</span>
+<span class="p">}</span>
 
-<p>/* No TOuch Fallback*/
-.no-touch .dl-menuwrapper li a:hover{
-    background: rgba(255, 248, 213, 0.1);
-}</p>
+<span class="nc">.dl-menuwrapper</span> <span class="o">&gt;</span> <span class="nc">.dl-submenu.dl-animate-out</span> <span class="p">{</span>
+    <span class="nl">-webkit-animation</span><span class="p">:</span> <span class="n">SubMenuAnimOut</span> <span class="m">0.4s</span> <span class="n">ease</span><span class="p">;</span>
+    <span class="nl">-moz-animation</span><span class="p">:</span> <span class="n">SubMenuAnimOut</span> <span class="m">0.4s</span> <span class="n">ease</span><span class="p">;</span>
+    <span class="nl">animation</span><span class="p">:</span> <span class="n">SubMenuAnimOut</span> <span class="m">0.4s</span> <span class="n">ease</span><span class="p">;</span>
+<span class="p">}</span>
 
-<p>/* No JS Fallback*/
-.no-js .dl-trigger {
-    display: none;
-}
-.no-js dl-menuwrapper{
-    position: inherit;
-}</p>
+<span class="c">/* No TOuch Fallback*/</span>
+<span class="nc">.no-touch</span> <span class="nc">.dl-menuwrapper</span> <span class="nt">li</span> <span class="nt">a</span><span class="nd">:hover</span><span class="p">{</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">255</span><span class="p">,</span> <span class="m">248</span><span class="p">,</span> <span class="m">213</span><span class="p">,</span> <span class="m">0.1</span><span class="p">);</span>
+<span class="p">}</span>
 
-<p>@media only screen and (min-width: 48em){
-    .no-js .dl-menuwrapper{
-        position: absolute;
-    }
-}</p>
+<span class="c">/* No JS Fallback*/</span>
+<span class="nc">.no-js</span> <span class="nc">.dl-trigger</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.no-js</span> <span class="nt">dl-menuwrapper</span><span class="p">{</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">inherit</span><span class="p">;</span>
+<span class="p">}</span>
 
-<p>.no-js .dl-menuwrapper .dl-menu{
-    position: relative;
-    opacity: 1;
-    pointer-events: auto;
-    -webkit-transform: none;
-    -moz-transform: none;
-    transform: none;
-}</p>
+<span class="k">@media</span> <span class="n">only</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">48em</span><span class="p">){</span>
+    <span class="nc">.no-js</span> <span class="nc">.dl-menuwrapper</span><span class="p">{</span>
+        <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-<p>.no-js .dl-menuwrapper li .dl-submenu{
-    display: block;
-}</p>
+<span class="nc">.no-js</span> <span class="nc">.dl-menuwrapper</span> <span class="nc">.dl-menu</span><span class="p">{</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
+    <span class="nl">opacity</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+    <span class="nl">pointer-events</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+    <span class="nl">-webkit-transform</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+    <span class="nl">-moz-transform</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+    <span class="nl">transform</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+<span class="p">}</span>
 
-<p>.no-js .dl-menuwrapper li .dl-back{
-    display: none;
-}</p>
+<span class="nc">.no-js</span> <span class="nc">.dl-menuwrapper</span> <span class="nt">li</span> <span class="nc">.dl-submenu</span><span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
+<span class="p">}</span>
 
-<p>.no-js .dl-menuwrapper li a:not(:only-child){
-    background: rgba(0, 0, 0, 0.1);
-}</p>
+<span class="nc">.no-js</span> <span class="nc">.dl-menuwrapper</span> <span class="nt">li</span> <span class="nc">.dl-back</span><span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+<span class="p">}</span>
 
-<p>.no-js .dl-menuwrapper li a:not(:only-child)::after{
-    content: ‘’;
-}</p>
+<span class="nc">.no-js</span> <span class="nc">.dl-menuwrapper</span> <span class="nt">li</span> <span class="nt">a</span><span class="nd">:not</span><span class="o">(</span><span class="nd">:only-child</span><span class="o">)</span><span class="p">{</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.1</span><span class="p">);</span>
+<span class="p">}</span>
 
-<p>.no-js .dl-menu{
-    max-height: 100%;
-}
-.no-js .dl-menu li {
-    display: block;
-}</p>
+<span class="nc">.no-js</span> <span class="nc">.dl-menuwrapper</span> <span class="nt">li</span> <span class="nt">a</span><span class="nd">:not</span><span class="o">(</span><span class="nd">:only-child</span><span class="o">)</span><span class="nd">::after</span><span class="p">{</span>
+    <span class="nl">content</span><span class="p">:</span> <span class="s2">''</span><span class="p">;</span>
+<span class="p">}</span>
 
-<p>.dl-menuwrapper button:hover,
-.dl-menuwrapper button.dl-active,
-.dl-menuwrapper ul{
-    background: #222222;
-}</p>
+<span class="nc">.no-js</span> <span class="nc">.dl-menu</span><span class="p">{</span>
+    <span class="nl">max-height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.no-js</span> <span class="nc">.dl-menu</span> <span class="nt">li</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
+<span class="p">}</span>
 
-<p>.dl-menu li {
-    display: none;
-}</p>
+<span class="nc">.dl-menuwrapper</span> <span class="nt">button</span><span class="nd">:hover</span><span class="o">,</span>
+<span class="nc">.dl-menuwrapper</span> <span class="nt">button</span><span class="nc">.dl-active</span><span class="o">,</span>
+<span class="nc">.dl-menuwrapper</span> <span class="nt">ul</span><span class="p">{</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="m">#222222</span><span class="p">;</span>
+<span class="p">}</span>
 
-<p>.dl-menuopen li {
-    display: block;
-}</p>
+<span class="nc">.dl-menu</span> <span class="nt">li</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+<span class="p">}</span>
 
-<p>/* Tags Archive 화면을 위한 css 처리*/
-.entry-meta{
-    font-size: 12px;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    color: rgba(187, 187, 187, 0.8);
-}</p>
+<span class="nc">.dl-menuopen</span> <span class="nt">li</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
+<span class="p">}</span>
 
-<p>.entry-meta a{
-    color: rgba(187, 187, 187, 0.8);
-}</p>
+<span class="c">/* Tags Archive 화면을 위한 css 처리*/</span>
+<span class="nc">.entry-meta</span><span class="p">{</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">12px</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">0.75rem</span><span class="p">;</span>
+    <span class="nl">text-transform</span><span class="p">:</span> <span class="nb">uppercase</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">187</span><span class="p">,</span> <span class="m">187</span><span class="p">,</span> <span class="m">187</span><span class="p">,</span> <span class="m">0.8</span><span class="p">);</span>
+<span class="p">}</span>
 
-<p>.entry-meta .vcard:before{
-    content: ‘ by ‘;
-}</p>
+<span class="nc">.entry-meta</span> <span class="nt">a</span><span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">187</span><span class="p">,</span> <span class="m">187</span><span class="p">,</span> <span class="m">187</span><span class="p">,</span> <span class="m">0.8</span><span class="p">);</span>
+<span class="p">}</span>
 
-<p>.entry-meta .tag{
-    display: inline-block;
-    margin: 4px;
-    color: #fff;
-    border-radius: 3px;
-    background-color: rgba(162, 162, 162, 0.8);
-}</p>
+<span class="nc">.entry-meta</span> <span class="nc">.vcard</span><span class="nd">:before</span><span class="p">{</span>
+    <span class="nl">content</span><span class="p">:</span> <span class="s2">' by '</span><span class="p">;</span>
+<span class="p">}</span>
 
-<p>.entry-meta .tag span{
-    float: left;
-    padding: 2px 6px;
-    color: black;
-    font-family: inherit;
-    background-color: aliceblue;
-}</p>
+<span class="nc">.entry-meta</span> <span class="nc">.tag</span><span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="n">inline-block</span><span class="p">;</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">4px</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="m">#fff</span><span class="p">;</span>
+    <span class="nl">border-radius</span><span class="p">:</span> <span class="m">3px</span><span class="p">;</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">162</span><span class="p">,</span> <span class="m">162</span><span class="p">,</span> <span class="m">162</span><span class="p">,</span> <span class="m">0.8</span><span class="p">);</span>
+<span class="p">}</span>
 
-<p>.entry-meta .tag .count {
-    background-color: rgba(136, 136, 136, 0.8);
-    border-radius: 0 3px 3px 0;
-}</p>
+<span class="nc">.entry-meta</span> <span class="nc">.tag</span> <span class="nt">span</span><span class="p">{</span>
+    <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">2px</span> <span class="m">6px</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">black</span><span class="p">;</span>
+    <span class="nl">font-family</span><span class="p">:</span> <span class="nb">inherit</span><span class="p">;</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="no">aliceblue</span><span class="p">;</span>
+<span class="p">}</span>
 
-<p>.entry-meta .tag:hover{
-    background-color: rgba(136, 136, 136, 0.8);
-}</p>
+<span class="nc">.entry-meta</span> <span class="nc">.tag</span> <span class="nc">.count</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">136</span><span class="p">,</span> <span class="m">136</span><span class="p">,</span> <span class="m">136</span><span class="p">,</span> <span class="m">0.8</span><span class="p">);</span>
+    <span class="nl">border-radius</span><span class="p">:</span> <span class="m">0</span> <span class="m">3px</span> <span class="m">3px</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
 
-<p>.entry-meta .entry-reading-time {
-    float: right;
-}</p>
+<span class="nc">.entry-meta</span> <span class="nc">.tag</span><span class="nd">:hover</span><span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">136</span><span class="p">,</span> <span class="m">136</span><span class="p">,</span> <span class="m">136</span><span class="p">,</span> <span class="m">0.8</span><span class="p">);</span>
+<span class="p">}</span>
 
-<p>.inline-list {
-    list-style: none;
-    margin-left: 0;
-    padding-left: 0;
-}</p>
+<span class="nc">.entry-meta</span> <span class="nc">.entry-reading-time</span> <span class="p">{</span>
+    <span class="nl">float</span><span class="p">:</span> <span class="nb">right</span><span class="p">;</span>
+<span class="p">}</span>
 
-<p>.inline-list li{
-    list-style-type: none;
-    display: inline;
-}</p>
+<span class="nc">.inline-list</span> <span class="p">{</span>
+    <span class="nl">list-style</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+    <span class="nl">margin-left</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">padding-left</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
 
-<p>#post-index.feature .header-title{
-    height: 400px;
-}</p>
+<span class="nc">.inline-list</span> <span class="nt">li</span><span class="p">{</span>
+    <span class="nl">list-style-type</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">inline</span><span class="p">;</span>
+<span class="p">}</span>
 
-<p>#post-index .entry-image{
-    min-height: 400px;
-}</p>
+<span class="nf">#post-index</span><span class="nc">.feature</span> <span class="nc">.header-title</span><span class="p">{</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">400px</span><span class="p">;</span>
+<span class="p">}</span>
 
-<p>#post-index .entry-image img{
-    min-height: 400px;
-}</p>
+<span class="nf">#post-index</span> <span class="nc">.entry-image</span><span class="p">{</span>
+    <span class="nl">min-height</span><span class="p">:</span> <span class="m">400px</span><span class="p">;</span>
+<span class="p">}</span>
 
-<p>#post-index #main{
-    margin: 40px 2px 20px 2px;
-}</p>
+<span class="nf">#post-index</span> <span class="nc">.entry-image</span> <span class="nt">img</span><span class="p">{</span>
+    <span class="nl">min-height</span><span class="p">:</span> <span class="m">400px</span><span class="p">;</span>
+<span class="p">}</span>
 
-<p>@media only screen and (min-width: 48em){
-    #post-index #main{
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-}</p>
+<span class="nf">#post-index</span> <span class="nf">#main</span><span class="p">{</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">40px</span> <span class="m">2px</span> <span class="m">20px</span> <span class="m">2px</span><span class="p">;</span>
+<span class="p">}</span>
 
-<p>@media only screen and (min-width: 62.5em){
-    #post-index #main{
-        max-width: 800px;
-        margin-top: 50px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}</p>
+<span class="k">@media</span> <span class="n">only</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">48em</span><span class="p">){</span>
+    <span class="nf">#post-index</span> <span class="nf">#main</span><span class="p">{</span>
+        <span class="nl">margin-left</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+        <span class="nl">margin-right</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-<p>#post-index article {
-    background-color: #fff;
-    box-shadow: 0 0 0 0, 0 6px 12px rgba(34, 34, 34, 0.1);
-    border-radius: 3px;
-    margin-bottom: 20px;
-    padding:25px 15px;
-}</p>
+<span class="k">@media</span> <span class="n">only</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">62.5em</span><span class="p">){</span>
+    <span class="nf">#post-index</span> <span class="nf">#main</span><span class="p">{</span>
+        <span class="nl">max-width</span><span class="p">:</span> <span class="m">800px</span><span class="p">;</span>
+        <span class="nl">margin-top</span><span class="p">:</span> <span class="m">50px</span><span class="p">;</span>
+        <span class="nl">margin-left</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+        <span class="nl">margin-right</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-<p>@media only screen and (min-width: 48em){
-    #post-index article {
-        padding: 30px;
-    }
-}</p>
+<span class="nf">#post-index</span> <span class="nt">article</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="m">#fff</span><span class="p">;</span>
+    <span class="nl">box-shadow</span><span class="p">:</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span> <span class="m">6px</span> <span class="m">12px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">34</span><span class="p">,</span> <span class="m">34</span><span class="p">,</span> <span class="m">34</span><span class="p">,</span> <span class="m">0.1</span><span class="p">);</span>
+    <span class="nl">border-radius</span><span class="p">:</span> <span class="m">3px</span><span class="p">;</span>
+    <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span><span class="m">25px</span> <span class="m">15px</span><span class="p">;</span>
+<span class="p">}</span>
 
-<p>@media only screen and (min-width: 62.5em){
-    #post-index article {
-        margin-bottom: 30px;
-        padding: 50px 80px;
-    }
-}</p>
+<span class="k">@media</span> <span class="n">only</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">48em</span><span class="p">){</span>
+    <span class="nf">#post-index</span> <span class="nt">article</span> <span class="p">{</span>
+        <span class="nl">padding</span><span class="p">:</span> <span class="m">30px</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-<p>.entry-title {
-    font-size: large성
-}</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-2. _layouts의 default.html에 해당 코드 추가&lt;br&gt;
-~~~html
-&lt;link rel="stylesheet" type="text/css" href="/cpu-blog/assets/built/custom.css" /&gt;
+<span class="k">@media</span> <span class="n">only</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">62.5em</span><span class="p">){</span>
+    <span class="nf">#post-index</span> <span class="nt">article</span> <span class="p">{</span>
+        <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">30px</span><span class="p">;</span>
+        <span class="nl">padding</span><span class="p">:</span> <span class="m">50px</span> <span class="m">80px</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nc">.entry-title</span> <span class="p">{</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="n">large성</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
-<h1 id="웹-폰트변경">웹 폰트변경</h1>
 <ol>
   <li>_layouts의 default.html에 해당 코드 추가<br />
-    <ul>
-      <li>나무고딕폰트<br />
 ~~~html</li>
-    </ul>
-  </li>
 </ol>
-<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css" />
+<link rel="stylesheet" type="text/css" href="/cpu-blog/assets/built/custom.css" />
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-* font-awsome폰트&lt;br&gt;
+# 웹 폰트변경
+1. _layouts의 default.html에 해당 코드 추가&lt;br&gt;
+* 나무고딕폰트&lt;br&gt;
 ~~~html
-&lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"&gt;`
+&lt;link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css"&gt;
 </code></pre></div></div>
-<ol>
-  <li>assets &gt; css 폴더의 screen.css에 .post-full-content의 style 변경<br />
-    <ul>
-      <li>font-family에 ‘Nanum Gothic’ 추가
-        <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.post-full-content</span> <span class="p">{</span>
- <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
- <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="nb">auto</span><span class="p">;</span>
- <span class="nl">padding</span><span class="p">:</span> <span class="m">70px</span> <span class="m">100px</span> <span class="m">0</span><span class="p">;</span>
- <span class="nl">min-height</span><span class="p">:</span> <span class="m">230px</span><span class="p">;</span>
- <span class="nl">font-family</span><span class="p">:</span> <span class="s2">'Georgia'</span><span class="p">,</span> <span class="s2">'Nanum Gothic'</span><span class="p">,</span> <span class="nb">serif</span><span class="p">;</span>
- <span class="nl">font-size</span><span class="p">:</span> <span class="m">2.2rem</span><span class="p">;</span>
- <span class="nl">line-height</span><span class="p">:</span> <span class="m">1.6em</span><span class="p">;</span>
- <span class="nl">background</span><span class="p">:</span> <span class="m">#fff</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>        </div>
-      </li>
-    </ul>
-  </li>
-</ol>
+
+<ul>
+  <li>font-awsome폰트<br />
+~~~html</li>
+</ul>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2. assets &gt; css 폴더의 screen.css에 .post-full-content의 style 변경&lt;br&gt;
+    * font-family에 'Nanum Gothic' 추가
+~~~css
+.post-full-content {
+    position: relative;
+    margin: 0 auto;
+    padding: 70px 100px 0;
+    min-height: 230px;
+    font-family: 'Georgia', 'Nanum Gothic', serif;
+    font-size: 2.2rem;
+    line-height: 1.6em;
+    background: #fff;
+}
+</code></pre></div></div>
 
 <h1 id="rouge를-이용한-syntaxhilighting">rouge를 이용한 syntaxhilighting</h1>
 <ol>
@@ -1060,7 +1066,7 @@ All this is done for any sub-level being entered.
   </li>
   <li>rouge 스타일 설치<br />
     <ul>
-      <li>monokai.sublime 스타일은 assets/css/syntax.css 파일로 작성
+      <li>monokai.sublime 스타일은 assets/css/syntax.css 파일로 작성<br />
 <code class="language-plaintext highlighter-rouge">rougify style monokai.sublime &gt; assets/css/syntax.css</code></li>
     </ul>
   </li>
@@ -1524,14 +1530,6 @@ gulp.task('css', function () {
         </div>
     
 
-    <!-- highlight.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/prism.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
-    <script>$(document).ready(function() {
-      $('pre code').each(function(i, block) {1
-        hljs.highlightBlock(block);
-      });
-    });</script>
 
     <!-- Paginator increased to "infinit" in _config.yml -->
     <!-- if paginator.posts  -->
