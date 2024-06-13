@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://hby0202.github.io/cpu-blog/author/hby/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://hby0202.github.io/cpu-blog/" rel="alternate" type="text/html" />
-  <updated>2024-06-11T05:41:18+00:00</updated>
+  <updated>2024-06-13T07:50:23+00:00</updated>
   <id>https://hby0202.github.io/cpu-blog/author/hby/feed.xml</id>
 
   
@@ -50,7 +50,8 @@
     &lt;li&gt;&lt;a href=&quot;./it2024-github-page1&quot;&gt;github-page 만들기(1) - localhost jekyll theme 세팅&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./it2024-github-page2&quot;&gt;github-page 만들기(2) - 환경설정 파일 세팅&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./it2024-github-page3&quot;&gt;github-page 만들기(3) - custom css 세팅&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;./it2024-github-page4&quot;&gt;github-page 만들기(4) - github page 배포&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-github-page4&quot;&gt;github-page 만들기(4) - lunr.js를 이용한 Search 기능 추가&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-github-page5&quot;&gt;github-page 만들기(5) - github page 배포&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h1 id=&quot;ruby-다운로드&quot;&gt;Ruby 다운로드&lt;/h1&gt;
@@ -104,7 +105,7 @@
       
 
       
-        <summary type="html">it2024 강좌는 여러 절로 구성되어 있습니다. github-page 만들기(1) - localhost jekyll theme 세팅 github-page 만들기(2) - 환경설정 파일 세팅 github-page 만들기(3) - custom css 세팅 github-page 만들기(4) - github page 배포</summary>
+        <summary type="html">it2024 강좌는 여러 절로 구성되어 있습니다. github-page 만들기(1) - localhost jekyll theme 세팅 github-page 만들기(2) - 환경설정 파일 세팅 github-page 만들기(3) - custom css 세팅 github-page 만들기(4) - lunr.js를 이용한 Search 기능 추가 github-page 만들기(5) - github page 배포</summary>
       
 
       
@@ -122,157 +123,159 @@
     &lt;li&gt;&lt;a href=&quot;./it2024-github-page1&quot;&gt;github-page 만들기(1) - localhost jekyll theme 세팅&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./it2024-github-page2&quot;&gt;github-page 만들기(2) - 환경설정 파일 세팅&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./it2024-github-page3&quot;&gt;github-page 만들기(3) - custom css 세팅&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;./it2024-github-page4&quot;&gt;github-page 만들기(4) - github page 배포&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-github-page4&quot;&gt;github-page 만들기(4) - lunr.js를 이용한 Search 기능 추가&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-github-page5&quot;&gt;github-page 만들기(5) - github page 배포&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h1 id=&quot;_config-파일-세팅&quot;&gt;_config 파일 세팅&lt;/h1&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Jekyll configuration
-markdown: kramdown
-# kramdown : markdown의 개조판
-# markdown에서 불편한 사항을 개선한 형태
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# Jekyll configuration&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;markdown&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;kramdown&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# kramdown : markdown의 개조판&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# markdown에서 불편한 사항을 개선한 형태&lt;/span&gt;
 
-highlighter: rouge
-# text highlighter로 rouge이용
-# 2016.02 이후로 syntax highlighter는 rouge만 지원
-# Pygments 사용불가.
+&lt;span class=&quot;na&quot;&gt;highlighter&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;rouge&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# text highlighter로 rouge이용&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# 2016.02 이후로 syntax highlighter는 rouge만 지원&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Pygments 사용불가.&lt;/span&gt;
 
-paginate: 20
-# 작성한 모든 post를 하나의 페이지에 열거할 수 없으니 pagination이 필요하고 몇개의 post를 하나의 page에서 보여줄 건지를 설정
+&lt;span class=&quot;na&quot;&gt;paginate&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;20&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# 작성한 모든 post를 하나의 페이지에 열거할 수 없으니 pagination이 필요하고 몇개의 post를 하나의 page에서 보여줄 건지를 설정&lt;/span&gt;
 
-language: &apos;en-uk&apos;
-# 언어 설정
+&lt;span class=&quot;na&quot;&gt;language&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;en-uk&apos;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# 언어 설정&lt;/span&gt;
 
-baseurl: /cpu-blog/ 
-# url 뒤에 붙는 contextPath
-url : https://hby0202.github.io
-# 기본이 되는 url gitpage를사용하므로 [username].github.io로 고정
+&lt;span class=&quot;na&quot;&gt;baseurl&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/cpu-blog/&lt;/span&gt; 
+&lt;span class=&quot;c1&quot;&gt;# url 뒤에 붙는 contextPath&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;url &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;https://hby0202.github.io&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# 기본이 되는 url gitpage를사용하므로 [username].github.io로 고정&lt;/span&gt;
 
-# Website info
-title: CPU - IT Technical
-# Website 제목
-description: CPU 동호회 IT 기반 공유 블로그
-# Website 설명
-cover: assets/images/blog-cover.jpg
-# cover 이미지
-logo: assets/images/blog-icon.png
-# log 이미지
-logo_dark: assets/images/favicon.png
-favicon: assets/images/favicon.png
-CNAME: #add cname for website to be created
+&lt;span class=&quot;c1&quot;&gt;# Website info&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;CPU - IT Technical&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Website 제목&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;CPU 동호회 IT 기반 공유 블로그&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Website 설명&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;cover&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;assets/images/blog-cover.jpg&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# cover 이미지&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;logo&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;assets/images/blog-icon.png&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# log 이미지&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;logo_dark&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;assets/images/favicon.png&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;favicon&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;assets/images/favicon.png&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;CNAME&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#add cname for website to be created&lt;/span&gt;
 
-# Social info
-navigation: True # show the navbar links
-subscribers: True # you need to connect an external service for this to work,
-# if &apos;True&apos; the submit button is disabled for now, but you can change that
-# by editing `_includes/subscribe-form.html`
-# twitter:  # replace by your username
-# facebook:  # replace by your username
+&lt;span class=&quot;c1&quot;&gt;# Social info&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;navigation&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;True&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# show the navbar links&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;subscribers&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;True&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# you need to connect an external service for this to work,&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# if &apos;True&apos; the submit button is disabled for now, but you can change that&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# by editing `_includes/subscribe-form.html`&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# twitter:  # replace by your username&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# facebook:  # replace by your username&lt;/span&gt;
 
-# Disqus
-disqus: False
-disqus_shortname: jekyllt # replace with your disqus username
+&lt;span class=&quot;c1&quot;&gt;# Disqus&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;disqus&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;False&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;disqus_shortname&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyllt&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# replace with your disqus username&lt;/span&gt;
 
-# Google Analytics
-# google_analytics: UA-69281367-1 # replace with your GA tracking identifier
+&lt;span class=&quot;c1&quot;&gt;# Google Analytics&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# google_analytics: UA-69281367-1 # replace with your GA tracking identifier&lt;/span&gt;
 
-# Permalinks
-permalink: /:title
-# post md 파일 생성 시 url 생성 방식
-# permalink: /author/:author
-# permalink: /tag/:tag
+&lt;span class=&quot;c1&quot;&gt;# Permalinks&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;permalink&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/:title&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# post md 파일 생성 시 url 생성 방식&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# permalink: /author/:author&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# permalink: /tag/:tag&lt;/span&gt;
 
-# Authors&apos; info in `_data/authors.yml`
-# Tags&apos; info in `_data/tags_info.yml`
+&lt;span class=&quot;c1&quot;&gt;# Authors&apos; info in `_data/authors.yml`&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Tags&apos; info in `_data/tags_info.yml`&lt;/span&gt;
 
-# gems and other configs
-plugins_dir: [_plugins]
-plugins: [jekyll-paginate, jekyll-feed]
+&lt;span class=&quot;c1&quot;&gt;# gems and other configs&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;plugins_dir&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;_plugins&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;plugins&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;jekyll-paginate&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;jekyll-feed&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
 
-feed:
-  path: feed.xml
+&lt;span class=&quot;na&quot;&gt;feed&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;feed.xml&lt;/span&gt;
 
-# Additional settings available on the front-matter
-# Site logo in the index.html (as in demo.ghost.io)
-# Author&apos;s page cover in _layouts/author.html
-# The same for page.html and tag.html layouts
-# Post&apos;s page cover as a per-post basis _posts/...
-# Disqus comments as a per-post basis
-# ...
+&lt;span class=&quot;c1&quot;&gt;# Additional settings available on the front-matter&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Site logo in the index.html (as in demo.ghost.io)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Author&apos;s page cover in _layouts/author.html&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# The same for page.html and tag.html layouts&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Post&apos;s page cover as a per-post basis _posts/...&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Disqus comments as a per-post basis&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# ...&lt;/span&gt;
 
-# Settings for building master branch with travis-ci
-# with jekyll-travis
+&lt;span class=&quot;c1&quot;&gt;# Settings for building master branch with travis-ci&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# with jekyll-travis&lt;/span&gt;
 
-# Settings for deploy rake task
-# Username and repo of Github repo, e.g.
-# https://github.com/USERNAME/REPO.git
-# username defaults to ENV[&apos;GIT_NAME&apos;] used by Travis
-# repo defaults to USERNAME.github.io
-# Branch defaults to &quot;source&quot; for USERNAME.github.io
-# or &quot;master&quot; otherwise
-safe: False
-lsi: False
-username: hby0202
-# github username
-repo: cpu-blog
-# github ropository 명칭
-branch: master
-# branch 명칭
-relative_source: ../cpu-blog/
-destination: ./output/
-# deploay 폴더 위치
-production_url:  https://hby0202.github.io/cpu-blog/
-# repository url
-source_url:  https://github.com/hby0202/cpu-blog/
-# 사이트 url
+&lt;span class=&quot;c1&quot;&gt;# Settings for deploy rake task&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Username and repo of Github repo, e.g.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# https://github.com/USERNAME/REPO.git&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# username defaults to ENV[&apos;GIT_NAME&apos;] used by Travis&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# repo defaults to USERNAME.github.io&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Branch defaults to &quot;source&quot; for USERNAME.github.io&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# or &quot;master&quot; otherwise&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;safe&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;False&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;lsi&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;False&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;hby0202&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# github username&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;repo&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;cpu-blog&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# github ropository 명칭&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;branch&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;master&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# branch 명칭&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;relative_source&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;../cpu-blog/&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;destination&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;./output/&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# deploay 폴더 위치&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;production_url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;s&quot;&gt;https://hby0202.github.io/cpu-blog/&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# repository url&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;source_url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;s&quot;&gt;https://github.com/hby0202/cpu-blog/&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# 사이트 url&lt;/span&gt;
 
-#제외 파일 설정
-exclude:
-  - assets/css
-  - node_modules
-  - vendor
-  - .travis.yml
-  - Gemfile
-  - Gemfile.lock
-  - GHOST.txt
-  - gulpfile.js
-  - LICENSE
-  - package.json
-  - package-lock.json
-  - Rakefile
-  - README.md
-  - script.py
-  - changelog.md
-  - &quot;*.Rmd&quot;
-  - .git*
+&lt;span class=&quot;c1&quot;&gt;#제외 파일 설정&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;exclude&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;assets/css&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;node_modules&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;vendor&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;.travis.yml&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Gemfile&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Gemfile.lock&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;GHOST.txt&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;gulpfile.js&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;LICENSE&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;package.json&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;package-lock.json&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Rakefile&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;README.md&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;script.py&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;changelog.md&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;*.Rmd&quot;&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;.git*&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;h1 id=&quot;authors-설정&quot;&gt;Authors 설정&lt;/h1&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ghost:
-  username: ghost # 사용자아이디
-  name: Ghost # 사용자 명
-  url_full: http://jekyllt.github.io/jasper2/ # 홈페이지 URL
-  url: jekyllt.github.io/jasper2 # 홈페이지 URL
-  bio: The professional publishing platform # 설명
-  picture: assets/images/ghost.png # 해당 아이디 이미지
-  facebook: ghost
-  twitter: tryghost
-  cover: False
-
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;ghost&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;ghost&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 사용자아이디&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Ghost&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 사용자 명&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;url_full&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;http://jekyllt.github.io/jasper2/&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 홈페이지 URL&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyllt.github.io/jasper2&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 홈페이지 URL&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;bio&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;The professional publishing platform&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 설명&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;picture&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;assets/images/ghost.png&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 해당 아이디 이미지&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;facebook&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;ghost&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;twitter&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;tryghost&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;cover&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;False&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;h1 id=&quot;tag-설정&quot;&gt;tag 설정&lt;/h1&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;it2024:
-  name: it2024 # 태그 명
-  description: 2024년 작성글 # 태그 설명
-  cover: assets/images/speeches.jpg # 태그 이미지
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;it2024&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;it2024&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 태그 명&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;2024년 작성글&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 태그 설명&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;cover&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;assets/images/speeches.jpg&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 태그 이미지&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;메뉴-수정&quot;&gt;메뉴 수정&lt;/h1&gt;
 &lt;p&gt;_includes &amp;gt; navigation.html 파일 수정&lt;br /&gt;
 예시&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;ul class=&quot;nav&quot; role=&quot;menu&quot;&amp;gt;
-    &amp;lt;li class=&quot;nav-home&quot; role=&quot;menuitem&quot;&amp;gt;&amp;lt;a href=&quot;/cpu-blog/&quot;&amp;gt;Home&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
-    &amp;lt;li class=&quot;nav-about&quot; role=&quot;menuitem&quot;&amp;gt;&amp;lt;a href=&quot;/cpu-blog/about/&quot;&amp;gt;게시글 작성법&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
-    &amp;lt;li class=&quot;nav-it2024&quot; role=&quot;menuitem&quot;&amp;gt;&amp;lt;a href=&quot;/cpu-blog/tag/it2024/&quot;&amp;gt;2024&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
-&amp;lt;/ul&amp;gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;nav&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;role=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;menu&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;nav-home&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;role=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;menuitem&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/cpu-blog/&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Home&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;nav-about&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;role=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;menuitem&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/cpu-blog/about/&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;게시글 작성법&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;nav-it2024&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;role=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;menuitem&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/cpu-blog/tag/it2024/&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;2024&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;※ 참고&lt;br /&gt;
@@ -298,7 +301,7 @@ exclude:
       
 
       
-        <summary type="html">it2024 강좌는 여러 절로 구성되어 있습니다. github-page 만들기(1) - localhost jekyll theme 세팅 github-page 만들기(2) - 환경설정 파일 세팅 github-page 만들기(3) - custom css 세팅 github-page 만들기(4) - github page 배포</summary>
+        <summary type="html">it2024 강좌는 여러 절로 구성되어 있습니다. github-page 만들기(1) - localhost jekyll theme 세팅 github-page 만들기(2) - 환경설정 파일 세팅 github-page 만들기(3) - custom css 세팅 github-page 만들기(4) - lunr.js를 이용한 Search 기능 추가 github-page 만들기(5) - github page 배포</summary>
       
 
       
@@ -316,50 +319,54 @@ exclude:
     &lt;li&gt;&lt;a href=&quot;./it2024-github-page1&quot;&gt;github-page 만들기(1) - localhost jekyll theme 세팅&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./it2024-github-page2&quot;&gt;github-page 만들기(2) - 환경설정 파일 세팅&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./it2024-github-page3&quot;&gt;github-page 만들기(3) - custom css 세팅&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;./it2024-github-page4&quot;&gt;github-page 만들기(4) - github page 배포&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-github-page4&quot;&gt;github-page 만들기(4) - lunr.js를 이용한 Search 기능 추가&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-github-page5&quot;&gt;github-page 만들기(5) - github page 배포&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h1 id=&quot;custom-css-추가&quot;&gt;Custom css 추가&lt;/h1&gt;
-&lt;p&gt;assets &amp;gt; css에 custom.css 파일 추가&lt;br /&gt;
+&lt;ol&gt;
+  &lt;li&gt;assets &amp;gt; css에 custom.css 파일 추가&lt;br /&gt;
 css 내용 작성&lt;br /&gt;
-custom.css 예시&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/* Search 결과화면ㅇ르 위한 CSS 설정 시작 */
+custom.css 예시
+~~~css
+/* Search 결과화면ㅇ르 위한 CSS 설정 시작 */
 ul.mylist li, ol.mylist li {
-    padding: 5px 0px 5px 5px;
-    margin-bottom: 5px;
-    border-bottom: 1px solid #efefef;
-    font-size: 12px;
-}
+ padding: 5px 0px 5px 5px;
+ margin-bottom: 5px;
+ border-bottom: 1px solid #efefef;
+ font-size: 12px;
+}&lt;/li&gt;
+&lt;/ol&gt;
 
-ul.mylist li:last-child, ol.mylist li:last-child{
+&lt;p&gt;ul.mylist li:last-child, ol.mylist li:last-child{
     border-bottom: 0px;
-}
+}&lt;/p&gt;
 
-ul.mylist li, ol.mylist li{
+&lt;p&gt;ul.mylist li, ol.mylist li{
     -webkit-transition: background-color 0.3s linear;
     -moz-transition: background-color 0.3s linear;
     -ms-transition: background-color 0.3s linear;
     -o-transition: background-color 0.3s linear;
     transition: background-color 0.3s linear;
-}
+}&lt;/p&gt;
 
-ul.mylist li:hover, ol.mylist li:hover{
+&lt;p&gt;ul.mylist li:hover, ol.mylist li:hover{
     background-color: #f6f0b6;
-}
+}&lt;/p&gt;
 
-/* 링크뒤쪽에 FontAwesome표현을 위한 custom CSS*/
-.post-full-content a[target=&quot;_blank&quot;]::after{
-    content: &apos;\1f517&apos;;
+&lt;p&gt;/* 링크뒤쪽에 FontAwesome표현을 위한 custom CSS*/
+.post-full-content a[target=”_blank”]::after{
+    content: ‘\1f517’;
     display: inline-block;
     margin: 0 2px 0 4px;
     line-height: 1;
-    font-family: &quot;FontAwesome&quot;;
+    font-family: “FontAwesome”;
     font-size: 2rem;
     font-weight: normal;
     font-style: normal;
-}
+}&lt;/p&gt;
 
-/* 강좌 table of contents(목차)를 위한 custom css */
+&lt;p&gt;/* 강좌 table of contents(목차)를 위한 custom css */
 span.table-of-contents-list {
     margin: 0px;
     padding: 0px;
@@ -369,145 +376,145 @@ span.table-of-contents-list {
     font-size: 18px;
     font-weight: bold;
     color: #ce180b;
-    font-family: Georgia, &apos;Nanum Gothic&apos;, serif !important;
-}
+    font-family: Georgia, ‘Nanum Gothic’, serif !important;
+}&lt;/p&gt;
 
-ul.table-of-contents-list, ol.table-of-contents-list{
+&lt;p&gt;ul.table-of-contents-list, ol.table-of-contents-list{
     list-style: none;
     margin: 0px;
     padding: 0px;
     max-width: 250px;
     width: 100%;
-    font-family: Georgia, &apos;Nanum Gothic&apos;, serif !important;
-}
+    font-family: Georgia, ‘Nanum Gothic’, serif !important;
+}&lt;/p&gt;
 
-ul.table-of-contents-list li, ol.table-of-contents-list li{
+&lt;p&gt;ul.table-of-contents-list li, ol.table-of-contents-list li{
     padding: 0px 0px 5px 5px;
     margin-bottom: 5px;
-    font-size: 15px;
+    font-size: 15px;&lt;/p&gt;
 
-}
+&lt;p&gt;}&lt;/p&gt;
 
-ul.table-of-contents-list li a, ol.table-of-contents-list li a{
+&lt;p&gt;ul.table-of-contents-list li a, ol.table-of-contents-list li a{
     text-decoration: none;
-    color: color(var(--midgrey) l(-25%));
+    color: color(var(–midgrey) l(-25%));
     font-weight: bold;
-}
+}&lt;/p&gt;
 
-ul.table-of-contents-list li a:hover, ol.table-of-contents-list li a:hover{
+&lt;p&gt;ul.table-of-contents-list li a:hover, ol.table-of-contents-list li a:hover{
     color: #c2255c;
     text-decoration: none;
     font-weight: bold;
-}
+}&lt;/p&gt;
 
-ul.table-of-contents-list li:last-child, ol.table-of-contents-list li:last-child{
+&lt;p&gt;ul.table-of-contents-list li:last-child, ol.table-of-contents-list li:last-child{
     border-bottom: 0px;
-}
+}&lt;/p&gt;
 
-ul.table-of-contents-list li:before, ol.table-of-contents-list li:before{
-    content: &apos;\2022&apos;;
+&lt;p&gt;ul.table-of-contents-list li:before, ol.table-of-contents-list li:before{
+    content: ‘\2022’;
     display: inline-block;
     margin: 0 2px 0 4px;
     line-height: 1;
-    font-family: &quot;FontAwesome&quot;;
+    font-family: “FontAwesome”;
     font-size: 2rem;
     font-weight: normal;
     font-style: normal;
     vertical-align: middle;
     padding: 5px 5px 6px 0px;
-}
+}&lt;/p&gt;
 
-/* 가로방향의 리스트를위한 custom css */
+&lt;p&gt;/* 가로방향의 리스트를위한 custom css */
 ul.font-awesome-list, ol.font-awesome-list{
     list-style: none;
     margin: 0px;
     padding: 0px;
     max-width: 250px;
     width: 100%;
-}
+}&lt;/p&gt;
 
-ul.font-awesome-list li, ol.font-awesome-list li{
+&lt;p&gt;ul.font-awesome-list li, ol.font-awesome-list li{
     padding: 5px 0px 5px 5px;
     margin-bottom: 5px;
     border-bottom: 1px solid #efefef;
     font-size: 18px;
-}
+}&lt;/p&gt;
 
-ul.font-awesome-list li span.icon-name, ol.font-awesome-list li span.icon-name{
+&lt;p&gt;ul.font-awesome-list li span.icon-name, ol.font-awesome-list li span.icon-name{
     padding: 0px 10px;
-}
+}&lt;/p&gt;
 
-ul.font-awesome-list li span.icon-value, ol.font-awesome-list li span.icon-value{
+&lt;p&gt;ul.font-awesome-list li span.icon-value, ol.font-awesome-list li span.icon-value{
     padding: 0px 10px;
     color: #c2255c;
     font-size: 15px;
-}
+}&lt;/p&gt;
 
-ul.font-awesome-list li, ol.font-awesome-list li{
+&lt;p&gt;ul.font-awesome-list li, ol.font-awesome-list li{
     -webkit-transition: background-color 0.3s linear;
     -moz-transition: background-color 0.3s linear;
     -ms-transition: background-color 0.3s linear;
     -o-transition: background-color 0.3s linear;
     transition: background-color 0.3s linear;
-}
+}&lt;/p&gt;
 
-ul.font-awesome-list li:hover, ol.font-awesome-list li:hover{
+&lt;p&gt;ul.font-awesome-list li:hover, ol.font-awesome-list li:hover{
     background-color: #f6f6f6;
-}
+}&lt;/p&gt;
 
-/* tl; dr 이미지를 위한 custom style. 각 글의 첫 이미지로 등작 - 사용하지 않음 */
+&lt;p&gt;/* tl; dr 이미지를 위한 custom style. 각 글의 첫 이미지로 등작 - 사용하지 않음 */
 .myTLDRstyle{
     display: inline !important;
     margin-bottom: -0.5em !important;
     width: 100%;
-}
+}&lt;/p&gt;
 
-/* 각 포스트의 시작Introduction을 위한 fontAwesome */
+&lt;p&gt;/* 각 포스트의 시작Introduction을 위한 fontAwesome */
 strong.post_introduction::before{
-    content: &apos;\f086&apos;;
+    content: ‘\f086’;
     display: inline-block;
     margin: 0 2px 0 4px;
     line-height: 1;
-    font-family: &quot;FontAwesome&quot;;
+    font-family: “FontAwesome”;
     font-size: 3rem;
     font-weight: normal;
     font-style: normal;
     vertical-align: middle;
     padding: 0px 5px 6px 0px;
     color: teal;
-}
+}&lt;/p&gt;
 
-/* 포스트의 subtitle을 위한 fontAwesome */
+&lt;p&gt;/* 포스트의 subtitle을 위한 fontAwesome */
 strong.subtitle_introduction::before{
-    content: &apos;\f0a4&apos;;
+    content: ‘\f0a4’;
     display: inline-block;
     margin: 0 2px 0 4px;
     line-height: 1;
-    font-family: &quot;FontAwesome&quot;;
+    font-family: “FontAwesome”;
     font-size: 3rem;
     font-weight: normal;
     font-style: normal;
     vertical-align: middle;
     padding: 0px 5px 6px 0px;
     color: teal;
-}
+}&lt;/p&gt;
 
-/* 포스트의 subtitle안에 단락제목을 위한 fontAwesome */
+&lt;p&gt;/* 포스트의 subtitle안에 단락제목을 위한 fontAwesome */
 strong.subtitle2_fontAwesome::before{
-    content: &apos;\f13a&apos;;
+    content: ‘\f13a’;
     display: inline-block;
     margin: 0 2px 0 4px;
     line-height: 1;
-    font-family: &quot;FontAwesome&quot;;
+    font-family: “FontAwesome”;
     font-size: 3rem;
     font-weight: normal;
     font-style: normal;
     vertical-align: middle;
     padding: 0px 5px 6px 0px;
     color: teal;
-}
+}&lt;/p&gt;
 
-/* 강좌 최하단 Reference를 위한 custom css */
+&lt;p&gt;/* 강좌 최하단 Reference를 위한 custom css */
 span.lecture-reference{
     margin: 0px;
     padding: 0px;
@@ -517,94 +524,93 @@ span.lecture-reference{
     font-size: 18px;
     font-weight: bold;
     color: #0e16ce
-}
+}&lt;/p&gt;
 
-/* All Tags 화면을 위한 폰트 크기 설정 custom css */
+&lt;p&gt;/* All Tags 화면을 위한 폰트 크기 설정 custom css */
 .alltags{
     font-size: 18px;
     font-weight: bold;
     color:#ce112a
-}
+}&lt;/p&gt;
 
-ul.lecture-reference{
+&lt;p&gt;ul.lecture-reference{
     list-style: none;
     margin: 0px;
     padding: 0px;
     max-width: 250px;
     width: 100%;
-}
+}&lt;/p&gt;
 
-ul.lecture-reference li{
+&lt;p&gt;ul.lecture-reference li{
     padding: 0px 0px 5px 5px;
     margin-bottom: 5px;
     font-size: 15px;
     font-weight: bold;
-}
+}&lt;/p&gt;
 
-ul.lecture-reference li a{
+&lt;p&gt;ul.lecture-reference li a{
     text-decoration: none;
-    color: color(var(--midgrey) l(-25%));
-}
+    color: color(var(–midgrey) l(-25%));
+}&lt;/p&gt;
 
-ul.lecture-reference li a:hover {
+&lt;p&gt;ul.lecture-reference li a:hover {
     color: #c2255c;
     text-decoration: none;
     font-weight: bold;
-}
+}&lt;/p&gt;
 
-ul.lecture-reference li:last-child{
+&lt;p&gt;ul.lecture-reference li:last-child{
     border-bottom: 0px;
-}
+}&lt;/p&gt;
 
-ul.lecture-reference li:before{
-    content: &apos;\F02b&apos;;
+&lt;p&gt;ul.lecture-reference li:before{
+    content: ‘\F02b’;
     display: inline-block;
     margin: 0 2px 0 4px;
     line-height: 1;
-    font-family: &quot;FontAwesome&quot;;
+    font-family: “FontAwesome”;
     font-size: 2rem;
     font-weight: normal;
     font-style: normal;
     vertical-align: middle;
     padding: 0px 5px 6px 0px;
-}
+}&lt;/p&gt;
 
-/* 이미지 출처를표현하기 위한 custom css*/
+&lt;p&gt;/* 이미지 출처를표현하기 위한 custom css*/
 img-reference {
     font-size: 1.5rem !important;
     text-align: center;
     font-weight: bold;
     margin-top: -40px;
     margin-bottom: 30px;
-}
+}&lt;/p&gt;
 
-/* 메뉴 표현을 위한 css*/
+&lt;p&gt;/* 메뉴 표현을 위한 css*/&lt;/p&gt;
 
-/* DL Menu In/Out
-=======================================================================================================================================
-*/
+&lt;h1 id=&quot;-dl-menu-inout&quot;&gt;/* DL Menu In/Out&lt;/h1&gt;
+&lt;p&gt;*/
 @-webkit-keyframes MenuAnimOut {
     100% {
         -webkit-transform: translateZ(300px);
         opacity: 0;
     }
-}
+}&lt;/p&gt;
 
-@-moz-keyframes MenuAnimOut {
+&lt;p&gt;@-moz-keyframes MenuAnimOut {
     100% {
         -moz-transform: translateZ(300px);
         opacity: 0;
     }
-}
+}&lt;/p&gt;
 
-@keyframes MenuAnimOut {
+&lt;p&gt;@keyframes MenuAnimOut {
     100% {
         transform: translateZ(300px);
         opacity: 0;
     }
-}
+}&lt;/p&gt;
 
-@-webkit-keyframes MenuAnimIn {
+&lt;p&gt;@-webkit-keyframes MenuAnimIn {
     0% {
         -webkit-transform: translateZ(300px);
         opacity: 0;
@@ -613,9 +619,9 @@ img-reference {
         -webkit-transform: translateZ(0px);
         opacity: 1;
     }
-}
+}&lt;/p&gt;
 
-@-moz-keyframes MenuAnimIn {
+&lt;p&gt;@-moz-keyframes MenuAnimIn {
     0% {
         -moz-transform: translateZ(300px);
         opacity: 0;
@@ -624,9 +630,9 @@ img-reference {
         -moz-transform: translateZ(0px);
         opacity: 1;
     }
-}
+}&lt;/p&gt;
 
-@keyframes MenuAnimIn {
+&lt;p&gt;@keyframes MenuAnimIn {
     0% {
         transform: translateZ(300px);
         opacity: 0;
@@ -635,9 +641,9 @@ img-reference {
         transform: translateZ(0px);
         opacity: 1;
     }
-}
+}&lt;/p&gt;
 
-@-webkit-keyframes SubMenuAnimIn {
+&lt;p&gt;@-webkit-keyframes SubMenuAnimIn {
     0% {
         -webkit-transform: translateZ(-300px);
         opacity: 0;
@@ -646,9 +652,9 @@ img-reference {
         -webkit-transform: translateZ(0px);
         opacity: 1;
     }
-}
+}&lt;/p&gt;
 
-@-moz-keyframes SubMenuAnimIn {
+&lt;p&gt;@-moz-keyframes SubMenuAnimIn {
     0% {
         -moz-transform: translateZ(-300px);
         opacity: 0;
@@ -657,9 +663,9 @@ img-reference {
         -moz-transform: translateZ(0px);
         opacity: 1;
     }
-}
+}&lt;/p&gt;
 
-@keyframes SubMenuAnimIn {
+&lt;p&gt;@keyframes SubMenuAnimIn {
     0% {
         transform: translateZ(-300px);
         opacity: 0;
@@ -668,21 +674,21 @@ img-reference {
         transform: translateZ(0px);
         opacity: 1;
     }
-}
+}&lt;/p&gt;
 
-@-webkit-keyframes SubMenuAnimOut {
+&lt;p&gt;@-webkit-keyframes SubMenuAnimOut {
     0% {
         -webkit-transform: translateZ(0px);
-        opacity: 1;
-        
-    }
-    100% {
-        -webkit-transform: translateZ(-300px);
-        opacity: 0;
-    }
-}
+        opacity: 1;&lt;/p&gt;
 
-@-moz-keyframes SubMenuAnimOut {
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;}
+100% {
+    -webkit-transform: translateZ(-300px);
+    opacity: 0;
+} }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;@-moz-keyframes SubMenuAnimOut {
     0% {
         -moz-transform: translateZ(-0px);
         opacity: 1;
@@ -691,9 +697,9 @@ img-reference {
         -moz-transform: translateZ(-300px);
         opacity: 0;
     }
-}
+}&lt;/p&gt;
 
-@keyframes SubMenuAnimOut {
+&lt;p&gt;@keyframes SubMenuAnimOut {
     0% {
         transform: translateZ(-0px);
         opacity: 1;
@@ -702,9 +708,9 @@ img-reference {
         transform: translateZ(-300px);
         opacity: 0;
     }
-}
+}&lt;/p&gt;
 
-.dl-menuwrapper {
+&lt;p&gt;.dl-menuwrapper {
     position: absolute;
     top: 0;
     left: 0;
@@ -716,9 +722,9 @@ img-reference {
     -moz-perspective-origin: 50% 200%;
     perspective-origin: 50% 200%;
     /* Hide the inner submenus */
-}
+}&lt;/p&gt;
 
-@media only screen and (min-width: 48em){
+&lt;p&gt;@media only screen and (min-width: 48em){
     .dl-menuwrapper {
         position: fixed;
         max-width: 175px;
@@ -746,25 +752,25 @@ img-reference {
     opacity: 0.6;
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
     transition: 0.4s ease-in-out;
-}
+}&lt;/p&gt;
 
-.dl-menuwrapper button:hover{
+&lt;p&gt;.dl-menuwrapper button:hover{
     opacity: 1;
 }
 @media only screen and (min-width: 48em){
     .dl-menuwrapper button {
         border-radius: 3px;
     }
-}
+}&lt;/p&gt;
 
-.dl-menuwrapper button:hover,
+&lt;p&gt;.dl-menuwrapper button:hover,
 .dl-menuwrapper button.dl-active,
 .dl-menuwrapper ul{
     background: #aaa;
-}
+}&lt;/p&gt;
 
-.dl-menuwrapper button::after{
-    content: &apos;&apos;;
+&lt;p&gt;.dl-menuwrapper button::after{
+    content: ‘’;
     position: absolute;
     width: 68px;
     height: 5px;
@@ -772,42 +778,42 @@ img-reference {
     top: 10px;
     left: 16%;
     box-shadow: 0 10px 0 #fff, 0 20px 0 #fff;
-}
+}&lt;/p&gt;
 
-.dl-menuwrapper ul {
+&lt;p&gt;.dl-menuwrapper ul {
     padding: 0;
     list-style: none;
     -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
     transform-style: preserve-3d;
-}
+}&lt;/p&gt;
 
-.dl-menuwrapper li {
+&lt;p&gt;.dl-menuwrapper li {
     position: relative;
-}
+}&lt;/p&gt;
 
-.dl-menuwrapper li h4{
+&lt;p&gt;.dl-menuwrapper li h4{
     margin: 0;
     padding: 15px 20px 0;
     color: rgba(255, 255, 255, 0.9);
-}
+}&lt;/p&gt;
 
-.dl-menuwrapper li p{
+&lt;p&gt;.dl-menuwrapper li p{
     margin: 0;
     padding: 15px 20px;
     font-size: 14px;
     font-size: 0.875rem;
     color: rgba(255, 255, 255, 0.8);
     font-weight: 300;
-}
+}&lt;/p&gt;
 
-.dl-menuwrapper li p a{
+&lt;p&gt;.dl-menuwrapper li p a{
     display: inline;
     padding: 0;
     font-size: 14px;
-}
+}&lt;/p&gt;
 
-.dl-menuwrapper li a{
+&lt;p&gt;.dl-menuwrapper li a{
     display: block;
     position: relative;
     padding: 15px 20px;
@@ -815,38 +821,38 @@ img-reference {
     line-height: 20px;
     font-weight: 400;
     color: #fff;
-}
+}&lt;/p&gt;
 
-.dl-menuwrapper li.dl-back a{
+&lt;p&gt;.dl-menuwrapper li.dl-back a{
     padding-left: 30px;
     background: rgba(0, 0, 0, 0.0);
-}
+}&lt;/p&gt;
 
-.dl-menuwrapper li.dl-back:after, .dl-menuwrapper li a:not(:only-child):after{
+&lt;p&gt;.dl-menuwrapper li.dl-back:after, .dl-menuwrapper li a:not(:only-child):after{
     position: absolute;
     top: 0;
     line-height: 50px;
-    font-family: &quot;fontawesome&quot;;
+    font-family: “fontawesome”;
     color: #fff;
     speak-as: none;
     -webkit-font-smoothing: antialiased;
-    content: &apos;\f105&apos;;
-}
+    content: ‘\f105’;
+}&lt;/p&gt;
 
-.dl-menuwrapper li.dl-back:after{
+&lt;p&gt;.dl-menuwrapper li.dl-back:after{
     left: 10px;
     color: rgba(212, 204, 198, 0.5);
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
     transform: rotate(180deg);
-}
+}&lt;/p&gt;
 
-.dl-menuwrapper li &amp;gt; a:after{
+&lt;p&gt;.dl-menuwrapper li &amp;gt; a:after{
     right: 10px;
     color: rgba(0, 0, 0, 0.15);
-}
+}&lt;/p&gt;
 
-.dl-menuwrapper .dl-menu{
+&lt;p&gt;.dl-menuwrapper .dl-menu{
     margin: 5px 0 0 0;
     position: relative;
     width: 100%;
@@ -863,276 +869,336 @@ img-reference {
     -moz-backface-visibility: hidden;
     backface-visibility: hidden;
     z-index: inherit;
-}
+}&lt;/p&gt;
 
-@media only screen and (min-width: 48em){
+&lt;p&gt;@media only screen and (min-width: 48em){
     .dl-menuwrapper .dl-menu{
         border-radius: 3px;
     }
-}
+}&lt;/p&gt;
 
-.dl-menuwrapper .dl-menu.dl-menu-toggle{
+&lt;p&gt;.dl-menuwrapper .dl-menu.dl-menu-toggle{
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     transition: all 0.3s ease;
-}
+}&lt;/p&gt;
 
-.dl-menuwrapper .dl-menu.dl-menuopen{
+&lt;p&gt;.dl-menuwrapper .dl-menu.dl-menuopen{
     opacity: 1;
     pointer-events: auto;
     background-color: #062c33;
     -webkit-transform: translateY(0px);
     -moz-transform: translateY(0px);
     transform: translateY(0px);
-}
+}&lt;/p&gt;
 
-.dl-menuwrapper .dl-submenu{
+&lt;p&gt;.dl-menuwrapper .dl-submenu{
     border-radius: 3px;
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.0);
-}
+}&lt;/p&gt;
 
-.dl-menuwrapper .dl-submenu .btn, .dl-menuwrapper .dl-submenu .read-more-header a{
+&lt;p&gt;.dl-menuwrapper .dl-submenu .btn, .dl-menuwrapper .dl-submenu .read-more-header a{
     margin-bottom: 0;
-}
+}&lt;/p&gt;
 
-.dl-menuwrapper li .dl-submenu{
+&lt;p&gt;.dl-menuwrapper li .dl-submenu{
     display: none;
-}
+}&lt;/p&gt;
 
-
-/*
+&lt;p&gt;/*
 When a submenu is opend, we will hide all li siblings
-For that we give a class to the parent menu called &quot;dl-subview&quot;
+For that we give a class to the parent menu called “dl-subview”
 We also hide the submenu link.
-The opened submenu will get the class &quot;dle-subviewopen&quot;
+The opened submenu will get the class “dle-subviewopen”
 All this is done for any sub-level being entered.
 */
 .dl-menu.dl-subview li, .dl-menu.dl-subview li.dl-subviewopen &amp;gt; a, .dl-menu.dl-subview li.del-subview &amp;gt; a{
     display: none;
     background-color: #062c33;
-}
+}&lt;/p&gt;
 
-.dl-menu.dl-menu.dl-subview li.dl-subview,
+&lt;p&gt;.dl-menu.dl-menu.dl-subview li.dl-subview,
 .dl-menu.dl-menu.dl-subview li.dl-subview .dl-submenu,
 .dl-menu.dl-menu.dl-subview li.dl-subviewopen,
 .dl-menu.dl-menu.dl-subview li.dl-subviewopen &amp;gt; .dl-submenu
 .dl-menu.dl-menu.dl-subview li.dl-subviewopen &amp;gt; .dl-submenu &amp;gt; li {
     display: block;
     background-color: #062c33;
-}
+}&lt;/p&gt;
 
-/* Animation classes ofr moving out and in */
+&lt;p&gt;/* Animation classes ofr moving out and in */
 .dl-menu.dl-animate-out {
     -webkit-animation: MenuAnimOut 0.4s ease;
     -moz-animation: MenuAnimOut 0.4s ease;
     animation: MenuAnimOut 0.4s ease;
-}
+}&lt;/p&gt;
 
-
-.dl-menu.dl-animate-in {
+&lt;p&gt;.dl-menu.dl-animate-in {
     -webkit-animation: MenuAnimIn 0.4s ease;
     -moz-animation: MenuAnimIn 0.4s ease;
     animation: MenuAnimIn 0.4s ease;
-}
+}&lt;/p&gt;
 
-.dl-menuwrapper &amp;gt; .dl-submenu.dl-animate-in {
+&lt;p&gt;.dl-menuwrapper &amp;gt; .dl-submenu.dl-animate-in {
     -webkit-animation: SubMenuAnimIn 0.4s ease;
     -moz-animation: SubMenuAnimIn 0.4s ease;
     animation: SubMenuAnimIn 0.4s ease;
-}
+}&lt;/p&gt;
 
-.dl-menuwrapper &amp;gt; .dl-submenu.dl-animate-out {
+&lt;p&gt;.dl-menuwrapper &amp;gt; .dl-submenu.dl-animate-out {
     -webkit-animation: SubMenuAnimOut 0.4s ease;
     -moz-animation: SubMenuAnimOut 0.4s ease;
     animation: SubMenuAnimOut 0.4s ease;
-}
+}&lt;/p&gt;
 
-/* No TOuch Fallback*/
+&lt;p&gt;/* No TOuch Fallback*/
 .no-touch .dl-menuwrapper li a:hover{
     background: rgba(255, 248, 213, 0.1);
-}
+}&lt;/p&gt;
 
-/* No JS Fallback*/
+&lt;p&gt;/* No JS Fallback*/
 .no-js .dl-trigger {
     display: none;
 }
 .no-js dl-menuwrapper{
     position: inherit;
-}
+}&lt;/p&gt;
 
-@media only screen and (min-width: 48em){
+&lt;p&gt;@media only screen and (min-width: 48em){
     .no-js .dl-menuwrapper{
         position: absolute;
     }
-}
+}&lt;/p&gt;
 
-.no-js .dl-menuwrapper .dl-menu{
+&lt;p&gt;.no-js .dl-menuwrapper .dl-menu{
     position: relative;
     opacity: 1;
     pointer-events: auto;
     -webkit-transform: none;
     -moz-transform: none;
     transform: none;
-}
+}&lt;/p&gt;
 
-.no-js .dl-menuwrapper li .dl-submenu{
+&lt;p&gt;.no-js .dl-menuwrapper li .dl-submenu{
     display: block;
-}
+}&lt;/p&gt;
 
-.no-js .dl-menuwrapper li .dl-back{
+&lt;p&gt;.no-js .dl-menuwrapper li .dl-back{
     display: none;
-}
+}&lt;/p&gt;
 
-.no-js .dl-menuwrapper li a:not(:only-child){
+&lt;p&gt;.no-js .dl-menuwrapper li a:not(:only-child){
     background: rgba(0, 0, 0, 0.1);
-}
+}&lt;/p&gt;
 
-.no-js .dl-menuwrapper li a:not(:only-child)::after{
-    content: &apos;&apos;;
-}
+&lt;p&gt;.no-js .dl-menuwrapper li a:not(:only-child)::after{
+    content: ‘’;
+}&lt;/p&gt;
 
-.no-js .dl-menu{
+&lt;p&gt;.no-js .dl-menu{
     max-height: 100%;
 }
 .no-js .dl-menu li {
     display: block;
-}
+}&lt;/p&gt;
 
-.dl-menuwrapper button:hover,
+&lt;p&gt;.dl-menuwrapper button:hover,
 .dl-menuwrapper button.dl-active,
 .dl-menuwrapper ul{
     background: #222222;
-}
+}&lt;/p&gt;
 
-.dl-menu li {
+&lt;p&gt;.dl-menu li {
     display: none;
-}
+}&lt;/p&gt;
 
-.dl-menuopen li {
+&lt;p&gt;.dl-menuopen li {
     display: block;
-}
+}&lt;/p&gt;
 
-/* Tags Archive 화면을 위한 css 처리*/
+&lt;p&gt;/* Tags Archive 화면을 위한 css 처리*/
 .entry-meta{
     font-size: 12px;
     font-size: 0.75rem;
     text-transform: uppercase;
     color: rgba(187, 187, 187, 0.8);
-}
+}&lt;/p&gt;
 
-.entry-meta a{
+&lt;p&gt;.entry-meta a{
     color: rgba(187, 187, 187, 0.8);
-}
+}&lt;/p&gt;
 
-.entry-meta .vcard:before{
-    content: &apos; by &apos;;
-}
+&lt;p&gt;.entry-meta .vcard:before{
+    content: ‘ by ‘;
+}&lt;/p&gt;
 
-.entry-meta .tag{
+&lt;p&gt;.entry-meta .tag{
     display: inline-block;
     margin: 4px;
     color: #fff;
     border-radius: 3px;
     background-color: rgba(162, 162, 162, 0.8);
-}
+}&lt;/p&gt;
 
-.entry-meta .tag span{
+&lt;p&gt;.entry-meta .tag span{
     float: left;
     padding: 2px 6px;
     color: black;
     font-family: inherit;
     background-color: aliceblue;
-}
+}&lt;/p&gt;
 
-.entry-meta .tag .count {
+&lt;p&gt;.entry-meta .tag .count {
     background-color: rgba(136, 136, 136, 0.8);
     border-radius: 0 3px 3px 0;
-}
+}&lt;/p&gt;
 
-.entry-meta .tag:hover{
+&lt;p&gt;.entry-meta .tag:hover{
     background-color: rgba(136, 136, 136, 0.8);
-}
+}&lt;/p&gt;
 
-.entry-meta .entry-reading-time {
+&lt;p&gt;.entry-meta .entry-reading-time {
     float: right;
-}
+}&lt;/p&gt;
 
-.inline-list {
+&lt;p&gt;.inline-list {
     list-style: none;
     margin-left: 0;
     padding-left: 0;
-}
+}&lt;/p&gt;
 
-.inline-list li{
+&lt;p&gt;.inline-list li{
     list-style-type: none;
     display: inline;
-}
+}&lt;/p&gt;
 
-#post-index.feature .header-title{
+&lt;p&gt;#post-index.feature .header-title{
     height: 400px;
-}
+}&lt;/p&gt;
 
-#post-index .entry-image{
+&lt;p&gt;#post-index .entry-image{
     min-height: 400px;
-}
+}&lt;/p&gt;
 
-#post-index .entry-image img{
+&lt;p&gt;#post-index .entry-image img{
     min-height: 400px;
-}
+}&lt;/p&gt;
 
-#post-index #main{
+&lt;p&gt;#post-index #main{
     margin: 40px 2px 20px 2px;
-}
+}&lt;/p&gt;
 
-@media only screen and (min-width: 48em){
+&lt;p&gt;@media only screen and (min-width: 48em){
     #post-index #main{
         margin-left: 20px;
         margin-right: 20px;
     }
-}
+}&lt;/p&gt;
 
-@media only screen and (min-width: 62.5em){
+&lt;p&gt;@media only screen and (min-width: 62.5em){
     #post-index #main{
         max-width: 800px;
         margin-top: 50px;
         margin-left: auto;
         margin-right: auto;
     }
-}
+}&lt;/p&gt;
 
-#post-index article {
+&lt;p&gt;#post-index article {
     background-color: #fff;
     box-shadow: 0 0 0 0, 0 6px 12px rgba(34, 34, 34, 0.1);
     border-radius: 3px;
     margin-bottom: 20px;
     padding:25px 15px;
-}
+}&lt;/p&gt;
 
-@media only screen and (min-width: 48em){
+&lt;p&gt;@media only screen and (min-width: 48em){
     #post-index article {
         padding: 30px;
     }
-}
+}&lt;/p&gt;
 
-@media only screen and (min-width: 62.5em){
+&lt;p&gt;@media only screen and (min-width: 62.5em){
     #post-index article {
         margin-bottom: 30px;
         padding: 50px 80px;
     }
-}
+}&lt;/p&gt;
 
-.entry-title {
+&lt;p&gt;.entry-title {
     font-size: large성
-}
+}&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+2. _layouts의 default.html에 해당 코드 추가&amp;lt;br&amp;gt;
+~~~html
+&amp;lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/cpu-blog/assets/built/custom.css&quot; /&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h1 id=&quot;node-js-설치&quot;&gt;Node js 설치&lt;/h1&gt;
+
+&lt;h1 id=&quot;웹-폰트변경&quot;&gt;웹 폰트변경&lt;/h1&gt;
 &lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;https://nodejs.org/en/download/prebuilt-installer&quot;&gt;node js 설치 페이지&lt;/a&gt; 에 접속&lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;node-v11.15.0 버전 설치&lt;/li&gt;
+  &lt;li&gt;_layouts의 default.html에 해당 코드 추가&lt;br /&gt;
+    &lt;ul&gt;
+      &lt;li&gt;나무고딕폰트&lt;br /&gt;
+~~~html&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/earlyaccess/nanumgothic.css&quot; /&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+* font-awsome폰트&amp;lt;br&amp;gt;
+~~~html
+&amp;lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css&quot;&amp;gt;`
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ol&gt;
+  &lt;li&gt;assets &amp;gt; css 폴더의 screen.css에 .post-full-content의 style 변경&lt;br /&gt;
+    &lt;ul&gt;
+      &lt;li&gt;font-family에 ‘Nanum Gothic’ 추가
+        &lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;.post-full-content&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+ &lt;span class=&quot;nl&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;relative&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+ &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;auto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+ &lt;span class=&quot;nl&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;70px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+ &lt;span class=&quot;nl&quot;&gt;min-height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;230px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+ &lt;span class=&quot;nl&quot;&gt;font-family&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&apos;Georgia&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&apos;Nanum Gothic&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;serif&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+ &lt;span class=&quot;nl&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2.2rem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+ &lt;span class=&quot;nl&quot;&gt;line-height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1.6em&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+ &lt;span class=&quot;nl&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#fff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h1 id=&quot;gulp-js-파일-작성&quot;&gt;gulp js 파일 작성&lt;/h1&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var gulp = require(&apos;gulp&apos;);
+&lt;h1 id=&quot;rouge를-이용한-syntaxhilighting&quot;&gt;rouge를 이용한 syntaxhilighting&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;rouge 설치&lt;br /&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem install rouge&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;rouge 스타일 확인&lt;br /&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rougify help style&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;rouge 스타일 설치&lt;br /&gt;
+    &lt;ul&gt;
+      &lt;li&gt;monokai.sublime 스타일은 assets/css/syntax.css 파일로 작성
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rougify style monokai.sublime &amp;gt; assets/css/syntax.css&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;_layouts의 default.html에 해당 코드 추가&lt;br /&gt;
+~~~html&lt;/li&gt;
+&lt;/ol&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/cpu-blog/assets/built/syntax.css&quot; /&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+# Node js 설치
+1. [node js 설치 페이지](https://nodejs.org/en/download/prebuilt-installer) 에 접속&amp;lt;br&amp;gt;
+2. node-v11.15.0 버전 설치
+
+# gulp js 파일 작성
+~~~javascript
+var gulp = require(&apos;gulp&apos;);
 
 // gulp plugins and utils
 var gutil = require(&apos;gulp-util&apos;);
@@ -1168,39 +1234,38 @@ gulp.task(&apos;css&apos;, function () {
         .pipe(sourcemaps.write(&apos;.&apos;))
         .pipe(gulp.dest(&apos;assets/built/&apos;))
 });
-
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;packagejson-수정&quot;&gt;package.json 수정&lt;/h1&gt;
 &lt;p&gt;package.json을 작성하여 npm install 시 package.json 작성된 파일, 버전으로 다운로드 설정함&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{
-    &quot;name&quot;: &quot;blog&quot;,
-    &quot;description&quot;: &quot;&quot;,
-    &quot;version&quot;: &quot;1.0.0&quot;,
-    &quot;engines&quot;: {
-        &quot;ghost&quot;: &quot;&amp;gt;=1.2.0&quot;
-    },
-    &quot;license&quot;: &quot;MIT&quot;,
-    &quot;devDependencies&quot;: {
-        &quot;autoprefixer&quot;: &quot;7.2.6&quot;,
-        &quot;cssnano&quot;: &quot;^3.10.0&quot;,
-        &quot;graceful-fs&quot;: &quot;^4.1.11&quot;,
-        &quot;gulp&quot;: &quot;^3.9.1&quot;,
-        &quot;gulp-imagemin&quot;: &quot;^4.1.0&quot;,
-        &quot;gulp-postcss&quot;: &quot;^7.0.1&quot;,
-        &quot;gulp-sourcemaps&quot;: &quot;^2.6.5&quot;,
-        &quot;gulp-util&quot;: &quot;^3.0.8&quot;,
-        &quot;minimatch&quot;: &quot;^3.0.4&quot;,
-        &quot;postcss-color-function&quot;: &quot;^4.0.1&quot;,
-        &quot;postcss-custom-properties&quot;: &quot;^6.3.1&quot;,
-        &quot;postcss-easy-import&quot;: &quot;^3.0.0&quot;
-    },
-    &quot;config&quot;: {
-        &quot;posts_per_page&quot;: 25
-    }
-}
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;blog&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;description&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;version&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;1.0.0&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;engines&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;ghost&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;gt;=1.2.0&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;license&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;MIT&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;devDependencies&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;autoprefixer&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;7.2.6&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;cssnano&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;^3.10.0&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;graceful-fs&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;^4.1.11&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;gulp&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;^3.9.1&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;gulp-imagemin&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;^4.1.0&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;gulp-postcss&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;^7.0.1&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;gulp-sourcemaps&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;^2.6.5&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;gulp-util&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;^3.0.8&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;minimatch&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;^3.0.4&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;postcss-color-function&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;^4.0.1&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;postcss-custom-properties&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;^6.3.1&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;postcss-easy-import&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;^3.0.0&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;config&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;posts_per_page&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;25&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;h2 id=&quot;gulp-사용하기-위한-설치&quot;&gt;gulp 사용하기 위한 설치&lt;/h2&gt;
 &lt;ol&gt;
   &lt;li&gt;터미널에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm install&lt;/code&gt; 명령어 실행&lt;/li&gt;
@@ -1209,7 +1274,9 @@ gulp.task(&apos;css&apos;, function () {
 &lt;/ol&gt;
 
 &lt;p&gt;※ 참고&lt;br /&gt;
- &lt;a href=&quot;https://youtu.be/acVpibElHZ8?si=ByWr3BBIh_Ux8NQ-&quot;&gt;(YouTube) Jekyll 기반의 GitHub Page 생성(2-5) post목차 설정&lt;/a&gt;&lt;/p&gt;</content>
+ &lt;a href=&quot;https://youtu.be/acVpibElHZ8?si=ByWr3BBIh_Ux8NQ-&quot;&gt;(YouTube) Jekyll 기반의 GitHub Page 생성(2-5) post목차 설정&lt;/a&gt;&lt;br /&gt;
+ &lt;a href=&quot;https://youtu.be/48pAqr9pMUU?si=Bv7S9dd7S1DDfHBS&quot;&gt;(YouTube) Jekyll 기반의 GitHub Page 생성(3) - 웹 폰트 설정&lt;/a&gt;&lt;br /&gt;
+ &lt;a href=&quot;https://youtu.be/ad07tYeZQdc?si=1ZJQujvwSg6us9o9&quot;&gt;(YouTube) Jekyll 기반의 GitHub Page 생성(4) - rouge를 이용한 syntax highlighting&lt;/a&gt;&lt;br /&gt;&lt;/p&gt;</content>
 
       
       
@@ -1230,7 +1297,7 @@ gulp.task(&apos;css&apos;, function () {
       
 
       
-        <summary type="html">it2024 강좌는 여러 절로 구성되어 있습니다. github-page 만들기(1) - localhost jekyll theme 세팅 github-page 만들기(2) - 환경설정 파일 세팅 github-page 만들기(3) - custom css 세팅 github-page 만들기(4) - github page 배포</summary>
+        <summary type="html">it2024 강좌는 여러 절로 구성되어 있습니다. github-page 만들기(1) - localhost jekyll theme 세팅 github-page 만들기(2) - 환경설정 파일 세팅 github-page 만들기(3) - custom css 세팅 github-page 만들기(4) - lunr.js를 이용한 Search 기능 추가 github-page 만들기(5) - github page 배포</summary>
       
 
       
@@ -1238,8 +1305,8 @@ gulp.task(&apos;css&apos;, function () {
     </entry>
   
     <entry>
-      <title type="html">github-page 만들기(4) - github page 배포</title>
-      <link href="https://hby0202.github.io/cpu-blog/it2024-github-page4" rel="alternate" type="text/html" title="github-page 만들기(4) - github page 배포" />
+      <title type="html">github-page 만들기(4) - lunr.js를 이용한 Search 기능 추가</title>
+      <link href="https://hby0202.github.io/cpu-blog/it2024-github-page4" rel="alternate" type="text/html" title="github-page 만들기(4) - lunr.js를 이용한 Search 기능 추가" />
       <published>2024-05-31T00:00:00+00:00</published>
       <updated>2024-05-31T00:00:00+00:00</updated>
       <id>https://hby0202.github.io/cpu-blog/it2024-github-page4</id>
@@ -1248,7 +1315,275 @@ gulp.task(&apos;css&apos;, function () {
     &lt;li&gt;&lt;a href=&quot;./it2024-github-page1&quot;&gt;github-page 만들기(1) - localhost jekyll theme 세팅&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./it2024-github-page2&quot;&gt;github-page 만들기(2) - 환경설정 파일 세팅&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./it2024-github-page3&quot;&gt;github-page 만들기(3) - custom css 세팅&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;./it2024-github-page4&quot;&gt;github-page 만들기(4) - github page 배포&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-github-page4&quot;&gt;github-page 만들기(4) - lunr.js를 이용한 Search 기능 추가&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-github-page5&quot;&gt;github-page 만들기(5) - github page 배포&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;검색-버튼-생성&quot;&gt;검색 버튼 생성&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;_includes의 site-nav.html 파일을 열고 &lt;strong&gt;&lt;em&gt;Subscribe&lt;/em&gt;&lt;/strong&gt;을 &lt;strong&gt;&lt;em&gt;Search&lt;/em&gt;&lt;/strong&gt;로 text 변경&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;검색-화면-html-변경&quot;&gt;검색 화면 html 변경&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;_layouts의 default.html 파일을 열어  …  사이의 코드를 해당 코드로 변경&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;subscribe&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;subscribe-overlay&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;subscribe-overlay-close&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;subscribe-overlay-content&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;subscribe-overlay-logo&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/cpu-blog/assets/images/blog-icon.png&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;alt=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;CPU - IT Technical&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+        
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;subscribe-overlay-title&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Searcj to CPU - IT Technical&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;subscribe-overlay-description&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;lunr.js를 이용한 posts 검색&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;span&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;searchform&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;method=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;post&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;action=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/subscribe/&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;confirm&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hidden&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;confirm&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;location&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hidden&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;location&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;referrer&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hidden&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;referrer&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;form-group&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;subscribe-email&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;onkeyup=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;myFunc()&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;searchtext&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;searchtext&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;placeholder=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Search...&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myFunc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;keyCode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;13&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+                &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;encodeURIComponent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;searchtext&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;nx&quot;&gt;location&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;href&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/cpu-blog//search.html?query=&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;_includes의 subscribe-form.html 내용 변경
+    &lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;span&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;searchform&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;method=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;post&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;action=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/subscribe/&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+ &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;confirm&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hidden&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;confirm&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+ &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;location&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hidden&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;location&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+ &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;referrer&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hidden&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;referrer&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+ &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;form-group&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+     &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;subscribe-email&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;onkeyup=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;myFunc()&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;searchtext&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;searchtext&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;placeholder=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Search...&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+ &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+ &lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+     &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myFunc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+         &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;keyCode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;13&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+             &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;encodeURIComponent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;searchtext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+             &lt;span class=&quot;nx&quot;&gt;location&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;href&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/search.html?query=&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+ &lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;search.html 파일 최상단 폴더에 추가
+~~~html
+—
+layout: page
+current: search
+title: Search Result
+navigation: True
+logo: 
+class: ‘page-template’
+subclass: ‘post page’
+—&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;form action=&quot;/search&quot; method=&quot;get&quot; hidden=&quot;hidden&quot;&gt;
+    &lt;label for=&quot;search-box&quot;&gt;&lt;/label&gt;
+    &lt;input type=&quot;text&quot; id=&quot;search-box&quot; name=&quot;query&quot; /&gt;
+&lt;/form&gt;
+
+&lt;ul class=&quot;mylist&quot; id=&quot;search-results&quot;&gt;&lt;/ul&gt;
+
+&lt;script&gt;
+    window.store = {
+        
+        &quot;it2024-github-page5&quot;: {
+            &quot;title&quot;: &quot;github-page 만들기(5) - github page 배포&quot;,
+                &quot;author&quot;: &quot;hby&quot;,
+                &quot;category&quot;: &quot;&quot;,
+                &quot;content&quot;: &quot;{% include it2024-table-of-contents.html %}# git repository 생성1. github 접속 및 로그인2. repostirory 메뉴 접속 및 New 버튼을 클릭3. Repository name 작성 후 Create repository**※ Repository name은 _config에서 작성한 repo, production_url, source_url, relative_source 영향을 있으므로 repo와 동일하게 작성**# git repository push1. 생성된 repository 접속 후 code 버튼 클릭하여 repository URL 복사1. vs code에서 TERMINAl 실행2. `git init` 명령어 실행3. `git remote add origin [git repository]` 명령어 실행ex) `git remote add origin https://github.com/hby0202/cpu-blog.git`4. `git checkout master` 명령어 실행5. `git push origin master` 명령어 실행6. 정상적으로 실행되면 github repository에 소스 push 됨# branh 생성1. 생성된 repository 접속 master 버튼 클릭 후 View all branhes 클릭2. New branch 버튼 클릭 후 New branch name 입력, Source는 master로 선택 후 Create new branch 클릭# Personal access tokens 발급1. 우측 상단 프로필 이미지 클릭 후 Settings 메뉴로 이동2. Developer settings 클릭 후 Personal access tokens &gt; Tokens(classic) 클릭3. Generate new token &gt; Generate new token(classic) 클릭4. note에 token에 대한 설명 적고 workflow 선택 후 generate token 클릭5. **token 값은 지금에만 보이고 이후에는 못보니 꼭 복사하기**# 블로그 사용을 위한 github action 세팅1. 생성한 repository 접속 후 settings로 접속2. Repository name을 `[username].github.io` 으로 입력 후 rename 클릭ex) hby0202.github.io3. pages 메뉴에 들어가 github 페이지가 생성되면 brach를 생성 했던 **New branch name** 명칭으로 변경4. General에 다시 접속 후 repository name을 원래 Repository 명으로 변경5. Actions &gt; General 메뉴 접속 후 Workflow permissions에서 Read and write permissions으로 변경6. Secrets and variables &gt; Actions 접속 후 new repository secret 클릭7. name에 명칭을 작성하고 **Secret에서 복사한 Token 값을 붙여놈**# workflows 파일 수정1. vs code 혹은 github &gt; code 메뉴에 접속 또는 실행 하여 jekyll_build.yml 파일 수정~~~ymlname: Build and deploy to GitHub Pagesaon:  push:    branches: [ master ]  pull_request:    branches: [ master ]    jobs:  github-pages:    runs-on: ubuntu-latest    steps:      - name: Checkout code        uses: actions/checkout@v2      - name: Set up Ruby        uses: ruby/setup-ruby@v1        with:          ruby-version: &apos;3.1.5&apos;      - name: Install dependencies        run: |          gem install bundler          bundle install      - name: Build site        run: bundle exec jekyll build      - name: Deploy to GitHub Pages        uses: peaceiris/actions-gh-pages@v3        with:          github_token: ${{ secrets.GITHUB_TOKEN }}          publish_dir: ./output/          target_branch: &apos;gh-pages&apos;~~~   **target_branch를 생성 했던 branch name 명칭으로 변경**2. 해당 파일을 저장하여 repostory에 push하면 gitAction가 자동으로 실행### 해당 과정까지 완료되면 repostory의 master branch에 push 또는 pull을하면 자동으로 새로 만든 brach에 deploy하여 github page가 최신화 됨&quot;,
+            &quot;url&quot;: &quot;/it2024-github-page5&quot;
+        }
+        , 
+        
+        &quot;it2024-github-page4&quot;: {
+            &quot;title&quot;: &quot;github-page 만들기(4) - lunr.js를 이용한 Search 기능 추가&quot;,
+                &quot;author&quot;: &quot;hby&quot;,
+                &quot;category&quot;: &quot;&quot;,
+                &quot;content&quot;: &quot;{% include it2024-table-of-contents.html %}# 검색 버튼 생성1. _includes의 site-nav.html 파일을 열고 ***Subscribe***을 ***Search***로 text 변경# 검색 화면 html 변경1. _layouts의 default.html 파일을 열어 {% if site.subscribers %} ... {% endif %} 사이의 코드를 해당 코드로 변경~~~html{% if site.subscribers %}                {% if site.logo %}                    {% endif %}        Searcj to {{ site.title }}        lunr.js를 이용한 posts 검색        {% include subscribe-form.html placeholder=\&quot;keyword\&quot; %}    {% endif %}~~~2. _includes의 subscribe-form.html 내용 변경~~~html                                ~~~3. search.html 파일 최상단 폴더에 추가~~~html---layout: pagecurrent: searchtitle: Search Resultnavigation: Truelogo: class: &apos;page-template&apos;subclass: &apos;post page&apos;---        ~~~# lunr.js 설치~~~html~~~코드 대신~~~html --&gt;~~~추가 또는 0.7.2 버전 lunr 다운로드# search.js 작성~~~javascript(function() {    function displaySearchResults(results, store) {        var searchResults = document.getElementById(&apos;search-results&apos;);        if (results.length) { // Are there any results?            var appendString = &apos;&apos;;            for (var i = 0; i &apos; + item.title + &apos;&apos;;                appendString += &apos;&apos; + item.content.substring(0, 150) + &apos;...&apos;;            }            searchResults.innerHTML = appendString;        } else {            searchResults.innerHTML = &apos;검색 결과가 없습니다.&apos;;        }    }    function getQueryVariable(variable) {        var query = window.location.search.substring(1);        var vars = query.split(&apos;&amp;&apos;);        for (var i = 0; i  [(YouTube) Jekyll 기반의 GitHub Page 생성(5) - lunr.js를 이용한 Search 기능 추가](https://youtu.be/usfdc-7BKa4?si=1gAAawB7Eufn40db)&quot;,
+            &quot;url&quot;: &quot;/it2024-github-page4&quot;
+        }
+        , 
+        
+        &quot;it2024-github-page3&quot;: {
+            &quot;title&quot;: &quot;github-page 만들기(3) - custom css 세팅&quot;,
+                &quot;author&quot;: &quot;hby&quot;,
+                &quot;category&quot;: &quot;&quot;,
+                &quot;content&quot;: &quot;it2024 강좌는 여러 절로 구성되어 있습니다.    github-page 만들기(1) - localhost jekyll theme 세팅    github-page 만들기(2) - 환경설정 파일 세팅    github-page 만들기(3) - custom css 세팅    github-page 만들기(4) - lunr.js를 이용한 Search 기능 추가    github-page 만들기(5) - github page 배포Custom css 추가  assets &amp;gt; css에 custom.css 파일 추가css 내용 작성custom.css 예시~~~css/* Search 결과화면ㅇ르 위한 CSS 설정 시작 */ul.mylist li, ol.mylist li { padding: 5px 0px 5px 5px; margin-bottom: 5px; border-bottom: 1px solid #efefef; font-size: 12px;}ul.mylist li:last-child, ol.mylist li:last-child{    border-bottom: 0px;}ul.mylist li, ol.mylist li{    -webkit-transition: background-color 0.3s linear;    -moz-transition: background-color 0.3s linear;    -ms-transition: background-color 0.3s linear;    -o-transition: background-color 0.3s linear;    transition: background-color 0.3s linear;}ul.mylist li:hover, ol.mylist li:hover{    background-color: #f6f0b6;}/* 링크뒤쪽에 FontAwesome표현을 위한 custom CSS*/.post-full-content a[target=”_blank”]::after{    content: ‘\\1f517’;    display: inline-block;    margin: 0 2px 0 4px;    line-height: 1;    font-family: “FontAwesome”;    font-size: 2rem;    font-weight: normal;    font-style: normal;}/* 강좌 table of contents(목차)를 위한 custom css */span.table-of-contents-list {    margin: 0px;    padding: 0px;    max-width: 250px;    width: 100%;    border-bottom: 1px solid #efefef;    font-size: 18px;    font-weight: bold;    color: #ce180b;    font-family: Georgia, ‘Nanum Gothic’, serif !important;}ul.table-of-contents-list, ol.table-of-contents-list{    list-style: none;    margin: 0px;    padding: 0px;    max-width: 250px;    width: 100%;    font-family: Georgia, ‘Nanum Gothic’, serif !important;}ul.table-of-contents-list li, ol.table-of-contents-list li{    padding: 0px 0px 5px 5px;    margin-bottom: 5px;    font-size: 15px;}ul.table-of-contents-list li a, ol.table-of-contents-list li a{    text-decoration: none;    color: color(var(–midgrey) l(-25%));    font-weight: bold;}ul.table-of-contents-list li a:hover, ol.table-of-contents-list li a:hover{    color: #c2255c;    text-decoration: none;    font-weight: bold;}ul.table-of-contents-list li:last-child, ol.table-of-contents-list li:last-child{    border-bottom: 0px;}ul.table-of-contents-list li:before, ol.table-of-contents-list li:before{    content: ‘\\2022’;    display: inline-block;    margin: 0 2px 0 4px;    line-height: 1;    font-family: “FontAwesome”;    font-size: 2rem;    font-weight: normal;    font-style: normal;    vertical-align: middle;    padding: 5px 5px 6px 0px;}/* 가로방향의 리스트를위한 custom css */ul.font-awesome-list, ol.font-awesome-list{    list-style: none;    margin: 0px;    padding: 0px;    max-width: 250px;    width: 100%;}ul.font-awesome-list li, ol.font-awesome-list li{    padding: 5px 0px 5px 5px;    margin-bottom: 5px;    border-bottom: 1px solid #efefef;    font-size: 18px;}ul.font-awesome-list li span.icon-name, ol.font-awesome-list li span.icon-name{    padding: 0px 10px;}ul.font-awesome-list li span.icon-value, ol.font-awesome-list li span.icon-value{    padding: 0px 10px;    color: #c2255c;    font-size: 15px;}ul.font-awesome-list li, ol.font-awesome-list li{    -webkit-transition: background-color 0.3s linear;    -moz-transition: background-color 0.3s linear;    -ms-transition: background-color 0.3s linear;    -o-transition: background-color 0.3s linear;    transition: background-color 0.3s linear;}ul.font-awesome-list li:hover, ol.font-awesome-list li:hover{    background-color: #f6f6f6;}/* tl; dr 이미지를 위한 custom style. 각 글의 첫 이미지로 등작 - 사용하지 않음 */.myTLDRstyle{    display: inline !important;    margin-bottom: -0.5em !important;    width: 100%;}/* 각 포스트의 시작Introduction을 위한 fontAwesome */strong.post_introduction::before{    content: ‘\\f086’;    display: inline-block;    margin: 0 2px 0 4px;    line-height: 1;    font-family: “FontAwesome”;    font-size: 3rem;    font-weight: normal;    font-style: normal;    vertical-align: middle;    padding: 0px 5px 6px 0px;    color: teal;}/* 포스트의 subtitle을 위한 fontAwesome */strong.subtitle_introduction::before{    content: ‘\\f0a4’;    display: inline-block;    margin: 0 2px 0 4px;    line-height: 1;    font-family: “FontAwesome”;    font-size: 3rem;    font-weight: normal;    font-style: normal;    vertical-align: middle;    padding: 0px 5px 6px 0px;    color: teal;}/* 포스트의 subtitle안에 단락제목을 위한 fontAwesome */strong.subtitle2_fontAwesome::before{    content: ‘\\f13a’;    display: inline-block;    margin: 0 2px 0 4px;    line-height: 1;    font-family: “FontAwesome”;    font-size: 3rem;    font-weight: normal;    font-style: normal;    vertical-align: middle;    padding: 0px 5px 6px 0px;    color: teal;}/* 강좌 최하단 Reference를 위한 custom css */span.lecture-reference{    margin: 0px;    padding: 0px;    max-width: 250px;    width: 100%;    border-bottom: 0px solid #efefef;    font-size: 18px;    font-weight: bold;    color: #0e16ce}/* All Tags 화면을 위한 폰트 크기 설정 custom css */.alltags{    font-size: 18px;    font-weight: bold;    color:#ce112a}ul.lecture-reference{    list-style: none;    margin: 0px;    padding: 0px;    max-width: 250px;    width: 100%;}ul.lecture-reference li{    padding: 0px 0px 5px 5px;    margin-bottom: 5px;    font-size: 15px;    font-weight: bold;}ul.lecture-reference li a{    text-decoration: none;    color: color(var(–midgrey) l(-25%));}ul.lecture-reference li a:hover {    color: #c2255c;    text-decoration: none;    font-weight: bold;}ul.lecture-reference li:last-child{    border-bottom: 0px;}ul.lecture-reference li:before{    content: ‘\\F02b’;    display: inline-block;    margin: 0 2px 0 4px;    line-height: 1;    font-family: “FontAwesome”;    font-size: 2rem;    font-weight: normal;    font-style: normal;    vertical-align: middle;    padding: 0px 5px 6px 0px;}/* 이미지 출처를표현하기 위한 custom css*/img-reference {    font-size: 1.5rem !important;    text-align: center;    font-weight: bold;    margin-top: -40px;    margin-bottom: 30px;}/* 메뉴 표현을 위한 css*//* DL Menu In/Out*/@-webkit-keyframes MenuAnimOut {    100% {        -webkit-transform: translateZ(300px);        opacity: 0;    }}@-moz-keyframes MenuAnimOut {    100% {        -moz-transform: translateZ(300px);        opacity: 0;    }}@keyframes MenuAnimOut {    100% {        transform: translateZ(300px);        opacity: 0;    }}@-webkit-keyframes MenuAnimIn {    0% {        -webkit-transform: translateZ(300px);        opacity: 0;    }    100% {        -webkit-transform: translateZ(0px);        opacity: 1;    }}@-moz-keyframes MenuAnimIn {    0% {        -moz-transform: translateZ(300px);        opacity: 0;    }    100% {        -moz-transform: translateZ(0px);        opacity: 1;    }}@keyframes MenuAnimIn {    0% {        transform: translateZ(300px);        opacity: 0;    }    100% {        transform: translateZ(0px);        opacity: 1;    }}@-webkit-keyframes SubMenuAnimIn {    0% {        -webkit-transform: translateZ(-300px);        opacity: 0;    }    100% {        -webkit-transform: translateZ(0px);        opacity: 1;    }}@-moz-keyframes SubMenuAnimIn {    0% {        -moz-transform: translateZ(-300px);        opacity: 0;    }    100% {        -moz-transform: translateZ(0px);        opacity: 1;    }}@keyframes SubMenuAnimIn {    0% {        transform: translateZ(-300px);        opacity: 0;    }    100% {        transform: translateZ(0px);        opacity: 1;    }}@-webkit-keyframes SubMenuAnimOut {    0% {        -webkit-transform: translateZ(0px);        opacity: 1;}100% {    -webkit-transform: translateZ(-300px);    opacity: 0;} }@-moz-keyframes SubMenuAnimOut {    0% {        -moz-transform: translateZ(-0px);        opacity: 1;    }    100% {        -moz-transform: translateZ(-300px);        opacity: 0;    }}@keyframes SubMenuAnimOut {    0% {        transform: translateZ(-0px);        opacity: 1;    }    100% {        transform: translateZ(-300px);        opacity: 0;    }}.dl-menuwrapper {    position: absolute;    top: 0;    left: 0;    z-index: 1000;    -webkit-perspective: 1000px;    -moz-perspective: 1000px;    perspective: 1000px;    -webkit-perspective-origin: 50% 200%;    -moz-perspective-origin: 50% 200%;    perspective-origin: 50% 200%;    /* Hide the inner submenus */}@media only screen and (min-width: 48em){    .dl-menuwrapper {        position: fixed;        max-width: 175px;        top: 25px;        left: 25px;    }}.dl-menuwrapper.dl-menuopen{    width: 100%;    height: 100%;}.dl-menuwrapper button {    top: 0;    left: 0;    background: #222222;    border: none;    width: 48px;    height: 45px;    text-indent: -900em;    overflow: hidden;    position: relative;    cursor: pointer;    outline: none;    border-radius: 0 0 3px 0;    opacity: 0.6;    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);    transition: 0.4s ease-in-out;}.dl-menuwrapper button:hover{    opacity: 1;}@media only screen and (min-width: 48em){    .dl-menuwrapper button {        border-radius: 3px;    }}.dl-menuwrapper button:hover,.dl-menuwrapper button.dl-active,.dl-menuwrapper ul{    background: #aaa;}.dl-menuwrapper button::after{    content: ‘’;    position: absolute;    width: 68px;    height: 5px;    background: #fff;    top: 10px;    left: 16%;    box-shadow: 0 10px 0 #fff, 0 20px 0 #fff;}.dl-menuwrapper ul {    padding: 0;    list-style: none;    -webkit-transform-style: preserve-3d;    -moz-transform-style: preserve-3d;    transform-style: preserve-3d;}.dl-menuwrapper li {    position: relative;}.dl-menuwrapper li h4{    margin: 0;    padding: 15px 20px 0;    color: rgba(255, 255, 255, 0.9);}.dl-menuwrapper li p{    margin: 0;    padding: 15px 20px;    font-size: 14px;    font-size: 0.875rem;    color: rgba(255, 255, 255, 0.8);    font-weight: 300;}.dl-menuwrapper li p a{    display: inline;    padding: 0;    font-size: 14px;}.dl-menuwrapper li a{    display: block;    position: relative;    padding: 15px 20px;    font-size: 14px;    line-height: 20px;    font-weight: 400;    color: #fff;}.dl-menuwrapper li.dl-back a{    padding-left: 30px;    background: rgba(0, 0, 0, 0.0);}.dl-menuwrapper li.dl-back:after, .dl-menuwrapper li a:not(:only-child):after{    position: absolute;    top: 0;    line-height: 50px;    font-family: “fontawesome”;    color: #fff;    speak-as: none;    -webkit-font-smoothing: antialiased;    content: ‘\\f105’;}.dl-menuwrapper li.dl-back:after{    left: 10px;    color: rgba(212, 204, 198, 0.5);    -webkit-transform: rotate(180deg);    -moz-transform: rotate(180deg);    transform: rotate(180deg);}.dl-menuwrapper li &amp;gt; a:after{    right: 10px;    color: rgba(0, 0, 0, 0.15);}.dl-menuwrapper .dl-menu{    margin: 5px 0 0 0;    position: relative;    width: 100%;    max-height: 90%;    overflow-y: auto;    overflow-x: hidden;    opacity: 0;    pointer-events: none;    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);    -webkit-transform: translateY(10ox);    -moz-transform: translateY(10ox);    transform: translateY(10ox);    -webkit-backface-visibility: hidden;    -moz-backface-visibility: hidden;    backface-visibility: hidden;    z-index: inherit;}@media only screen and (min-width: 48em){    .dl-menuwrapper .dl-menu{        border-radius: 3px;    }}.dl-menuwrapper .dl-menu.dl-menu-toggle{    -webkit-transition: all 0.3s ease;    -moz-transition: all 0.3s ease;    transition: all 0.3s ease;}.dl-menuwrapper .dl-menu.dl-menuopen{    opacity: 1;    pointer-events: auto;    background-color: #062c33;    -webkit-transform: translateY(0px);    -moz-transform: translateY(0px);    transform: translateY(0px);}.dl-menuwrapper .dl-submenu{    border-radius: 3px;    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.0);}.dl-menuwrapper .dl-submenu .btn, .dl-menuwrapper .dl-submenu .read-more-header a{    margin-bottom: 0;}.dl-menuwrapper li .dl-submenu{    display: none;}/*When a submenu is opend, we will hide all li siblingsFor that we give a class to the parent menu called “dl-subview”We also hide the submenu link.The opened submenu will get the class “dle-subviewopen”All this is done for any sub-level being entered.*/.dl-menu.dl-subview li, .dl-menu.dl-subview li.dl-subviewopen &amp;gt; a, .dl-menu.dl-subview li.del-subview &amp;gt; a{    display: none;    background-color: #062c33;}.dl-menu.dl-menu.dl-subview li.dl-subview,.dl-menu.dl-menu.dl-subview li.dl-subview .dl-submenu,.dl-menu.dl-menu.dl-subview li.dl-subviewopen,.dl-menu.dl-menu.dl-subview li.dl-subviewopen &amp;gt; .dl-submenu.dl-menu.dl-menu.dl-subview li.dl-subviewopen &amp;gt; .dl-submenu &amp;gt; li {    display: block;    background-color: #062c33;}/* Animation classes ofr moving out and in */.dl-menu.dl-animate-out {    -webkit-animation: MenuAnimOut 0.4s ease;    -moz-animation: MenuAnimOut 0.4s ease;    animation: MenuAnimOut 0.4s ease;}.dl-menu.dl-animate-in {    -webkit-animation: MenuAnimIn 0.4s ease;    -moz-animation: MenuAnimIn 0.4s ease;    animation: MenuAnimIn 0.4s ease;}.dl-menuwrapper &amp;gt; .dl-submenu.dl-animate-in {    -webkit-animation: SubMenuAnimIn 0.4s ease;    -moz-animation: SubMenuAnimIn 0.4s ease;    animation: SubMenuAnimIn 0.4s ease;}.dl-menuwrapper &amp;gt; .dl-submenu.dl-animate-out {    -webkit-animation: SubMenuAnimOut 0.4s ease;    -moz-animation: SubMenuAnimOut 0.4s ease;    animation: SubMenuAnimOut 0.4s ease;}/* No TOuch Fallback*/.no-touch .dl-menuwrapper li a:hover{    background: rgba(255, 248, 213, 0.1);}/* No JS Fallback*/.no-js .dl-trigger {    display: none;}.no-js dl-menuwrapper{    position: inherit;}@media only screen and (min-width: 48em){    .no-js .dl-menuwrapper{        position: absolute;    }}.no-js .dl-menuwrapper .dl-menu{    position: relative;    opacity: 1;    pointer-events: auto;    -webkit-transform: none;    -moz-transform: none;    transform: none;}.no-js .dl-menuwrapper li .dl-submenu{    display: block;}.no-js .dl-menuwrapper li .dl-back{    display: none;}.no-js .dl-menuwrapper li a:not(:only-child){    background: rgba(0, 0, 0, 0.1);}.no-js .dl-menuwrapper li a:not(:only-child)::after{    content: ‘’;}.no-js .dl-menu{    max-height: 100%;}.no-js .dl-menu li {    display: block;}.dl-menuwrapper button:hover,.dl-menuwrapper button.dl-active,.dl-menuwrapper ul{    background: #222222;}.dl-menu li {    display: none;}.dl-menuopen li {    display: block;}/* Tags Archive 화면을 위한 css 처리*/.entry-meta{    font-size: 12px;    font-size: 0.75rem;    text-transform: uppercase;    color: rgba(187, 187, 187, 0.8);}.entry-meta a{    color: rgba(187, 187, 187, 0.8);}.entry-meta .vcard:before{    content: ‘ by ‘;}.entry-meta .tag{    display: inline-block;    margin: 4px;    color: #fff;    border-radius: 3px;    background-color: rgba(162, 162, 162, 0.8);}.entry-meta .tag span{    float: left;    padding: 2px 6px;    color: black;    font-family: inherit;    background-color: aliceblue;}.entry-meta .tag .count {    background-color: rgba(136, 136, 136, 0.8);    border-radius: 0 3px 3px 0;}.entry-meta .tag:hover{    background-color: rgba(136, 136, 136, 0.8);}.entry-meta .entry-reading-time {    float: right;}.inline-list {    list-style: none;    margin-left: 0;    padding-left: 0;}.inline-list li{    list-style-type: none;    display: inline;}#post-index.feature .header-title{    height: 400px;}#post-index .entry-image{    min-height: 400px;}#post-index .entry-image img{    min-height: 400px;}#post-index #main{    margin: 40px 2px 20px 2px;}@media only screen and (min-width: 48em){    #post-index #main{        margin-left: 20px;        margin-right: 20px;    }}@media only screen and (min-width: 62.5em){    #post-index #main{        max-width: 800px;        margin-top: 50px;        margin-left: auto;        margin-right: auto;    }}#post-index article {    background-color: #fff;    box-shadow: 0 0 0 0, 0 6px 12px rgba(34, 34, 34, 0.1);    border-radius: 3px;    margin-bottom: 20px;    padding:25px 15px;}@media only screen and (min-width: 48em){    #post-index article {        padding: 30px;    }}@media only screen and (min-width: 62.5em){    #post-index article {        margin-bottom: 30px;        padding: 50px 80px;    }}.entry-title {    font-size: large성}2. _layouts의 default.html에 해당 코드 추가&amp;lt;br&amp;gt;~~~html&amp;lt;link rel=\&quot;stylesheet\&quot; type=\&quot;text/css\&quot; href=\&quot;/cpu-blog/assets/built/custom.css\&quot; /&amp;gt;웹 폰트변경  _layouts의 default.html에 해당 코드 추가          나무고딕폰트~~~html      * font-awsome폰트&amp;lt;br&amp;gt;~~~html&amp;lt;link rel=\&quot;stylesheet\&quot; href=\&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\&quot;&amp;gt;`  assets &amp;gt; css 폴더의 screen.css에 .post-full-content의 style 변경          font-family에 ‘Nanum Gothic’ 추가        .post-full-content { position: relative; margin: 0 auto; padding: 70px 100px 0; min-height: 230px; font-family: &apos;Georgia&apos;, &apos;Nanum Gothic&apos;, serif; font-size: 2.2rem; line-height: 1.6em; background: #fff;}                    rouge를 이용한 syntaxhilighting      rouge 설치gem install rouge        rouge 스타일 확인rougify help style    rouge 스타일 설치          monokai.sublime 스타일은 assets/css/syntax.css 파일로 작성rougify style monokai.sublime &amp;gt; assets/css/syntax.css        _layouts의 default.html에 해당 코드 추가~~~html# Node js 설치1. [node js 설치 페이지](https://nodejs.org/en/download/prebuilt-installer) 에 접속&amp;lt;br&amp;gt;2. node-v11.15.0 버전 설치# gulp js 파일 작성~~~javascriptvar gulp = require(&apos;gulp&apos;);// gulp plugins and utilsvar gutil = require(&apos;gulp-util&apos;);var postcss = require(&apos;gulp-postcss&apos;);var sourcemaps = require(&apos;gulp-sourcemaps&apos;);var imagemin = require(&apos;gulp-imagemin&apos;);// postcss pluginsvar autoprefixer = require(&apos;autoprefixer&apos;);var colorFunction = require(&apos;postcss-color-function&apos;);var cssnano = require(&apos;cssnano&apos;);var customProperties = require(&apos;postcss-custom-properties&apos;);var easyimport = require(&apos;postcss-easy-import&apos;);gulp.task(&apos;images&apos;, function(){    return gulp.src(&apos;assets/images/*&apos;)    .pipe(imagemin())    .pipe(gulp.dest(&apos;assets/built/images/&apos;))});gulp.task(&apos;css&apos;, function () {    var processors = [        easyimport,        customProperties,        colorFunction(),        autoprefixer({browsers: [&apos;last 2 versions&apos;]}),        cssnano()    ];    return gulp.src(&apos;assets/css/*.css&apos;)        .pipe(sourcemaps.init())        .pipe(postcss(processors))        .pipe(sourcemaps.write(&apos;.&apos;))        .pipe(gulp.dest(&apos;assets/built/&apos;))});package.json 수정package.json을 작성하여 npm install 시 package.json 작성된 파일, 버전으로 다운로드 설정함{    \&quot;name\&quot;: \&quot;blog\&quot;,    \&quot;description\&quot;: \&quot;\&quot;,    \&quot;version\&quot;: \&quot;1.0.0\&quot;,    \&quot;engines\&quot;: {        \&quot;ghost\&quot;: \&quot;&amp;gt;=1.2.0\&quot;    },    \&quot;license\&quot;: \&quot;MIT\&quot;,    \&quot;devDependencies\&quot;: {        \&quot;autoprefixer\&quot;: \&quot;7.2.6\&quot;,        \&quot;cssnano\&quot;: \&quot;^3.10.0\&quot;,        \&quot;graceful-fs\&quot;: \&quot;^4.1.11\&quot;,        \&quot;gulp\&quot;: \&quot;^3.9.1\&quot;,        \&quot;gulp-imagemin\&quot;: \&quot;^4.1.0\&quot;,        \&quot;gulp-postcss\&quot;: \&quot;^7.0.1\&quot;,        \&quot;gulp-sourcemaps\&quot;: \&quot;^2.6.5\&quot;,        \&quot;gulp-util\&quot;: \&quot;^3.0.8\&quot;,        \&quot;minimatch\&quot;: \&quot;^3.0.4\&quot;,        \&quot;postcss-color-function\&quot;: \&quot;^4.0.1\&quot;,        \&quot;postcss-custom-properties\&quot;: \&quot;^6.3.1\&quot;,        \&quot;postcss-easy-import\&quot;: \&quot;^3.0.0\&quot;    },    \&quot;config\&quot;: {        \&quot;posts_per_page\&quot;: 25    }}gulp 사용하기 위한 설치  터미널에서 npm install 명령어 실행  gulp css 실행  실행이 완료 되면 assets &amp;gt; built 폴더에 custom.css 추가 됨※ 참고 (YouTube) Jekyll 기반의 GitHub Page 생성(2-5) post목차 설정 (YouTube) Jekyll 기반의 GitHub Page 생성(3) - 웹 폰트 설정 (YouTube) Jekyll 기반의 GitHub Page 생성(4) - rouge를 이용한 syntax highlighting&quot;,
+            &quot;url&quot;: &quot;/it2024-github-page3&quot;
+        }
+        , 
+        
+        &quot;it2024-github-page2&quot;: {
+            &quot;title&quot;: &quot;github-page 만들기(2) - 환경설정 파일 세팅&quot;,
+                &quot;author&quot;: &quot;hby&quot;,
+                &quot;category&quot;: &quot;&quot;,
+                &quot;content&quot;: &quot;it2024 강좌는 여러 절로 구성되어 있습니다.    github-page 만들기(1) - localhost jekyll theme 세팅    github-page 만들기(2) - 환경설정 파일 세팅    github-page 만들기(3) - custom css 세팅    github-page 만들기(4) - lunr.js를 이용한 Search 기능 추가    github-page 만들기(5) - github page 배포_config 파일 세팅# Jekyll configurationmarkdown: kramdown# kramdown : markdown의 개조판# markdown에서 불편한 사항을 개선한 형태highlighter: rouge# text highlighter로 rouge이용# 2016.02 이후로 syntax highlighter는 rouge만 지원# Pygments 사용불가.paginate: 20# 작성한 모든 post를 하나의 페이지에 열거할 수 없으니 pagination이 필요하고 몇개의 post를 하나의 page에서 보여줄 건지를 설정language: &apos;en-uk&apos;# 언어 설정baseurl: /cpu-blog/ # url 뒤에 붙는 contextPathurl : https://hby0202.github.io# 기본이 되는 url gitpage를사용하므로 [username].github.io로 고정# Website infotitle: CPU - IT Technical# Website 제목description: CPU 동호회 IT 기반 공유 블로그# Website 설명cover: assets/images/blog-cover.jpg# cover 이미지logo: assets/images/blog-icon.png# log 이미지logo_dark: assets/images/favicon.pngfavicon: assets/images/favicon.pngCNAME: #add cname for website to be created# Social infonavigation: True # show the navbar linkssubscribers: True # you need to connect an external service for this to work,# if &apos;True&apos; the submit button is disabled for now, but you can change that# by editing `_includes/subscribe-form.html`# twitter:  # replace by your username# facebook:  # replace by your username# Disqusdisqus: Falsedisqus_shortname: jekyllt # replace with your disqus username# Google Analytics# google_analytics: UA-69281367-1 # replace with your GA tracking identifier# Permalinkspermalink: /:title# post md 파일 생성 시 url 생성 방식# permalink: /author/:author# permalink: /tag/:tag# Authors&apos; info in `_data/authors.yml`# Tags&apos; info in `_data/tags_info.yml`# gems and other configsplugins_dir: [_plugins]plugins: [jekyll-paginate, jekyll-feed]feed:  path: feed.xml# Additional settings available on the front-matter# Site logo in the index.html (as in demo.ghost.io)# Author&apos;s page cover in _layouts/author.html# The same for page.html and tag.html layouts# Post&apos;s page cover as a per-post basis _posts/...# Disqus comments as a per-post basis# ...# Settings for building master branch with travis-ci# with jekyll-travis# Settings for deploy rake task# Username and repo of Github repo, e.g.# https://github.com/USERNAME/REPO.git# username defaults to ENV[&apos;GIT_NAME&apos;] used by Travis# repo defaults to USERNAME.github.io# Branch defaults to \&quot;source\&quot; for USERNAME.github.io# or \&quot;master\&quot; otherwisesafe: Falselsi: Falseusername: hby0202# github usernamerepo: cpu-blog# github ropository 명칭branch: master# branch 명칭relative_source: ../cpu-blog/destination: ./output/# deploay 폴더 위치production_url:  https://hby0202.github.io/cpu-blog/# repository urlsource_url:  https://github.com/hby0202/cpu-blog/# 사이트 url#제외 파일 설정exclude:  - assets/css  - node_modules  - vendor  - .travis.yml  - Gemfile  - Gemfile.lock  - GHOST.txt  - gulpfile.js  - LICENSE  - package.json  - package-lock.json  - Rakefile  - README.md  - script.py  - changelog.md  - \&quot;*.Rmd\&quot;  - .git*Authors 설정ghost:  username: ghost # 사용자아이디  name: Ghost # 사용자 명  url_full: http://jekyllt.github.io/jasper2/ # 홈페이지 URL  url: jekyllt.github.io/jasper2 # 홈페이지 URL  bio: The professional publishing platform # 설명  picture: assets/images/ghost.png # 해당 아이디 이미지  facebook: ghost  twitter: tryghost  cover: Falsetag 설정it2024:  name: it2024 # 태그 명  description: 2024년 작성글 # 태그 설명  cover: assets/images/speeches.jpg # 태그 이미지메뉴 수정_includes &amp;gt; navigation.html 파일 수정예시&amp;lt;ul class=\&quot;nav\&quot; role=\&quot;menu\&quot;&amp;gt;    &amp;lt;li class=\&quot;nav-home\&quot; role=\&quot;menuitem\&quot;&amp;gt;&amp;lt;a href=\&quot;/cpu-blog/\&quot;&amp;gt;Home&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;    &amp;lt;li class=\&quot;nav-about\&quot; role=\&quot;menuitem\&quot;&amp;gt;&amp;lt;a href=\&quot;/cpu-blog/about/\&quot;&amp;gt;게시글 작성법&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;    &amp;lt;li class=\&quot;nav-it2024\&quot; role=\&quot;menuitem\&quot;&amp;gt;&amp;lt;a href=\&quot;/cpu-blog/tag/it2024/\&quot;&amp;gt;2024&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt;※ 참고 (YouTube) Jekyll 기반의 GitHub Page 생성(2-1) - 환경설정파일(YouTube) Jekyll 기반의 GitHub Page 생성(2-2) author와 tags 설정&quot;,
+            &quot;url&quot;: &quot;/it2024-github-page2&quot;
+        }
+        , 
+        
+        &quot;it2024-github-page1&quot;: {
+            &quot;title&quot;: &quot;github-page 만들기(1) - localhost jekyll theme 세팅&quot;,
+                &quot;author&quot;: &quot;hby&quot;,
+                &quot;category&quot;: &quot;&quot;,
+                &quot;content&quot;: &quot;it2024 강좌는 여러 절로 구성되어 있습니다.    github-page 만들기(1) - localhost jekyll theme 세팅    github-page 만들기(2) - 환경설정 파일 세팅    github-page 만들기(3) - custom css 세팅    github-page 만들기(4) - lunr.js를 이용한 Search 기능 추가    github-page 만들기(5) - github page 배포Ruby 다운로드  rubyinstaller-devkit-3.1.5-1-x64.exe 다운로드※ ruby는 3.2이상은 오류 발생하므로 3.2이하 버전으로 설치  ubyinstaller-devkit-3.1.5-1-x64.exe 설치bundler 다운로드  명령 프롬프트 실행(cmd)  gem install bundler 명령어 실행jekyll template 설치  template 다운로드jekyll template 사이트※ 세팅 시 editor는 vs code 사용      editor(vs code)로 해당 소스 열기    template 폴더 &amp;gt; Gemfile에 gem &apos;wdm&apos;, &apos;&amp;gt;= 0.1.0&apos; 붙여놓기  상단 메뉴 Terminal &amp;gt; new Terminal 실행  Terminal에서 template 위치로 이동 후 bundle install 명령어 실행  bundle add webrick 명령어 실행  bundle exec jekyll serve 명령어 실행해당 과정을 완료하면 localhost에 template을 올릴 수 있음※ 참고(YouTube) Jekyll 기반의 GitHub Page 생성(1) - 환경설정&quot;,
+            &quot;url&quot;: &quot;/it2024-github-page1&quot;
+        }
+        
+        
+    };
+&lt;/script&gt;
+
+&lt;script src=&quot;assets/js/lunr.js&quot;&gt;&lt;/script&gt;
+
+&lt;script src=&quot;assets/js/search.js&quot;&gt;&lt;/script&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+# lunr.js 설치
+~~~html
+&amp;lt;script src=&quot;assets/js/lunr.js&quot;&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;코드 대신&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://unpkg.com/lunr@0.7.2/lunr.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt; --&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;추가 또는 0.7.2 버전 lunr 다운로드&lt;/p&gt;
+
+&lt;h1 id=&quot;searchjs-작성&quot;&gt;search.js 작성&lt;/h1&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;displaySearchResults&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;results&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;store&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;searchResults&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;search-results&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;results&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Are there any results?&lt;/span&gt;
+            &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;appendString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;results&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// Iterate over the results&lt;/span&gt;
+                &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;store&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;results&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ref&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+                &lt;span class=&quot;nx&quot;&gt;appendString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;lt;li&amp;gt;&amp;lt;a href=&quot;&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&quot;&amp;gt;&amp;lt;h6&amp;gt;&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;lt;/h6&amp;gt;&amp;lt;/a&amp;gt;&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+                &lt;span class=&quot;nx&quot;&gt;appendString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;substring&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;150&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;...&amp;lt;/p&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+            &lt;span class=&quot;nx&quot;&gt;searchResults&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;innerHTML&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;appendString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;searchResults&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;innerHTML&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;lt;li&amp;gt;검색 결과가 없습니다.&amp;lt;/li&amp;gt;&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;getQueryVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;variable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;query&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;location&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;search&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;substring&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;vars&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;vars&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;pair&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;vars&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pair&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;variable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;decodeURIComponent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pair&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\+&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/g&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;%20&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;trimmerEnKo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;token&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;token&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/^&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;[^\w&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;가-힣&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;+/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;[^\w&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;가-힣&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;+$/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;searchTerm&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;getQueryVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;searchTerm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;search-box&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setAttribute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;searchTerm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+        &lt;span class=&quot;c1&quot;&gt;// Initalize lunr with the fields it will be searching on. I&apos;ve given title&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// a boost of 10 to indicate matches on this field are more important.&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;idx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;lunr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pipeline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pipeline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+                &lt;span class=&quot;nx&quot;&gt;trimmerEnKo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;nx&quot;&gt;lunr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stopWordFilter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;nx&quot;&gt;lunr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stemmer&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;field&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;field&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;boost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;field&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;author&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;field&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;category&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;field&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;key&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;store&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Add the data to lunr&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;idx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+                &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;store&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;author&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;store&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;author&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;category&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;store&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;category&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;store&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;content&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+
+            &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;results&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;idx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;search&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;searchTerm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Get lunr to perform a search&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;displaySearchResults&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;results&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;store&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// We&apos;ll write this in the next section&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;※ 참고&lt;br /&gt;
+ &lt;a href=&quot;https://youtu.be/usfdc-7BKa4?si=1gAAawB7Eufn40db&quot;&gt;(YouTube) Jekyll 기반의 GitHub Page 생성(5) - lunr.js를 이용한 Search 기능 추가&lt;/a&gt;&lt;br /&gt;&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>한병엽</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="IT2024" />
+      
+
+      
+        <summary type="html">it2024 강좌는 여러 절로 구성되어 있습니다. github-page 만들기(1) - localhost jekyll theme 세팅 github-page 만들기(2) - 환경설정 파일 세팅 github-page 만들기(3) - custom css 세팅 github-page 만들기(4) - lunr.js를 이용한 Search 기능 추가 github-page 만들기(5) - github page 배포</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">github-page 만들기(5) - github page 배포</title>
+      <link href="https://hby0202.github.io/cpu-blog/it2024-github-page5" rel="alternate" type="text/html" title="github-page 만들기(5) - github page 배포" />
+      <published>2024-05-31T00:00:00+00:00</published>
+      <updated>2024-05-31T00:00:00+00:00</updated>
+      <id>https://hby0202.github.io/cpu-blog/it2024-github-page5</id>
+      <content type="html" xml:base="https://hby0202.github.io/cpu-blog/it2024-github-page5">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;it2024 강좌는 여러 절로 구성되어 있습니다.&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-github-page1&quot;&gt;github-page 만들기(1) - localhost jekyll theme 세팅&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-github-page2&quot;&gt;github-page 만들기(2) - 환경설정 파일 세팅&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-github-page3&quot;&gt;github-page 만들기(3) - custom css 세팅&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-github-page4&quot;&gt;github-page 만들기(4) - lunr.js를 이용한 Search 기능 추가&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-github-page5&quot;&gt;github-page 만들기(5) - github page 배포&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h1 id=&quot;git-repository-생성&quot;&gt;git repository 생성&lt;/h1&gt;
@@ -1302,7 +1637,7 @@ ex) hby0202.github.io&lt;/li&gt;
 
 &lt;ol&gt;
   &lt;li&gt;vs code 혹은 github &amp;gt; code 메뉴에 접속 또는 실행 하여 jekyll_build.yml 파일 수정
-```
+~~~yml
 name: Build and deploy to GitHub Pagesa&lt;/li&gt;
 &lt;/ol&gt;
 
@@ -1337,7 +1672,7 @@ name: Build and deploy to GitHub Pagesa&lt;/li&gt;
     with:
       github_token: $
       publish_dir: ./output/
-      target_branch: &apos;gh-pages&apos; ```    **target_branch를 생성 했던 branch name 명칭으로 변경**
+      target_branch: &apos;gh-pages&apos; ~~~    **target_branch를 생성 했던 branch name 명칭으로 변경**
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;ol&gt;
@@ -1365,7 +1700,7 @@ name: Build and deploy to GitHub Pagesa&lt;/li&gt;
       
 
       
-        <summary type="html">it2024 강좌는 여러 절로 구성되어 있습니다. github-page 만들기(1) - localhost jekyll theme 세팅 github-page 만들기(2) - 환경설정 파일 세팅 github-page 만들기(3) - custom css 세팅 github-page 만들기(4) - github page 배포</summary>
+        <summary type="html">it2024 강좌는 여러 절로 구성되어 있습니다. github-page 만들기(1) - localhost jekyll theme 세팅 github-page 만들기(2) - 환경설정 파일 세팅 github-page 만들기(3) - custom css 세팅 github-page 만들기(4) - lunr.js를 이용한 Search 기능 추가 github-page 만들기(5) - github page 배포</summary>
       
 
       

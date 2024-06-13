@@ -24,7 +24,27 @@
 
     <!-- custom css -->
     <link rel="stylesheet" type="text/css" href="/cpu-blog/assets/built/custom.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+    <link rel="stylesheet" type="text/css" href="/cpu-blog/assets/built/syntax.css" />
+    
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/cpu-blog/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
 
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
     <!--[if IE]>
         <style>
             p, ol, ul{
@@ -133,7 +153,7 @@ into the {body} of the default.hbs template -->
             
         </div>
         
-            <a class="subscribe-button" href="#subscribe">Subscribe</a>
+            <a class="subscribe-button" href="#subscribe">Search</a>
         
     </div>
 </nav>
@@ -164,7 +184,16 @@ into the {body} of the default.hbs template -->
     
     <li><span class="post-date">
         
-        2024-05-31 </span><a href="./it2024-github-page4" target="_blank">github-page 만들기(4) - github page 배포</a></li>
+        2024-05-31 </span><a href="./it2024-github-page5" target="_blank">github-page 만들기(5) - github page 배포</a></li>
+
+    
+        
+        
+        
+    
+    <li><span class="post-date">
+        
+        2024-05-31 </span><a href="./it2024-github-page4" target="_blank">github-page 만들기(4) - lunr.js를 이용한 Search 기능 추가</a></li>
 
     
         
@@ -235,7 +264,6 @@ $(function() {
         </footer>
 
     </div>
-
     <!-- The big email subscribe modal content -->
     
         <div id="subscribe" class="subscribe-overlay">
@@ -244,39 +272,30 @@ $(function() {
                 
                     <img class="subscribe-overlay-logo" src="/cpu-blog/assets/images/blog-icon.png" alt="CPU - IT Technical" />
                 
-                <h1 class="subscribe-overlay-title">Subscribe to CPU - IT Technical</h1>
-                <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered straight to your inbox</p>
-                <form method="post" action="/subscribe/" class="">
-    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+                <h1 class="subscribe-overlay-title">Searcj to CPU - IT Technical</h1>
+                <p class="subscribe-overlay-description">lunr.js를 이용한 posts 검색</p>
+                <span id="searchform" method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm" >
+    <input class="location" type="hidden" name="location" >
+    <input class="referrer" type="hidden" name="referrer" >
 
     <div class="form-group">
-        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+        <input class="subscribe-email" onkeyup="myFunc()" id="searchtext" type="text" name="searchtext" placeholder="Search..." >
     </div>
-    <button class="" type="submit" disabled><span>Subscribe</span></button>
-    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
-</form>
-
+    <script>
+        function myFunc(){
+            if(event.keyCode == 13){
+                var url= encodeURIComponent(document.getElementById('searchtext').value);
+                location.href = "/cpu-blog//search.html?query=" + url;
+            }
+        }
+    </script>
+</span>
             </div>
         </div>
     
 
-    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
-    <script
-        src="https://code.jquery.com/jquery-3.2.1.min.js"
-        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous">
-    </script>
-    <script type="text/javascript" src="/cpu-blog/assets/js/jquery.fitvids.js"></script>
-    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
-
-    <!-- highlight.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/prism.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
-    <script>$(document).ready(function() {
-      $('pre code').each(function(i, block) {
-        hljs.highlightBlock(block);
-      });
-    });</script>
+    
 
     <!-- Paginator increased to "infinit" in _config.yml -->
     <!-- if paginator.posts  -->

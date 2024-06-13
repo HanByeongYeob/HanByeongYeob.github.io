@@ -24,7 +24,27 @@
 
     <!-- custom css -->
     <link rel="stylesheet" type="text/css" href="/cpu-blog/assets/built/custom.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+    <link rel="stylesheet" type="text/css" href="/cpu-blog/assets/built/syntax.css" />
+    
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/cpu-blog/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
 
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
     <!--[if IE]>
         <style>
             p, ol, ul{
@@ -46,7 +66,7 @@
     <meta property="og:site_name" content="CPU - IT Technical" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="github-page 만들기(2) - 환경설정 파일 세팅" />
-    <meta property="og:description" content="it2024 강좌는 여러 절로 구성되어 있습니다. github-page 만들기(1) - localhost jekyll theme 세팅 github-page 만들기(2) - 환경설정 파일 세팅 github-page 만들기(3) - custom css 세팅 github-page 만들기(4) - github page 배포 _config 파일 세팅 # Jekyll configuration markdown: kramdown # kramdown : markdown의 개조판 # markdown에서 불편한 사항을 개선한 형태" />
+    <meta property="og:description" content="it2024 강좌는 여러 절로 구성되어 있습니다. github-page 만들기(1) - localhost jekyll theme 세팅 github-page 만들기(2) - 환경설정 파일 세팅 github-page 만들기(3) - custom css 세팅 github-page 만들기(4) - lunr.js를 이용한 Search 기능 추가 github-page 만들기(5) - github page 배포 _config 파일 세팅 # Jekyll configuration markdown: kramdown # kramdown :" />
     <meta property="og:url" content="https://hby0202.github.io/cpu-blog/it2024-github-page2" />
     <meta property="og:image" content="https://hby0202.github.io/cpu-blog/assets/images/welcome.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
@@ -56,7 +76,7 @@
     <meta property="article:tag" content="It2024" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="github-page 만들기(2) - 환경설정 파일 세팅" />
-    <meta name="twitter:description" content="it2024 강좌는 여러 절로 구성되어 있습니다. github-page 만들기(1) - localhost jekyll theme 세팅 github-page 만들기(2) - 환경설정 파일 세팅 github-page 만들기(3) - custom css 세팅 github-page 만들기(4) - github page 배포 _config 파일 세팅 # Jekyll configuration markdown: kramdown # kramdown : markdown의 개조판 # markdown에서 불편한 사항을 개선한 형태" />
+    <meta name="twitter:description" content="it2024 강좌는 여러 절로 구성되어 있습니다. github-page 만들기(1) - localhost jekyll theme 세팅 github-page 만들기(2) - 환경설정 파일 세팅 github-page 만들기(3) - custom css 세팅 github-page 만들기(4) - lunr.js를 이용한 Search 기능 추가 github-page 만들기(5) - github page 배포 _config 파일 세팅 # Jekyll configuration markdown: kramdown # kramdown :" />
     <meta name="twitter:url" content="https://hby0202.github.io/cpu-blog/" />
     <meta name="twitter:image" content="https://hby0202.github.io/cpu-blog/assets/images/welcome.jpg" />
     <meta name="twitter:label1" content="Written by" />
@@ -88,7 +108,7 @@
         "@type": "WebPage",
         "@id": "https://hby0202.github.io/cpu-blog/it2024-github-page2"
     },
-    "description": "it2024 강좌는 여러 절로 구성되어 있습니다. github-page 만들기(1) - localhost jekyll theme 세팅 github-page 만들기(2) - 환경설정 파일 세팅 github-page 만들기(3) - custom css 세팅 github-page 만들기(4) - github page 배포 _config 파일 세팅 # Jekyll configuration markdown: kramdown # kramdown : markdown의 개조판 # markdown에서 불편한 사항을 개선한 형태"
+    "description": "it2024 강좌는 여러 절로 구성되어 있습니다. github-page 만들기(1) - localhost jekyll theme 세팅 github-page 만들기(2) - 환경설정 파일 세팅 github-page 만들기(3) - custom css 세팅 github-page 만들기(4) - lunr.js를 이용한 Search 기능 추가 github-page 만들기(5) - github page 배포 _config 파일 세팅 # Jekyll configuration markdown: kramdown # kramdown :"
 }
     </script>
 
@@ -139,7 +159,7 @@ into the {body} of the default.hbs template -->
             
         </div>
         
-            <a class="subscribe-button" href="#subscribe">Subscribe</a>
+            <a class="subscribe-button" href="#subscribe">Search</a>
         
     </div>
 </nav>
@@ -184,157 +204,159 @@ into the {body} of the default.hbs template -->
     <li><a href="./it2024-github-page1">github-page 만들기(1) - localhost jekyll theme 세팅</a></li>
     <li><a href="./it2024-github-page2">github-page 만들기(2) - 환경설정 파일 세팅</a></li>
     <li><a href="./it2024-github-page3">github-page 만들기(3) - custom css 세팅</a></li>
-    <li><a href="./it2024-github-page4">github-page 만들기(4) - github page 배포</a></li>
+    <li><a href="./it2024-github-page4">github-page 만들기(4) - lunr.js를 이용한 Search 기능 추가</a></li>
+    <li><a href="./it2024-github-page5">github-page 만들기(5) - github page 배포</a></li>
 </ul>
 
 <h1 id="_config-파일-세팅">_config 파일 세팅</h1>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Jekyll configuration
-markdown: kramdown
-# kramdown : markdown의 개조판
-# markdown에서 불편한 사항을 개선한 형태
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Jekyll configuration</span>
+<span class="na">markdown</span><span class="pi">:</span> <span class="s">kramdown</span>
+<span class="c1"># kramdown : markdown의 개조판</span>
+<span class="c1"># markdown에서 불편한 사항을 개선한 형태</span>
 
-highlighter: rouge
-# text highlighter로 rouge이용
-# 2016.02 이후로 syntax highlighter는 rouge만 지원
-# Pygments 사용불가.
+<span class="na">highlighter</span><span class="pi">:</span> <span class="s">rouge</span>
+<span class="c1"># text highlighter로 rouge이용</span>
+<span class="c1"># 2016.02 이후로 syntax highlighter는 rouge만 지원</span>
+<span class="c1"># Pygments 사용불가.</span>
 
-paginate: 20
-# 작성한 모든 post를 하나의 페이지에 열거할 수 없으니 pagination이 필요하고 몇개의 post를 하나의 page에서 보여줄 건지를 설정
+<span class="na">paginate</span><span class="pi">:</span> <span class="m">20</span>
+<span class="c1"># 작성한 모든 post를 하나의 페이지에 열거할 수 없으니 pagination이 필요하고 몇개의 post를 하나의 page에서 보여줄 건지를 설정</span>
 
-language: 'en-uk'
-# 언어 설정
+<span class="na">language</span><span class="pi">:</span> <span class="s1">'</span><span class="s">en-uk'</span>
+<span class="c1"># 언어 설정</span>
 
-baseurl: /cpu-blog/ 
-# url 뒤에 붙는 contextPath
-url : https://hby0202.github.io
-# 기본이 되는 url gitpage를사용하므로 [username].github.io로 고정
+<span class="na">baseurl</span><span class="pi">:</span> <span class="s">/cpu-blog/</span> 
+<span class="c1"># url 뒤에 붙는 contextPath</span>
+<span class="na">url </span><span class="pi">:</span> <span class="s">https://hby0202.github.io</span>
+<span class="c1"># 기본이 되는 url gitpage를사용하므로 [username].github.io로 고정</span>
 
-# Website info
-title: CPU - IT Technical
-# Website 제목
-description: CPU 동호회 IT 기반 공유 블로그
-# Website 설명
-cover: assets/images/blog-cover.jpg
-# cover 이미지
-logo: assets/images/blog-icon.png
-# log 이미지
-logo_dark: assets/images/favicon.png
-favicon: assets/images/favicon.png
-CNAME: #add cname for website to be created
+<span class="c1"># Website info</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">CPU - IT Technical</span>
+<span class="c1"># Website 제목</span>
+<span class="na">description</span><span class="pi">:</span> <span class="s">CPU 동호회 IT 기반 공유 블로그</span>
+<span class="c1"># Website 설명</span>
+<span class="na">cover</span><span class="pi">:</span> <span class="s">assets/images/blog-cover.jpg</span>
+<span class="c1"># cover 이미지</span>
+<span class="na">logo</span><span class="pi">:</span> <span class="s">assets/images/blog-icon.png</span>
+<span class="c1"># log 이미지</span>
+<span class="na">logo_dark</span><span class="pi">:</span> <span class="s">assets/images/favicon.png</span>
+<span class="na">favicon</span><span class="pi">:</span> <span class="s">assets/images/favicon.png</span>
+<span class="na">CNAME</span><span class="pi">:</span> <span class="c1">#add cname for website to be created</span>
 
-# Social info
-navigation: True # show the navbar links
-subscribers: True # you need to connect an external service for this to work,
-# if 'True' the submit button is disabled for now, but you can change that
-# by editing `_includes/subscribe-form.html`
-# twitter:  # replace by your username
-# facebook:  # replace by your username
+<span class="c1"># Social info</span>
+<span class="na">navigation</span><span class="pi">:</span> <span class="s">True</span> <span class="c1"># show the navbar links</span>
+<span class="na">subscribers</span><span class="pi">:</span> <span class="s">True</span> <span class="c1"># you need to connect an external service for this to work,</span>
+<span class="c1"># if 'True' the submit button is disabled for now, but you can change that</span>
+<span class="c1"># by editing `_includes/subscribe-form.html`</span>
+<span class="c1"># twitter:  # replace by your username</span>
+<span class="c1"># facebook:  # replace by your username</span>
 
-# Disqus
-disqus: False
-disqus_shortname: jekyllt # replace with your disqus username
+<span class="c1"># Disqus</span>
+<span class="na">disqus</span><span class="pi">:</span> <span class="s">False</span>
+<span class="na">disqus_shortname</span><span class="pi">:</span> <span class="s">jekyllt</span> <span class="c1"># replace with your disqus username</span>
 
-# Google Analytics
-# google_analytics: UA-69281367-1 # replace with your GA tracking identifier
+<span class="c1"># Google Analytics</span>
+<span class="c1"># google_analytics: UA-69281367-1 # replace with your GA tracking identifier</span>
 
-# Permalinks
-permalink: /:title
-# post md 파일 생성 시 url 생성 방식
-# permalink: /author/:author
-# permalink: /tag/:tag
+<span class="c1"># Permalinks</span>
+<span class="na">permalink</span><span class="pi">:</span> <span class="s">/:title</span>
+<span class="c1"># post md 파일 생성 시 url 생성 방식</span>
+<span class="c1"># permalink: /author/:author</span>
+<span class="c1"># permalink: /tag/:tag</span>
 
-# Authors' info in `_data/authors.yml`
-# Tags' info in `_data/tags_info.yml`
+<span class="c1"># Authors' info in `_data/authors.yml`</span>
+<span class="c1"># Tags' info in `_data/tags_info.yml`</span>
 
-# gems and other configs
-plugins_dir: [_plugins]
-plugins: [jekyll-paginate, jekyll-feed]
+<span class="c1"># gems and other configs</span>
+<span class="na">plugins_dir</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">_plugins</span><span class="pi">]</span>
+<span class="na">plugins</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">jekyll-paginate</span><span class="pi">,</span> <span class="nv">jekyll-feed</span><span class="pi">]</span>
 
-feed:
-  path: feed.xml
+<span class="na">feed</span><span class="pi">:</span>
+  <span class="na">path</span><span class="pi">:</span> <span class="s">feed.xml</span>
 
-# Additional settings available on the front-matter
-# Site logo in the index.html (as in demo.ghost.io)
-# Author's page cover in _layouts/author.html
-# The same for page.html and tag.html layouts
-# Post's page cover as a per-post basis _posts/...
-# Disqus comments as a per-post basis
-# ...
+<span class="c1"># Additional settings available on the front-matter</span>
+<span class="c1"># Site logo in the index.html (as in demo.ghost.io)</span>
+<span class="c1"># Author's page cover in _layouts/author.html</span>
+<span class="c1"># The same for page.html and tag.html layouts</span>
+<span class="c1"># Post's page cover as a per-post basis _posts/...</span>
+<span class="c1"># Disqus comments as a per-post basis</span>
+<span class="c1"># ...</span>
 
-# Settings for building master branch with travis-ci
-# with jekyll-travis
+<span class="c1"># Settings for building master branch with travis-ci</span>
+<span class="c1"># with jekyll-travis</span>
 
-# Settings for deploy rake task
-# Username and repo of Github repo, e.g.
-# https://github.com/USERNAME/REPO.git
-# username defaults to ENV['GIT_NAME'] used by Travis
-# repo defaults to USERNAME.github.io
-# Branch defaults to "source" for USERNAME.github.io
-# or "master" otherwise
-safe: False
-lsi: False
-username: hby0202
-# github username
-repo: cpu-blog
-# github ropository 명칭
-branch: master
-# branch 명칭
-relative_source: ../cpu-blog/
-destination: ./output/
-# deploay 폴더 위치
-production_url:  https://hby0202.github.io/cpu-blog/
-# repository url
-source_url:  https://github.com/hby0202/cpu-blog/
-# 사이트 url
+<span class="c1"># Settings for deploy rake task</span>
+<span class="c1"># Username and repo of Github repo, e.g.</span>
+<span class="c1"># https://github.com/USERNAME/REPO.git</span>
+<span class="c1"># username defaults to ENV['GIT_NAME'] used by Travis</span>
+<span class="c1"># repo defaults to USERNAME.github.io</span>
+<span class="c1"># Branch defaults to "source" for USERNAME.github.io</span>
+<span class="c1"># or "master" otherwise</span>
+<span class="na">safe</span><span class="pi">:</span> <span class="s">False</span>
+<span class="na">lsi</span><span class="pi">:</span> <span class="s">False</span>
+<span class="na">username</span><span class="pi">:</span> <span class="s">hby0202</span>
+<span class="c1"># github username</span>
+<span class="na">repo</span><span class="pi">:</span> <span class="s">cpu-blog</span>
+<span class="c1"># github ropository 명칭</span>
+<span class="na">branch</span><span class="pi">:</span> <span class="s">master</span>
+<span class="c1"># branch 명칭</span>
+<span class="na">relative_source</span><span class="pi">:</span> <span class="s">../cpu-blog/</span>
+<span class="na">destination</span><span class="pi">:</span> <span class="s">./output/</span>
+<span class="c1"># deploay 폴더 위치</span>
+<span class="na">production_url</span><span class="pi">:</span>  <span class="s">https://hby0202.github.io/cpu-blog/</span>
+<span class="c1"># repository url</span>
+<span class="na">source_url</span><span class="pi">:</span>  <span class="s">https://github.com/hby0202/cpu-blog/</span>
+<span class="c1"># 사이트 url</span>
 
-#제외 파일 설정
-exclude:
-  - assets/css
-  - node_modules
-  - vendor
-  - .travis.yml
-  - Gemfile
-  - Gemfile.lock
-  - GHOST.txt
-  - gulpfile.js
-  - LICENSE
-  - package.json
-  - package-lock.json
-  - Rakefile
-  - README.md
-  - script.py
-  - changelog.md
-  - "*.Rmd"
-  - .git*
+<span class="c1">#제외 파일 설정</span>
+<span class="na">exclude</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">assets/css</span>
+  <span class="pi">-</span> <span class="s">node_modules</span>
+  <span class="pi">-</span> <span class="s">vendor</span>
+  <span class="pi">-</span> <span class="s">.travis.yml</span>
+  <span class="pi">-</span> <span class="s">Gemfile</span>
+  <span class="pi">-</span> <span class="s">Gemfile.lock</span>
+  <span class="pi">-</span> <span class="s">GHOST.txt</span>
+  <span class="pi">-</span> <span class="s">gulpfile.js</span>
+  <span class="pi">-</span> <span class="s">LICENSE</span>
+  <span class="pi">-</span> <span class="s">package.json</span>
+  <span class="pi">-</span> <span class="s">package-lock.json</span>
+  <span class="pi">-</span> <span class="s">Rakefile</span>
+  <span class="pi">-</span> <span class="s">README.md</span>
+  <span class="pi">-</span> <span class="s">script.py</span>
+  <span class="pi">-</span> <span class="s">changelog.md</span>
+  <span class="pi">-</span> <span class="s2">"</span><span class="s">*.Rmd"</span>
+  <span class="pi">-</span> <span class="s">.git*</span>
 </code></pre></div></div>
+
 <h1 id="authors-설정">Authors 설정</h1>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ghost:
-  username: ghost # 사용자아이디
-  name: Ghost # 사용자 명
-  url_full: http://jekyllt.github.io/jasper2/ # 홈페이지 URL
-  url: jekyllt.github.io/jasper2 # 홈페이지 URL
-  bio: The professional publishing platform # 설명
-  picture: assets/images/ghost.png # 해당 아이디 이미지
-  facebook: ghost
-  twitter: tryghost
-  cover: False
-
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">ghost</span><span class="pi">:</span>
+  <span class="na">username</span><span class="pi">:</span> <span class="s">ghost</span> <span class="c1"># 사용자아이디</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">Ghost</span> <span class="c1"># 사용자 명</span>
+  <span class="na">url_full</span><span class="pi">:</span> <span class="s">http://jekyllt.github.io/jasper2/</span> <span class="c1"># 홈페이지 URL</span>
+  <span class="na">url</span><span class="pi">:</span> <span class="s">jekyllt.github.io/jasper2</span> <span class="c1"># 홈페이지 URL</span>
+  <span class="na">bio</span><span class="pi">:</span> <span class="s">The professional publishing platform</span> <span class="c1"># 설명</span>
+  <span class="na">picture</span><span class="pi">:</span> <span class="s">assets/images/ghost.png</span> <span class="c1"># 해당 아이디 이미지</span>
+  <span class="na">facebook</span><span class="pi">:</span> <span class="s">ghost</span>
+  <span class="na">twitter</span><span class="pi">:</span> <span class="s">tryghost</span>
+  <span class="na">cover</span><span class="pi">:</span> <span class="s">False</span>
 </code></pre></div></div>
+
 <h1 id="tag-설정">tag 설정</h1>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>it2024:
-  name: it2024 # 태그 명
-  description: 2024년 작성글 # 태그 설명
-  cover: assets/images/speeches.jpg # 태그 이미지
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">it2024</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">it2024</span> <span class="c1"># 태그 명</span>
+  <span class="na">description</span><span class="pi">:</span> <span class="s">2024년 작성글</span> <span class="c1"># 태그 설명</span>
+  <span class="na">cover</span><span class="pi">:</span> <span class="s">assets/images/speeches.jpg</span> <span class="c1"># 태그 이미지</span>
 </code></pre></div></div>
 
 <h1 id="메뉴-수정">메뉴 수정</h1>
 <p>_includes &gt; navigation.html 파일 수정<br />
 예시</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;ul class="nav" role="menu"&gt;
-    &lt;li class="nav-home" role="menuitem"&gt;&lt;a href="/cpu-blog/"&gt;Home&lt;/a&gt;&lt;/li&gt;
-    &lt;li class="nav-about" role="menuitem"&gt;&lt;a href="/cpu-blog/about/"&gt;게시글 작성법&lt;/a&gt;&lt;/li&gt;
-    &lt;li class="nav-it2024" role="menuitem"&gt;&lt;a href="/cpu-blog/tag/it2024/"&gt;2024&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"nav"</span> <span class="na">role=</span><span class="s">"menu"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-home"</span> <span class="na">role=</span><span class="s">"menuitem"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"/cpu-blog/"</span><span class="nt">&gt;</span>Home<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-about"</span> <span class="na">role=</span><span class="s">"menuitem"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"/cpu-blog/about/"</span><span class="nt">&gt;</span>게시글 작성법<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-it2024"</span> <span class="na">role=</span><span class="s">"menuitem"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"/cpu-blog/tag/it2024/"</span><span class="nt">&gt;</span>2024<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
 </code></pre></div></div>
 
 <p>※ 참고<br />
@@ -351,16 +373,23 @@ exclude:
                 <section class="subscribe-form">
                     <h3 class="subscribe-form-title">Subscribe to CPU - IT Technical</h3>
                     <p>Get the latest posts delivered right to your inbox</p>
-                    <form method="post" action="/subscribe/" class="">
-    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+                    <span id="searchform" method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm" >
+    <input class="location" type="hidden" name="location" >
+    <input class="referrer" type="hidden" name="referrer" >
 
     <div class="form-group">
-        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+        <input class="subscribe-email" onkeyup="myFunc()" id="searchtext" type="text" name="searchtext" placeholder="Search..." >
     </div>
-    <button class="" type="submit" disabled><span>Subscribe</span></button>
-    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
-</form>
-
+    <script>
+        function myFunc(){
+            if(event.keyCode == 13){
+                var url= encodeURIComponent(document.getElementById('searchtext').value);
+                location.href = "/cpu-blog//search.html?query=" + url;
+            }
+        }
+    </script>
+</span>
                 </section>
             
             -->
@@ -439,7 +468,16 @@ exclude:
                                     
                                         
                                         
-                                            <li><a href="/cpu-blog/it2024-github-page4">github-page 만들기(4) - github page 배포</a></li>
+                                            <li><a href="/cpu-blog/it2024-github-page5">github-page 만들기(5) - github page 배포</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/cpu-blog/it2024-github-page4">github-page 만들기(4) - lunr.js를 이용한 Search 기능 추가</a></li>
                                         
                                     
                                   
@@ -461,8 +499,6 @@ exclude:
                                     
                                         
                                         
-                                            <li><a href="/cpu-blog/it2024-github-page1">github-page 만들기(1) - localhost jekyll theme 세팅</a></li>
-                                        
                                     
                                   
                                 
@@ -471,7 +507,7 @@ exclude:
                         <footer class="read-next-card-footer">
                             <a href="/cpu-blog/tag/it2024/">
                                 
-                                    See all 3 posts  →
+                                    See all 4 posts  →
                                 
                             </a>
                         </footer>
@@ -504,15 +540,7 @@ exclude:
                 </header>
                 <section class="post-card-excerpt">
                     
-                        <p>it2024 강좌는 여러 절로 구성되어 있습니다.
-
-    github-page 만들기(1) - localhost jekyll theme 세팅
-    github-page 만들기(2) - 환경설정 파일 세팅
-    github-page 만들기(3) - custom css 세팅
-    github-page 만들기(4) - github page 배포
-
-
-</p>
+                        <p>it2024 강좌는 여러 절로 구성되어 있습니다. github-page 만들기(1) - localhost jekyll theme 세팅 github-page 만들기(2) - 환경설정 파일 세팅 github-page 만들기(3) - custom css 세팅 github-page 만들기(4) - lunr.js를 이용한 Search 기능 추가</p>
                     
                 </section>
             </a>
@@ -538,7 +566,7 @@ exclude:
                 <span class="reading-time">
                     
                     
-                      9 min read
+                      10 min read
                     
                 </span>
             </footer>
@@ -572,15 +600,7 @@ exclude:
                 </header>
                 <section class="post-card-excerpt">
                     
-                        <p>it2024 강좌는 여러 절로 구성되어 있습니다.
-
-    github-page 만들기(1) - localhost jekyll theme 세팅
-    github-page 만들기(2) - 환경설정 파일 세팅
-    github-page 만들기(3) - custom css 세팅
-    github-page 만들기(4) - github page 배포
-
-
-</p>
+                        <p>it2024 강좌는 여러 절로 구성되어 있습니다. github-page 만들기(1) - localhost jekyll theme 세팅 github-page 만들기(2) - 환경설정 파일 세팅 github-page 만들기(3) - custom css 세팅 github-page 만들기(4) - lunr.js를 이용한 Search 기능 추가</p>
                     
                 </section>
             </a>
@@ -680,7 +700,6 @@ exclude:
         </footer>
 
     </div>
-
     <!-- The big email subscribe modal content -->
     
         <div id="subscribe" class="subscribe-overlay">
@@ -689,39 +708,30 @@ exclude:
                 
                     <img class="subscribe-overlay-logo" src="/cpu-blog/assets/images/blog-icon.png" alt="CPU - IT Technical" />
                 
-                <h1 class="subscribe-overlay-title">Subscribe to CPU - IT Technical</h1>
-                <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered straight to your inbox</p>
-                <form method="post" action="/subscribe/" class="">
-    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+                <h1 class="subscribe-overlay-title">Searcj to CPU - IT Technical</h1>
+                <p class="subscribe-overlay-description">lunr.js를 이용한 posts 검색</p>
+                <span id="searchform" method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm" >
+    <input class="location" type="hidden" name="location" >
+    <input class="referrer" type="hidden" name="referrer" >
 
     <div class="form-group">
-        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+        <input class="subscribe-email" onkeyup="myFunc()" id="searchtext" type="text" name="searchtext" placeholder="Search..." >
     </div>
-    <button class="" type="submit" disabled><span>Subscribe</span></button>
-    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
-</form>
-
+    <script>
+        function myFunc(){
+            if(event.keyCode == 13){
+                var url= encodeURIComponent(document.getElementById('searchtext').value);
+                location.href = "/cpu-blog//search.html?query=" + url;
+            }
+        }
+    </script>
+</span>
             </div>
         </div>
     
 
-    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
-    <script
-        src="https://code.jquery.com/jquery-3.2.1.min.js"
-        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous">
-    </script>
-    <script type="text/javascript" src="/cpu-blog/assets/js/jquery.fitvids.js"></script>
-    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
-
-    <!-- highlight.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/prism.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
-    <script>$(document).ready(function() {
-      $('pre code').each(function(i, block) {
-        hljs.highlightBlock(block);
-      });
-    });</script>
+    
 
     <!-- Paginator increased to "infinit" in _config.yml -->
     <!-- if paginator.posts  -->
