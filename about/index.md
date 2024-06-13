@@ -15,8 +15,8 @@ subclass: 'post page'
     년도-월-일-태그명-타이틀명.md<br>
     ex) 2024-05-24-it2024-title.md
 3. md 파일 상단에는 다음 내용을 필수 작성 후 MarkDown 작성법에 따라 게시글을 작성한다.<br>
----
 ```
+---
 layout: post
 current: post
 cover:  assets/images/welcome.jpg
@@ -27,8 +27,8 @@ tags: [it2024]
 class: post-template
 subclass: 'post'
 author: hby
-```
 ---
+```
 <br>
 - layout, current, cover, navigation, class, subclass 변경 X<br>
 - title : 게시글 제목<br>
@@ -106,6 +106,9 @@ function syntaxHighling(code){
     var bar = 100;
 }
 ~~~
+```
+<br>
+```
 지원가능 언어
 abap
 actionscript, as, as3
@@ -289,5 +292,3 @@ ___
 - [x] 할 일 2
 - [ ] 할 일 3
 ```
-#
-11. rouge를 이용한 코드 작성
