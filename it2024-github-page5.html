@@ -17,11 +17,6 @@
     <!-- Styles'n'Scripts -->
     <link rel="stylesheet" type="text/css" href="/cpu-blog/assets/built/screen.css" />
     <link rel="stylesheet" type="text/css" href="/cpu-blog/assets/built/screen.edited.css" />
-    <link rel="stylesheet" type="text/css" href="/cpu-blog/assets/built/syntax.css" />
-    <!-- highlight.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <style>.hljs { background: none; }</style>
 
     <!-- custom css -->
     <link rel="stylesheet" type="text/css" href="/cpu-blog/assets/built/custom.css" />
@@ -38,14 +33,6 @@
     <script type="text/javascript" src="/cpu-blog/assets/js/jquery.fitvids.js"></script>
     <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
     
-    <!-- highlight.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/prism.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
-    <script>$(document).ready(function() {
-      $('pre code').each(function(i, block) {1
-        hljs.highlightBlock(block);
-      });
-    });</script>
     <!--[if IE]>
         <style>
             p, ol, ul{
@@ -259,44 +246,45 @@ ex) hby0202.github.io</li>
 <h1 id="workflows-파일-수정">workflows 파일 수정</h1>
 
 <ol>
-  <li>vs code 혹은 github &gt; code 메뉴에 접속 또는 실행 하여 jekyll_build.yml 파일 수정
-~~~yml
-name: Build and deploy to GitHub Pagesa</li>
+  <li>vs code 혹은 github &gt; code 메뉴에 접속 또는 실행 하여 jekyll_build.yml 파일 수정</li>
 </ol>
 
-<p>on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]</p>
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">name</span><span class="pi">:</span> <span class="s">Build and deploy to GitHub Pagesa</span>
 
-<p>jobs:
-  github-pages:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2</p>
+<span class="na">on</span><span class="pi">:</span>
+  <span class="na">push</span><span class="pi">:</span>
+    <span class="na">branches</span><span class="pi">:</span> <span class="pi">[</span> <span class="nv">master</span> <span class="pi">]</span>
+  <span class="na">pull_request</span><span class="pi">:</span>
+    <span class="na">branches</span><span class="pi">:</span> <span class="pi">[</span> <span class="nv">master</span> <span class="pi">]</span>
+    
+<span class="na">jobs</span><span class="pi">:</span>
+  <span class="na">github-pages</span><span class="pi">:</span>
+    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Checkout code</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v2</span>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  - name: Set up Ruby
-    uses: ruby/setup-ruby@v1
-    with:
-      ruby-version: '3.1.5'
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Set up Ruby</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">ruby/setup-ruby@v1</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">ruby-version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3.1.5'</span>
 
-  - name: Install dependencies
-    run: |
-      gem install bundler
-      bundle install
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Install dependencies</span>
+        <span class="na">run</span><span class="pi">:</span> <span class="pi">|</span>
+          <span class="s">gem install bundler</span>
+          <span class="s">bundle install</span>
 
-  - name: Build site
-    run: bundle exec jekyll build
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Build site</span>
+        <span class="na">run</span><span class="pi">:</span> <span class="s">bundle exec jekyll build</span>
 
-  - name: Deploy to GitHub Pages
-    uses: peaceiris/actions-gh-pages@v3
-    with:
-      github_token: $
-      publish_dir: ./output/
-      target_branch: 'gh-pages' ~~~    **target_branch를 생성 했던 branch name 명칭으로 변경**
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Deploy to GitHub Pages</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">peaceiris/actions-gh-pages@v3</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">github_token</span><span class="pi">:</span> <span class="s">$</span>
+          <span class="na">publish_dir</span><span class="pi">:</span> <span class="s">./output/</span>
+          <span class="na">target_branch</span><span class="pi">:</span> <span class="s1">'</span><span class="s">gh-pages'</span>
 </code></pre></div></div>
+<p><strong>target_branch를 생성 했던 branch name 명칭으로 변경</strong></p>
 
 <ol>
   <li>해당 파일을 저장하여 repostory에 push하면 gitAction가 자동으로 실행</li>
