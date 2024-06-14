@@ -100,12 +100,12 @@ author: hby
 ```
 * rouge를 이용한 코드 작성
 ```
-~~~javascript
-function syntaxHighling(code){
-    var foo = 'Hello World';
-    var bar = 100;
-}
-~~~
+    ```javascript
+    function syntaxHighling(code){
+        var foo = 'Hello World';
+        var bar = 100;
+    }
+    ```
 ```
 <br>
 ```
