@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://hby0202.github.io/cpu-blog/author/hby/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://hby0202.github.io/cpu-blog/" rel="alternate" type="text/html" />
-  <updated>2024-06-21T04:19:08+00:00</updated>
+  <updated>2024-06-21T05:56:37+00:00</updated>
   <id>https://hby0202.github.io/cpu-blog/author/hby/feed.xml</id>
 
   
@@ -524,6 +524,14 @@ STATICFILES_DIRS = [
     &lt;li&gt;&lt;a href=&quot;./it2024-django-page3&quot;&gt;django(3) - django css 꾸미기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./it2024-django-page4&quot;&gt;django(4) - POST, GET 통신 / DB 연결 및 데이터 저장&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h1 id=&quot;model-작성&quot;&gt;model 작성&lt;/h1&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;django.db&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;HelloWorld&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CharField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;max_length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;db연동을-위한-python-명령어-정리&quot;&gt;DB연동을 위한 python 명령어 정리&lt;/h1&gt;
 &lt;ol&gt;
