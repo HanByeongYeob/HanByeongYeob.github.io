@@ -1,7 +1,7 @@
 ---
 layout: post
 current: post
-cover:  https://velog.velcdn.com/images/chw970320/post/8ab73098-76ef-459c-bb96-ffe3f2d69f20/image.png
+cover:  assets/images/chw/crash-python.jpg
 navigation: True
 title: Python을 뿌셔보자 - 기본기
 date: 2024-06-21 09:00:00 +0900
@@ -10,8 +10,6 @@ class: post-template
 subclass: 'post'
 author: chw
 ---
-
-{% include it2024-table-of-contents.html %}
 
 ![](https://velog.velcdn.com/images/chw970320/post/8ab73098-76ef-459c-bb96-ffe3f2d69f20/image.png)
 
