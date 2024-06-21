@@ -81,7 +81,7 @@ repo: cpu-blog
 # repo: https://github.com/HanByeongYeob/HanByeongYeob.github.io
 branch: master
 relative_source: ../cpu-blog/
-destination: ./output/
+destination: ../output/
 production_url:  https://hby0202.github.io/cpu-blog/
 source_url:  https://github.com/hby0202/cpu-blog/
 
