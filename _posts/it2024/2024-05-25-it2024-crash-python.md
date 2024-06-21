@@ -1,7 +1,7 @@
 ---
 layout: post
 current: post
-cover:  assets/images/chw/crash-python.jpg
+cover:  assets/images/chw/crash-python.png
 navigation: True
 title: Python을 뿌셔보자 - 기본기
 date: 2024-06-21 09:00:00 +0900
