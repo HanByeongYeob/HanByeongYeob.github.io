@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://hby0202.github.io/cpu-blog/tag/it2024/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://hby0202.github.io/cpu-blog/" rel="alternate" type="text/html" />
-  <updated>2024-06-21T05:56:37+00:00</updated>
+  <updated>2024-06-21T07:28:25+00:00</updated>
   <id>https://hby0202.github.io/cpu-blog/tag/it2024/feed.xml</id>
 
   
@@ -1084,11 +1084,154 @@ parameters : reunserver&lt;br /&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 
+&lt;h1 id=&quot;git-연결을-위한-세팅&quot;&gt;git 연결을 위한 세팅&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;[프로젝트명]에 .gitignore 파일 생성 후 해당 코드 작성&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
+# Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
+
+# User-specific stuff
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
+
+# AWS User-specific
+.idea/**/aws.xml
+
+# Generated files
+.idea/**/contentModel.xml
+
+# Sensitive or high-churn files
+.idea/**/dataSources/
+.idea/**/dataSources.ids
+.idea/**/dataSources.local.xml
+.idea/**/sqlDataSources.xml
+.idea/**/dynamic.xml
+.idea/**/uiDesigner.xml
+.idea/**/dbnavigator.xml
+
+# Gradle
+.idea/**/gradle.xml
+.idea/**/libraries
+
+# Gradle and Maven with auto-import
+# When using Gradle or Maven with auto-import, you should exclude module files,
+# since they will be recreated, and may cause churn.  Uncomment if using
+# auto-import.
+# .idea/artifacts
+# .idea/compiler.xml
+# .idea/jarRepositories.xml
+# .idea/modules.xml
+# .idea/*.iml
+# .idea/modules
+# *.iml
+# *.ipr
+
+# CMake
+cmake-build-*/
+
+# Mongo Explorer plugin
+.idea/**/mongoSettings.xml
+
+# File-based project format
+*.iws
+
+# IntelliJ
+out/
+
+# mpeltonen/sbt-idea plugin
+.idea_modules/
+
+# JIRA plugin
+atlassian-ide-plugin.xml
+
+# Cursive Clojure plugin
+.idea/replstate.xml
+
+# SonarLint plugin
+.idea/sonarlint/
+
+# Crashlytics plugin (for Android Studio and IntelliJ)
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+fabric.properties
+
+# Editor-based Rest Client
+.idea/httpRequests
+
+# Android studio 3.1+ serialized cache file
+.idea/caches/build_file_checksums.ser
+
+.env
+
+db.sqlite3
+
+.idea
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;django-environ 설치&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pip install django-environ
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;[프로젝트명] &amp;gt; settings.py에 해당 코드작성&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import os, environ
+
+env = environ.Env(
+    # set casting, default value
+    DEBUG=(bool, False)
+)
+
+# reading .env file
+environ.Env.read_env(
+    env_file=os.path.join(BASE_DIR, &apos;.env&apos;)
+)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;[프로젝트명]에 .env 파일 생성 후 해당 코드 작성&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;DEBUG=on
+SECRET_KEY=django-insecure-6%okebm86^pa=g)o^q&amp;amp;p(c2#(%co-6f0htm&amp;amp;=1o%(=-q)74vsg
+DATABASE_URL=psql://user:un-githubbedpassword@127.0.0.1:8458/database
+SQLITE_URL=sqlite:///my-local-sqlite.db
+CACHE_URL=memcache://127.0.0.1:11211,127.0.0.1:11212,127.0.0.1:11213
+REDIS_URL=rediscache://127.0.0.1:6379/1?client_class=django_redis.client.DefaultClient&amp;amp;password=ungithubbed-secret
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;SECRET_KEY는 setting.py에 있는 SECRET_KEY로 붙여놓기&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;[프로젝트명] &amp;gt; settings.py의 SECRET_KE Y해당 코드로 작성
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SECRET_KEY = env(&apos;SECRET_KEY&apos;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;h1 id=&quot;git-연결&quot;&gt;git 연결&lt;/h1&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git init&lt;/code&gt; : git 초기화&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git status&lt;/code&gt; : git 상태 확인&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git add .&lt;/code&gt; : git에 파일 추가&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git commmit -m &quot;init commit&quot;&lt;/code&gt; : git commit&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git remote add [repo]&lt;/code&gt; : git 원격 저장소 연결&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git push -u master&lt;/code&gt; : git push&lt;/li&gt;
+&lt;/ol&gt;
+
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;parameters 칸이 안보이면 Modify opions를 선택하여 parameters 선택&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
 ※ 참고&lt;br /&gt;
 &lt;a href=&quot;https://youtu.be/RWEZITw27Ts?si=Gxr9qCNzUo46leD1&quot;&gt;(YouTube) 작정하고 장고 1강 - 무엇을 만들 것인지 : Django로 Pinterest 따라하기!&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;https://youtu.be/vI4EVw-2_1M?si=C-arr7PtY-ywXvCu&quot;&gt;(YouTube) 작정하고 장고 2강 - 웹서비스 구조 : Django로 Pinterest 따라하기!&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;https://youtu.be/hC7_nRh8tm8?si=WE6HYD_PBrAVIiIc&quot;&gt;(YouTube) 작정하고 장고 3강 - 개발환경 셋업 : Django로 Pinterest 따라하기!&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://youtu.be/oNF6LHiK6KI?si=nDTLELaDpJFL5NGG&quot;&gt;(YouTube) 작정하고 장고 7강 - Gitignore 설정, 환경변수 분리, 첫 커밋 : Django로 Pinterest 따라하기!&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;https://youtu.be/4tlLtoSB_1Y?si=Lv5Ied-rHgARA9fa&quot;&gt;(YouTube) 작정하고 장고 19강 - Pycharm 디버깅 설정 : Django로 Pinterest 따라하기!&lt;/a&gt;&lt;/p&gt;</content>
 
       
