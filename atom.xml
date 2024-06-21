@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title> - Articles</title>
+    <description>CPU 동호회 IT 기반 공유 블로그</description>
+    <link>
+    https://hby0202.github.io</link>
+    
+      
+      <item>
+        <title>Python을 뿌셔보자 - 기본기</title>
+        
+          <description>&lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/chw970320/post/8ab73098-76ef-459c-bb96-ffe3f2d69f20/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Fri, 21 Jun 2024 00:00:00 +0000</pubDate>
+        <link>
+        https://hby0202.github.io/it2024-crash-python</link>
+        <guid isPermaLink="true">https://hby0202.github.io/it2024-crash-python</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>django(4) - POST, GET 통신 / DB 연결 및 데이터 저장</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Django 강좌는 여러 절로 구성되어 있습니다.&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-django-page1&quot;&gt;django(1) - django 세팅&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-django-page2&quot;&gt;django(2) - django 앱 생성&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-django-page3&quot;&gt;django(3) - django css 꾸미기&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-django-page4&quot;&gt;django(4) - POST, GET 통신 / DB 연결 및 데이터 저장&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Thu, 20 Jun 2024 00:00:00 +0000</pubDate>
+        <link>
+        https://hby0202.github.io/it2024-django-page4</link>
+        <guid isPermaLink="true">https://hby0202.github.io/it2024-django-page4</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>django(3) - django css 꾸미기</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Django 강좌는 여러 절로 구성되어 있습니다.&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-django-page1&quot;&gt;django(1) - django 세팅&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-django-page2&quot;&gt;django(2) - django 앱 생성&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-django-page3&quot;&gt;django(3) - django css 꾸미기&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-django-page4&quot;&gt;django(4) - POST, GET 통신 / DB 연결 및 데이터 저장&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Thu, 20 Jun 2024 00:00:00 +0000</pubDate>
+        <link>
+        https://hby0202.github.io/it2024-django-page3</link>
+        <guid isPermaLink="true">https://hby0202.github.io/it2024-django-page3</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>django(2) - django 앱 생성</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Django 강좌는 여러 절로 구성되어 있습니다.&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-django-page1&quot;&gt;django(1) - django 세팅&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-django-page2&quot;&gt;django(2) - django 앱 생성&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-django-page3&quot;&gt;django(3) - django css 꾸미기&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-django-page4&quot;&gt;django(4) - POST, GET 통신 / DB 연결 및 데이터 저장&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Thu, 20 Jun 2024 00:00:00 +0000</pubDate>
+        <link>
+        https://hby0202.github.io/it2024-django-page2</link>
+        <guid isPermaLink="true">https://hby0202.github.io/it2024-django-page2</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>django(1) - django 세팅</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Django 강좌는 여러 절로 구성되어 있습니다.&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-django-page1&quot;&gt;django(1) - django 세팅&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-django-page2&quot;&gt;django(2) - django 앱 생성&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-django-page3&quot;&gt;django(3) - django css 꾸미기&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-django-page4&quot;&gt;django(4) - POST, GET 통신 / DB 연결 및 데이터 저장&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Thu, 20 Jun 2024 00:00:00 +0000</pubDate>
+        <link>
+        https://hby0202.github.io/it2024-django-page1</link>
+        <guid isPermaLink="true">https://hby0202.github.io/it2024-django-page1</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>github-page 만들기(5) - github page 배포</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;it2024 강좌는 여러 절로 구성되어 있습니다.&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-github-page1&quot;&gt;github-page 만들기(1) - localhost jekyll theme 세팅&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-github-page2&quot;&gt;github-page 만들기(2) - 환경설정 파일 세팅&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-github-page3&quot;&gt;github-page 만들기(3) - custom css 세팅&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-github-page4&quot;&gt;github-page 만들기(4) - lunr.js를 이용한 Search 기능 추가&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-github-page5&quot;&gt;github-page 만들기(5) - github page 배포&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Fri, 31 May 2024 00:00:00 +0000</pubDate>
+        <link>
+        https://hby0202.github.io/it2024-github-page5</link>
+        <guid isPermaLink="true">https://hby0202.github.io/it2024-github-page5</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>github-page 만들기(4) - lunr.js를 이용한 Search 기능 추가</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;it2024 강좌는 여러 절로 구성되어 있습니다.&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-github-page1&quot;&gt;github-page 만들기(1) - localhost jekyll theme 세팅&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-github-page2&quot;&gt;github-page 만들기(2) - 환경설정 파일 세팅&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-github-page3&quot;&gt;github-page 만들기(3) - custom css 세팅&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-github-page4&quot;&gt;github-page 만들기(4) - lunr.js를 이용한 Search 기능 추가&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-github-page5&quot;&gt;github-page 만들기(5) - github page 배포&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Fri, 31 May 2024 00:00:00 +0000</pubDate>
+        <link>
+        https://hby0202.github.io/it2024-github-page4</link>
+        <guid isPermaLink="true">https://hby0202.github.io/it2024-github-page4</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>github-page 만들기(3) - custom css 세팅</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;it2024 강좌는 여러 절로 구성되어 있습니다.&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-github-page1&quot;&gt;github-page 만들기(1) - localhost jekyll theme 세팅&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-github-page2&quot;&gt;github-page 만들기(2) - 환경설정 파일 세팅&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-github-page3&quot;&gt;github-page 만들기(3) - custom css 세팅&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-github-page4&quot;&gt;github-page 만들기(4) - lunr.js를 이용한 Search 기능 추가&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-github-page5&quot;&gt;github-page 만들기(5) - github page 배포&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Fri, 31 May 2024 00:00:00 +0000</pubDate>
+        <link>
+        https://hby0202.github.io/it2024-github-page3</link>
+        <guid isPermaLink="true">https://hby0202.github.io/it2024-github-page3</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>github-page 만들기(2) - 환경설정 파일 세팅</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;it2024 강좌는 여러 절로 구성되어 있습니다.&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-github-page1&quot;&gt;github-page 만들기(1) - localhost jekyll theme 세팅&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-github-page2&quot;&gt;github-page 만들기(2) - 환경설정 파일 세팅&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-github-page3&quot;&gt;github-page 만들기(3) - custom css 세팅&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-github-page4&quot;&gt;github-page 만들기(4) - lunr.js를 이용한 Search 기능 추가&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-github-page5&quot;&gt;github-page 만들기(5) - github page 배포&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Fri, 31 May 2024 00:00:00 +0000</pubDate>
+        <link>
+        https://hby0202.github.io/it2024-github-page2</link>
+        <guid isPermaLink="true">https://hby0202.github.io/it2024-github-page2</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>github-page 만들기(1) - localhost jekyll theme 세팅</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;it2024 강좌는 여러 절로 구성되어 있습니다.&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-github-page1&quot;&gt;github-page 만들기(1) - localhost jekyll theme 세팅&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-github-page2&quot;&gt;github-page 만들기(2) - 환경설정 파일 세팅&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-github-page3&quot;&gt;github-page 만들기(3) - custom css 세팅&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-github-page4&quot;&gt;github-page 만들기(4) - lunr.js를 이용한 Search 기능 추가&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-github-page5&quot;&gt;github-page 만들기(5) - github page 배포&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Fri, 31 May 2024 00:00:00 +0000</pubDate>
+        <link>
+        https://hby0202.github.io/it2024-github-page1</link>
+        <guid isPermaLink="true">https://hby0202.github.io/it2024-github-page1</guid>
+      </item>
+      
+    
+  </channel>
+</rss>

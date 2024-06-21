@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Base Meta -->
+    <!-- dynamically fixing the title for tag/author pages -->
+
+
+
+    <title>Python을 뿌셔보자 - 기본기</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/cpu-blog/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/cpu-blog/assets/built/screen.edited.css" />
+
+    <!-- custom css -->
+    <link rel="stylesheet" type="text/css" href="/cpu-blog/assets/built/custom.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+    <link rel="stylesheet" type="text/css" href="/cpu-blog/assets/built/syntax.css" />
+    
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/cpu-blog/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+    
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+    
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="CPU 동호회 IT 기반 공유 블로그" />
+    <link rel="shortcut icon" href="https://hby0202.github.io/cpu-blog/assets/images/favicon.png" type="image/png" />
+    <link rel="canonical" href="https://hby0202.github.io/cpu-blog/it2024-crash-python" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+     <!--title below is coming from _includes/dynamic_title-->
+    <meta property="og:site_name" content="CPU - IT Technical" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Python을 뿌셔보자 - 기본기" />
+    <meta property="og:description" content="초안을 해라체로 작성하여 부적절한 단어 사용 혹은 부자연스러운 문장 전개 방식이 발견될 수 있습니다. 문의 주시면 수정하겠습니다.🙇🙇‍♂️🙇‍♀️ 들어가기 앞서 python은 {}, ;을 사용하지 않습니다. 대신 indent(들여쓰기)를 기준으로 판단하므로 띄어쓰기가 중요합니다. 코딩규칙 python은 일반적으로 변수명을 snake case로 작성합니다. ex) isNumber → is_number 변수 선언 타언어와 비교하연 python의 변수 선언이 독특합니다. 그" />
+    <meta property="og:url" content="https://hby0202.github.io/cpu-blog/it2024-crash-python" />
+    <meta property="og:image" content="https://hby0202.github.io/cpu-blog/assets/images/chw/crash-python.png" />
+    <meta property="article:publisher" content="https://www.facebook.com/" />
+    <meta property="article:author" content="https://www.facebook.com/" />
+    <meta property="article:published_time" content="2024-06-21T00:00:00+00:00" />
+    <meta property="article:modified_time" content="2024-06-21T00:00:00+00:00" />
+    <meta property="article:tag" content="It2024" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Python을 뿌셔보자 - 기본기" />
+    <meta name="twitter:description" content="초안을 해라체로 작성하여 부적절한 단어 사용 혹은 부자연스러운 문장 전개 방식이 발견될 수 있습니다. 문의 주시면 수정하겠습니다.🙇🙇‍♂️🙇‍♀️ 들어가기 앞서 python은 {}, ;을 사용하지 않습니다. 대신 indent(들여쓰기)를 기준으로 판단하므로 띄어쓰기가 중요합니다. 코딩규칙 python은 일반적으로 변수명을 snake case로 작성합니다. ex) isNumber → is_number 변수 선언 타언어와 비교하연 python의 변수 선언이 독특합니다. 그" />
+    <meta name="twitter:url" content="https://hby0202.github.io/cpu-blog/" />
+    <meta name="twitter:image" content="https://hby0202.github.io/cpu-blog/assets/images/chw/crash-python.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="CPU - IT Technical" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="It2024" />
+    <meta name="twitter:site" content="@" />
+    <meta name="twitter:creator" content="@" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="933" />
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Organization",
+        "name": "CPU - IT Technical",
+        "logo": "https://hby0202.github.io/cpu-blog/assets/images/blog-icon.png"
+    },
+    "url": "https://hby0202.github.io/cpu-blog/it2024-crash-python",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://hby0202.github.io/cpu-blog/assets/images/chw/crash-python.png",
+        "width": 2000,
+        "height": 666
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://hby0202.github.io/cpu-blog/it2024-crash-python"
+    },
+    "description": "초안을 해라체로 작성하여 부적절한 단어 사용 혹은 부자연스러운 문장 전개 방식이 발견될 수 있습니다. 문의 주시면 수정하겠습니다.🙇🙇‍♂️🙇‍♀️ 들어가기 앞서 python은 {}, ;을 사용하지 않습니다. 대신 indent(들여쓰기)를 기준으로 판단하므로 띄어쓰기가 중요합니다. 코딩규칙 python은 일반적으로 변수명을 snake case로 작성합니다. ex) isNumber → is_number 변수 선언 타언어와 비교하연 python의 변수 선언이 독특합니다. 그"
+}
+    </script>
+
+    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+    <script type="text/javascript">
+    ghost.init({
+    	clientId: "ghost-frontend",
+    	clientSecret: "f84a07a72b17"
+    });
+    </script> -->
+
+    <meta name="generator" content="Jekyll 3.6.2" />
+    <link rel="alternate" type="application/rss+xml" title="Python을 뿌셔보자 - 기본기" href="/cpu-blog/feed.xml" />
+
+
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="https://hby0202.github.io/cpu-blog/"><img src="/cpu-blog/assets/images/blog-icon.png" alt="CPU - IT Technical" /></a>
+            
+        
+        
+            <ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/cpu-blog/">Home</a></li>
+    <li class="nav-about" role="menuitem"><a href="/cpu-blog/about/">게시글 작성법</a></li>
+    <li class="nav-it2024" role="menuitem"><a href="/cpu-blog/tag/it2024/">2024</a></li>
+    <!-- <li class="nav-archive" role="menuitem"><a href="/cpu-blog/archive.html">All Posts</a></li> -->
+</ul>
+
+        
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Search</a>
+        
+    </div>
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full  tag-it2024 post ">
+
+            <header class="post-full-header">
+                <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="21 June 2024">21 June 2024</time>
+                    
+                        <span class="date-divider">/</span>
+                        
+                            
+                               <a href='/cpu-blog/tag/it2024/'>IT2024</a>
+                            
+                        
+                    
+                </section>
+                <h1 class="post-full-title">Python을 뿌셔보자 - 기본기</h1>
+            </header>
+
+            <!--
+            
+            <figure class="post-full-image" style="background-image: url(/cpu-blog/assets/images/chw/crash-python.png)">
+            </figure>
+            
+            -->
+
+            <section class="post-full-content">
+                <div class="kg-card-markdown">
+                    <p><img src="https://velog.velcdn.com/images/chw970320/post/8ab73098-76ef-459c-bb96-ffe3f2d69f20/image.png" alt="" /></p>
+
+<blockquote>
+  <p>초안을 해라체로 작성하여 부적절한 단어 사용 혹은 부자연스러운 문장 전개 방식이 발견될 수 있습니다. 문의 주시면 수정하겠습니다.🙇🙇‍♂️🙇‍♀️</p>
+</blockquote>
+
+<h1 id="들어가기-앞서">들어가기 앞서</h1>
+<ul>
+  <li>python은 {}, ;을 사용하지 않습니다.</li>
+  <li>대신 indent(들여쓰기)를 기준으로 판단하므로 <strong>띄어쓰기</strong>가 중요합니다.</li>
+</ul>
+
+<h1 id="코딩규칙">코딩규칙</h1>
+<ul>
+  <li>python은 일반적으로 변수명을 snake case로 작성합니다.<br />
+ ex) isNumber → is_number</li>
+</ul>
+
+<h1 id="변수-선언">변수 선언</h1>
+<p>타언어와 비교하연 python의 변수 선언이 독특합니다.<br />
+ 그 이유는 변수를 선언할 때 자료형을 선언하지 않기 때문입니다.<br /></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> number = 10
+ string = 'hyoungwook'
+ 
+ print(number, huoungwook)
+ =================================================
+ 촐력결과
+ 10 hyougwook
+</code></pre></div></div>
+<p>위의 결과로 알 수 있는 사실은</p>
+
+<p>첫 번째로, python은 변수에 할당되는 값을 기준으로 알아서 자료형을 추론한다는 것입니다. 아직 자료형에 대해 설명하지는 않았지만, 변수 선언을 할 때 자료형을 사용하지 않는다고 하여 자료형이 없는 것이 아닙니다. (대표적인 예시로 javascript가 있습니다.) 그러니 할당되는 값을 보고 추론한다고 표현하는 것이 옳다고 생각할 수 있습니다.(javascript의 typeof를 생각하시면 이해가 편합니다.)</p>
+
+<p>두 번째로, python은 변수 선언을 할 때 초기화가 무조건적으로 필요합니다.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> number
+ string = 'hyoungwook'
+ 
+ print(number, huoungwook)
+ =================================================
+ 촐력결과
+ NameError: name 'number' is not defined
+</code></pre></div></div>
+<p>위의 예시를 참고하면 이해가 빠릅니다. 타 언어들은 변수의 선언과 초기화가 별개로 진행되지만, python은 선언과 초기화는 동시에 이루어져야 합니다.</p>
+
+<p># 자료형
+ python의 자료형은 아래와 같습니다.</p>
+<ul>
+  <li>int(숫자형)</li>
+  <li>float(실수형)</li>
+  <li>str(문자형)</li>
+  <li>bool(논리형)</li>
+  <li>list(배열)</li>
+  <li>tuple(요소를 수정할 수 없는 배열)</li>
+  <li>set(중복을 허용하지 않는 배열, 집합)</li>
+  <li>dict(key, value로 이루어진 집합)</li>
+  <li>NonType(None)</li>
+</ul>
+
+<p>사실 이 외에도 complex, json, bytes 등 더 많은 자료형이 있으나 기본만 정리하여 이상으로 줄이겠습니다.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a = 1
+b = 1.2
+c = 'hyoungwook' # '', "" 홑, 쌍 따옴표 관련 없음
+d = True # True or False 첫 글자는 대문자로 작성
+e = [1, 2, '3', True]
+f = {1, 1, 2, '3', '3', '4'} # 중복성이 제거됨
+g = {'a' : 1, 'b' : 2, 'c' : '3', 'd' : True}
+f = None # 타언어의 Null과 비슷
+
+print(a, b, d, e, f, g, h, sep="\n")
+print(type(a)
+
+=================================================
+촐력결과
+# 값
+1
+1.2
+True
+[1, 2, '3', True]
+{'4', 1, 2, '3'}
+{'a': 1, 'b': 2, 'c': '3', 'd': True}
+None
+
+# 자료형
+&lt;class 'int'&gt;
+&lt;class 'float'&gt;
+&lt;class 'bool'&gt;
+&lt;class 'list'&gt;
+&lt;class 'set'&gt;
+&lt;class 'dict'&gt;
+&lt;class 'NoneType'&gt;
+</code></pre></div></div>
+
+<h1 id="형변환">형변환</h1>
+<p>python의 형변환은 단순합니다. 자료형(<변수명>) 형태로만 작성해주면 형변환이 가능합니다.</변수명></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a = 1
+b = '2'
+c = 3
+d = 0
+e = [1, 1, 2, 2, 3]
+
+print(str(a), type(str(a)))
+print(int(b), type(int(b)))
+print(float(c), type(float(c)))
+print(bool(d), type(bool(d)))
+print(set(e), type(set(e)))
+
+=================================================
+촐력결과
+1 &lt;class 'str'&gt;
+2 &lt;class 'int'&gt;
+3.0 &lt;class 'float'&gt;
+False &lt;class 'bool'&gt;
+{1, 2, 3} &lt;class 'set'&gt;
+</code></pre></div></div>
+<p>당연하지만 적절하지 않은 값을 형변환 하려고 한다면 에러가 발생합니다.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a = 'hyoungwook'
+
+print(int(a), type(str(a)))
+
+=================================================
+촐력결과
+ValueError: invalid literal for int() with base 10: 'hyoungwook'
+</code></pre></div></div>
+
+<h1 id="인덱스">인덱스</h1>
+<p>python의 인덱스는 타언어와는 다른 점이 있습니다. 그것은 바로 인덱스의 간격을 조절할 수 있다는 점입니다. 무슨 뜻인지는 아래의 예시를 먼저 보겠습니다.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+b = list(range(10))
+
+print(b)
+print(a[:])
+print(a[0:9])
+print(a[:3])
+print(a[::2])
+print(a[0])
+print(len(a))
+
+=================================================
+촐력결과
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[0, 1, 2, 3, 4, 5, 6, 7, 8]
+[0, 1, 2]
+[0, 2, 4, 6, 8]
+0
+10
+</code></pre></div></div>
+<p>python에서 배열을 접근할 때 <변수명>[시작값:끝값:간격]의 형태로 접근할 수 있습니다.</변수명></p>
+
+<p>배열에선 원소 하나에 접근할 경우에는 <변수명>[<인덱스>]를 통해 원소값만 조회가 가능하고, 특정 조건의 인덱스들을 조회하는 방법은 앞의 시작값, 끝값, 간격을 조정하여 배열 형태로 조회할 수 있습니다.</인덱스></변수명></p>
+
+<p>예시를 보면 알겠지만 시작값, 끝값, 간격의 default는 0, len(), 1입니다.</p>
+
+<p>참고로 b 변수처럼 선언해도 a와 같으니 잘 쓰면 좋을 것 같습니다.</p>
+
+<h1 id="연산자">연산자</h1>
+<p>기본적인 연사자는 타언어와 동일합니다.</p>
+<ul>
+  <li>산술 연산자
+    <ul>
+      <li>+, -, <em>, /, %(나머지), //(루트), *</em>(제곱)</li>
+      <li>+=, -=, <em>=, /=, %=, *</em>=</li>
+    </ul>
+  </li>
+  <li>비교 연산자
+    <ul>
+      <li>
+        <blockquote>
+          <p>, &lt;, &lt;=, &gt;=, ==, !=</p>
+        </blockquote>
+      </li>
+      <li>and, or, not</li>
+    </ul>
+  </li>
+  <li>비트 연산자
+    <ul>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>&gt;&gt;, «, &amp;,</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>일단 아래의 예시를 보자</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a = 5
+b = 2
+c = 3
+
+c += b
+
+print(a + b)
+print(a - b)
+print(a * b)
+print(a / b)
+print(a % b)
+print(a // b)
+print(a ** b)
+print(c)
+print(a &gt; b)
+print(a &lt; b)
+print(a &lt;= b)
+print(a &gt;= b)
+print(a == b)
+print(a != b)
+print(a and b)
+print(a or b)
+print(not a)
+print(b &gt;&gt; 1)
+print(b &lt;&lt; 2)
+print(a &amp; b)
+print(a | b)
+
+=================================================
+촐력결과
+3
+10
+2.5
+1
+2
+25
+5
+True
+False
+False
+True
+False
+True
+2
+5
+False
+1
+8
+0
+7
+</code></pre></div></div>
+<p>예시가 적절하지 않을 수는 있으나 이하에 서술하겠습니다.</p>
+
+<p>산술 연산에서 볼 것은 +=, -=, *= 등 기본 산술에 =이라는 대입 연산이 추가된 것입니다. 예시를 보면 알겠지만, 실제 c += b는 c = c + b와 동일합니다. 계산(+)하고 대입(=)한다라고 이해하면 될 것입니다.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>비교 연산에서 볼 것은 and, or, not 연산일 것입니다. 물론 개발자라면 이 연산이 무엇을 의미하는지 모를 것이라고 생각하지는 않지만 타언어들에서는 각각 &amp;&amp;,</td>
+      <td> </td>
+      <td>, !과 같은 형태로 제공되는데 python은 위와 같을 뿐입니다. 참고로 비교 연산의 모든 결과는 bool(True or False)값입니다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>비트 연산은 타 언어와 동일한데 잘 사용을 하지 않아 추가 설명하겠습니다. », « 연산은 왼쪽의 값을 오른쪽의 값만큼 비트를 이동시킨다는 의미입니다. 이렇게 말해서 알아듣는다면 굳이 더 읽어볼 필요는 없을 것이나 추가 적인 설명이 필요하시다면 이하를 잘 살펴보면 이해에 도움이 될 것입니다.</p>
+
+<p>5 « 2 라는 연산을 수행한다고 가정해보겠습니다. 비트 연산은 값을 2진수로 바꾸는 것부터 시작입니다. 5를 2진수로 바꾸게 된다면 0b101이 됩니다.</p>
+
+<p>참고로 python에서 0b<숫자>, 0o<숫자>, 0x<숫자>는 각각 2진수, 8진수, 16진수를 나타냅니다. 편의를 위해 앞의 0b를 제거하고 보면 5는 101이 됩니다.</숫자></숫자></숫자></p>
+
+<p>이제 이 101을 화살표 방향으로 2칸만큼 이동해보겠습니다. 이동하게 되면서 뒤에 새로 생기는 숫자는 0입니다. 그렇게 된다면 10100이 됩니다. 이를 10진수 표기법으로 변경해보면, 1 * 2^(5-1)(=32) + 1 * 2^(3-1)(=8) = 20이 됩니다.</p>
+
+<p>사실 설명은 위에서 다 끝났습니다. «, » 연산은 화살표 방향으로 왼쪽값에 대하여 오른쪽값만큼 이동시킨다는 것입니다.</p>
+
+<p>이해를 돕기 위해 추가적으로 5 » 2의 경우를 예로 들면, 5는 101이고 이를 오른쪽으로 2칸 이동시키면 1이 됩니다. 왼쪽으로 이동시키면 0이 추가되고, 오른쪽으로 이동시키면 맨 끝에 값들은 사라진다. 그래서 5 » 2의 결과값은 1이 됩니다.</p>
+
+<p>다시 한 번 이야기해서 «, » 연산은 이걸로 끝입니다. 계산 편의를 돕자면 2진법에서 a « b의 값은 a * 2^b이고, a » b의 값은 a / 2^b입니다. 왜 그런지는 잘 생각해보면 나올 것입니다.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>이제 &amp;와</td>
+      <td>에 대해서 알아보겠습니다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>&amp;은 왼쪽값과 오른쪽값을 and 연산하겠습니다는 의미이고,</td>
+      <td>는 or 연산을 하겠습니다는 의미입니다. 이것도 예시를 들어 설명하겠습니다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>5 &amp; 2 라는 연산을 수행한다고 가정해보겠습니다. 앞에서도 말했듯 비트 연산은 항상 2진수로 만들어놓고 시작하면 됩니다. 5는 101이고, 2는 10이 됩니다. 자 이제 이것을 and 연산을 하는 방법은 먼저 두 수의 자릿수를 동일하게 맞춥니다. 101 and 010 형태가 될 것입니다. 빈 공간은 0으로 채우면 됩니다. 이제 and 연산은 두 값이 1로 같을 때의 조건을 제외하고 다른 모든 경우에 False가 됩니다.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	 101
+and  010
+---------
+     000 =&gt; 0
+</code></pre></div></div>
+<p>따라서 결과는 0이 나오게 됩니다.</p>
+
+<p>| 연산도 동일합니다. | 연산은 or 연산을 하겠습니다는 뜻이고, or 연산은 둘 중 하나라도 값이 1이라면 True가 됩니다.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	 101
+and  010
+---------
+     111 =&gt; 7
+</code></pre></div></div>
+<p>따라서 결과는 7이 나오게 됩니다.</p>
+
+<h1 id="문자열-처리">문자열 처리</h1>
+<p>python 문자열 처리의 합치기부터 보겠다. 합치기는 매우 간단합니다. 바로 예시부터 보도록 하겠습니다.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print('Hello, ' + 'Hyoungwook!')
+
+=================================================
+촐력결과
+Hello, Hyoungwook!
+</code></pre></div></div>
+<p>정말 너무 간단하니 설명은 생략하겠습니다.</p>
+
+<p>문자열에서 한 문자에 접근하거나 자르기 등의 작업은 배열과 같습니다. 아래의 예시를 보겠습니다.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a = 'abcdefghijklmn'
+
+print(a[0])
+print(a[:])
+print(a[0:5:2])
+
+=================================================
+촐력결과
+a
+abcdefghijklmn
+ace
+</code></pre></div></div>
+<p>충분히 이해할 수 있을 것이라 믿습니다.</p>
+
+<p>문자열 포맷팅도 존재합니다. 타언어와 비슷하게 문자열, 정수형, 실수형 각각을 %s, %d, %f로 표현합니다. 더 다양한 건 검색해보는 것으로 하고, 아래 간단한 사용 예시를 보겠습니다.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a = 'hello'
+b = 10
+c = 1.3
+
+print("%s %d %.1f" % (a, b, c))
+print("{0} {1} {2}".format(a, b, c))
+print(f"{a} {b} {c}")
+
+=================================================
+촐력결과
+hello 10 1.3
+hello 10 1.3
+hello 10 1.3
+</code></pre></div></div>
+<p>두 번째 print 구문처럼 인덱스로 지정도 가능합니다.</p>
+
+<h1 id="제어문">제어문</h1>
+<p>앞서 <strong>들어가기 앞서</strong>라는 이름으로 {}를 사용하지 않는 다는 설명이 위에 있었습니다. 이 제어문과 앞으로 나올 함수, 클래스 모두 동일합니다. 먼저 예시를 한 번 살펴보겠습니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a = 1
+b = 10
+
+# 조건문
+if a &gt; b :
+    print('a is bigger than b')
+elif a &lt; b :
+    print('a is smaller than b')
+else :
+    print('is wired')
+
+# 반복문
+for i in range(a, b) :
+    print(i, end=" ")
+    
+=================================================
+촐력결과
+a is smaller than b
+1 2 3 4 5 6 7 8 9 
+</code></pre></div></div>
+
+<p>타언어와의 차이점만 비교해보겠습니다.</p>
+
+<p>우선 {}를 사용하지 않고 :으로 대체하는 모습이 보입니다. 그리고 앞서 이야기했듯이 indent(들여쓰기)로 scope 범위를 나누는 것을 알 수 있습니다.</p>
+
+<p>두 번째로 조건문에서 else if 대신에 elif라는 형태를 사용하는 것을 볼 수 있습니다. 이건 그냥 외웁시다.</p>
+
+<p>세 번째로 반복문에서 타 언어와는 다르게 <변수> in <배열>형태로 반복문을 수행합니다. 타 언어는 보통 변수;범위 조건;변수 연산 형태로 많이 들어가는 것에 대비해 다른 것을 알 수 있습니다. 해당 방식은 Java의 향상된 for문과 비슷한 형태로 생각하면 비슷할 것입니다.</배열></변수></p>
+
+<h1 id="함수">함수</h1>
+<p>python의 함수는 생김새와 방식 모드 조금은 독특합니다. 그 이유는 function이라는 이름으로 선언하는 것이 아니라 def(define)으로 선언하는 것이 그 첫 번째 이유고 두 번째는 parameter에 따라 call by value로 받을지 call by reference로 받을지 달라지기 때문입니다.</p>
+
+<p>첫 번째는 그냥 언어의 차이 정도로만 인식하면 되지만, 두 번째는 독특하다고 볼 수 있습니다. python 공식 문서에서는 call by assignment라는 이름으로 부르는데 Mutable Object를 받았을 때는 call by value로 Immutable Object를 받았을 때는 call by refernce로 받는 방법이라고 합니다. 참고로 Mutable Object는 str, int 등 Java에서 원시 자료형이라고 하는 자료형에 가까운 자료형들이고, Immutable Object는 list, dict, set과 같은 자료형입니다. 자세한 건 검색해보기를 바랍니다.</p>
+
+<p>call by value와 call by reference에 관해서도 작성하겠습니다. call by value와 call by reference는 함수를 호출할 때, parameter를 받을 때 복사본을 받느냐 포인터를 받느냐의 차이로 인지하면 됩니다.</p>
+
+<p>좀 더 상세히 이야기하자면, 함수 내에서 수정한 파라미터가 외부에서 선언된 파라미터에 영향을 주느냐를 보고 판단하면 편합니다. 물론 단순히 이걸로 판단하면 Java와 같은 경우 call by value이지만, call by reference처럼 동작을 하는 것에 혼동을 느낄 수 있습니다. 하지만, 우선은 위와 같이 알아두자 call by reference는 메모리 관리에 강력한 방법이지만 보안상의 이슈가 있어 Java에서는 실제 메모리(포인터)에 접근하지 못하도록 설계했기 때문에 동작만 비슷하지 내부적으로는 call by value 방식이 맞습니다.</p>
+
+<p>예시를 들어보겠다.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a = 1
+
+def add(p) :
+    p += 1
+
+add(a)
+print(a)
+
+=================================================
+촐력결과
+1
+</code></pre></div></div>
+<p>이렇게 함수 내에서 a의 값을 더해주는 연산을 했지만, 외부의 변수에 영향을 주지 않는 경우를 call by value라고 합니다. 그럼 다음의 예시를 보겠습니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a = ['1']
+
+def replace(p) :
+    p[0] = '2'
+
+replace(a)
+print(a)
+
+=================================================
+촐력결과
+['2']
+</code></pre></div></div>
+<p>분명 함수 내에서 대입 연산자를 사용하였는데 외부의 a 변수에 영향을 주었다. 이것이 call by reference입니다.</p>
+
+<h1 id="클래스">클래스</h1>
+<p>python의 클래스는 __init__과 self에 대해서 알면 다른 객체지향 함수들과 크게 다르지 않다. 예시를 살펴보겠습니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Car :
+    def __init__(self) :
+        self.name = 'Avante'
+        self.year = 2024
+        
+    def introduce(self, name) :
+        print(f"My name is {name}. My car is {self.year} {self.name}")
+
+a = Car()
+a.introduce('hyoungwook')
+
+=================================================
+촐력결과
+My name is hyoungwook. My car is 2024 Avante
+</code></pre></div></div>
+
+<p>특이한 점은 앞서 이야기한 부분 외에는 없는 것으로 보입니다. self로 클래스 내 멤버 변수와 파라미터를 구분하고, 생성자로 멤버 변수 정의도 잘 됩니다.</p>
+
+<p>이상으로 가장 기본적인 python 문법들에 대해 정리해보았다.</p>
+
+                </div>
+            </section>
+
+            <!-- Email subscribe form at the bottom of the page -->
+            <!--
+            
+                <section class="subscribe-form">
+                    <h3 class="subscribe-form-title">Subscribe to CPU - IT Technical</h3>
+                    <p>Get the latest posts delivered right to your inbox</p>
+                    <span id="searchform" method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm" >
+    <input class="location" type="hidden" name="location" >
+    <input class="referrer" type="hidden" name="referrer" >
+
+    <div class="form-group">
+        <input class="subscribe-email" onkeyup="myFunc()" id="searchtext" type="text" name="searchtext" placeholder="Search..." >
+    </div>
+    <script>
+        function myFunc(){
+            if(event.keyCode == 13){
+                var url= encodeURIComponent(document.getElementById('searchtext').value);
+                location.href = "/cpu-blog//search.html?query=" + url;
+            }
+        }
+    </script>
+</span>
+                </section>
+            
+            -->
+
+            <footer class="post-full-footer">
+                <!-- Everything inside the #author tags pulls data from the author -->
+                <!-- #author-->
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <section class="author-card">
+                            
+                                <img class="author-profile-image" src="/cpu-blog/assets/images/chw/chw-icon.png" alt="chw" />
+                            
+                            <section class="author-card-content">
+                                <h4 class="author-card-name"><a href="/cpu-blog/author/chw">최형욱</a></h4>
+                                
+                                    <p>Wavus - 담당</p>
+                                
+                            </section>
+                        </section>
+                        <div class="post-full-footer-right">
+                            <a class="author-card-button" href="/cpu-blog/author/chw">Read More</a>
+                        </div>
+                    
+                
+                <!-- /author  -->
+            </footer>
+
+            <!-- If you use Disqus comments, just uncomment this block.
+            The only thing you need to change is "test-apkdzgmqhj" - which
+            should be replaced with your own Disqus site-id. -->
+            
+
+        </article>
+
+    </div>
+</main>
+
+<!-- Links to Previous/Next posts -->
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            
+                
+                
+                
+                
+                    <article class="read-next-card">
+                    <!--
+                        
+                            style="background-image: url(/cpu-blog/assets/images/blog-cover.jpg)"
+                        
+                    
+                    >-->
+                        <header class="read-next-card-header">
+                            <small class="read-next-card-header-sitetitle">&mdash; CPU - IT Technical &mdash;</small>
+                            
+                                <h3 class="read-next-card-header-title"><a href="/cpu-blog/tag/it2024/">It2024</a></h3>
+                            
+                        </header>
+                        <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
+</div>
+                        <div class="read-next-card-content">
+                            <ul>
+                                
+                                
+                                  
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/cpu-blog/it2024-django-page4">django(4) - POST, GET 통신 / DB 연결 및 데이터 저장</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/cpu-blog/it2024-django-page3">django(3) - django css 꾸미기</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/cpu-blog/it2024-django-page2">django(2) - django 앱 생성</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                            </ul>
+                        </div>
+                        <footer class="read-next-card-footer">
+                            <a href="/cpu-blog/tag/it2024/">
+                                
+                                    See all 9 posts  →
+                                
+                            </a>
+                        </footer>
+                    </article>
+                
+            
+
+            <!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs -->
+            
+
+            <!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/cpu-blog/it2024-django-page4">
+                <div class="post-card-image" style="background-image: url(/cpu-blog/assets/images/welcome.jpg)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/cpu-blog/it2024-django-page4">
+                <header class="post-card-header">
+                    
+                        
+                            
+                                <span class="post-card-tags">It2024</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">django(4) - POST, GET 통신 / DB 연결 및 데이터 저장</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    
+                        <p>Django 강좌는 여러 절로 구성되어 있습니다.
+
+    django(1) - django 세팅
+    django(2) - django 앱 생성
+    django(3) - django css 꾸미기
+    django(4) - POST, GET 통신 / DB 연결 및 데이터 저장
+
+
+</p>
+                    
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/cpu-blog/assets/images/ghost.png" alt="한병엽" />
+                        
+                        <span class="post-card-author">
+                            <a href="/cpu-blog/author/hby/">한병엽</a>
+                        </span>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                <span class="reading-time">
+                    
+                    
+                      1 min read
+                    
+                </span>
+            </footer>
+        </div>
+    </article>
+
+            
+
+        </div>
+    </div>
+</aside>
+
+<!-- Floating header which appears on-scroll, included from includes/floating-header.hbs -->
+<div class="floating-header">
+    <div class="floating-header-logo">
+        <a href="https://hby0202.github.io/cpu-blog/">
+            
+                <img src="/cpu-blog/assets/images/favicon.png" alt="CPU - IT Technical icon" />
+            
+            <span>CPU - IT Technical</span>
+        </a>
+    </div>
+    <span class="floating-header-divider">&mdash;</span>
+    <div class="floating-header-title">Python을 뿌셔보자 - 기본기</div>
+    <div class="floating-header-share">
+        <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
+</svg>
+</div>
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=Python%EC%9D%84+%EB%BF%8C%EC%85%94%EB%B3%B4%EC%9E%90+-+%EA%B8%B0%EB%B3%B8%EA%B8%B0&amp;url=https://hby0202.github.io/cpu-blog/it2024-crash-python"
+            onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+
+        </a>
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://hby0202.github.io/cpu-blog/it2024-crash-python"
+            onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+
+        </a>
+    </div>
+    <progress class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>
+
+
+<!-- /post -->
+
+<!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs -->
+
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://hby0202.github.io/cpu-blog/">CPU - IT Technical</a> &copy; 2024</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
+                    <a href="https://github.com/jekyllt/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
+                <nav class="site-footer-nav">
+                    <a href="/cpu-blog/">Latest Posts</a>
+                    
+                    
+                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+    <!-- The big email subscribe modal content -->
+    
+        <div id="subscribe" class="subscribe-overlay">
+            <a class="subscribe-overlay-close" href="#"></a>
+            <div class="subscribe-overlay-content">
+                
+                    <img class="subscribe-overlay-logo" src="/cpu-blog/assets/images/blog-icon.png" alt="CPU - IT Technical" />
+                
+                <h1 class="subscribe-overlay-title">Searcj to CPU - IT Technical</h1>
+                <p class="subscribe-overlay-description">lunr.js를 이용한 posts 검색</p>
+                <span id="searchform" method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm" >
+    <input class="location" type="hidden" name="location" >
+    <input class="referrer" type="hidden" name="referrer" >
+
+    <div class="form-group">
+        <input class="subscribe-email" onkeyup="myFunc()" id="searchtext" type="text" name="searchtext" placeholder="Search..." >
+    </div>
+    <script>
+        function myFunc(){
+            if(event.keyCode == 13){
+                var url= encodeURIComponent(document.getElementById('searchtext').value);
+                location.href = "/cpu-blog//search.html?query=" + url;
+            }
+        }
+    </script>
+</span>
+            </div>
+        </div>
+    
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/cpu-blog/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+
+</body>
+</html>
