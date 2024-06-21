@@ -1,3 +1,7 @@
+## 배포 주소
+
+https://hby0202.github.io/cpu-blog/
+
 ## Jasper2
 
 [![Build Status](https://github.com/jekyllt/jasper2/actions/workflows/jekyll_build.yml/badge.svg)](https://github.com/jekyllt/jasper2/actions/workflows/jekyll_build.yml)
