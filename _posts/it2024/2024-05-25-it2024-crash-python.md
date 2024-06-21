@@ -11,8 +11,6 @@ subclass: 'post'
 author: chw
 ---
 
-![](https://velog.velcdn.com/images/chw970320/post/8ab73098-76ef-459c-bb96-ffe3f2d69f20/image.png)
-
 > 초안을 해라체로 작성하여 부적절한 단어 사용 혹은 부자연스러운 문장 전개 방식이 발견될 수 있습니다. 문의 주시면 수정하겠습니다.🙇🙇‍♂️🙇‍♀️
 
 # 들어가기 앞서
