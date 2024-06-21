@@ -48,7 +48,7 @@ chw:
   url_full: # 홈페이지 URL
   url: # jekyllt.github.io/jasper2
   bio: Wavus - 담당
-  picture: assets/images/ghost.png # 해당 사용자 이미지 아이콘
+  picture: assets/images/chw/chw-icon.png # 해당 사용자 이미지 아이콘
   facebook: # ghost
   twitter: # tryghost
   cover: False
