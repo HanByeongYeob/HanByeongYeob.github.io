@@ -10,14 +10,7 @@
       <item>
         <title>Python을 뿌셔보자 - 기본기</title>
         
-          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;it2024 강좌는 여러 절로 구성되어 있습니다.&lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;table-of-contents-list&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;./it2024-github-page1&quot;&gt;github-page 만들기(1) - localhost jekyll theme 세팅&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;./it2024-github-page2&quot;&gt;github-page 만들기(2) - 환경설정 파일 세팅&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;./it2024-github-page3&quot;&gt;github-page 만들기(3) - custom css 세팅&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;./it2024-github-page4&quot;&gt;github-page 만들기(4) - lunr.js를 이용한 Search 기능 추가&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;./it2024-github-page5&quot;&gt;github-page 만들기(5) - github page 배포&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+          <description>&lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/chw970320/post/8ab73098-76ef-459c-bb96-ffe3f2d69f20/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 </description>
         
