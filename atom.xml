@@ -8,6 +8,63 @@
     
       
       <item>
+        <title>django -REST Framework(3) - token 생성</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Django REST Framework 강좌는 django 글에서 이어서 작성합니다.&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-django-RESTFramework-page1&quot;&gt;django -REST Framework(1) - Dhango 설치 및 DRF 라이브러리 설치&lt;/a&gt;&lt;/li&gt;및 데이터 저장&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Fri, 21 Jun 2024 00:00:00 +0000</pubDate>
+        <link>
+        https://hby0202.github.io/it2024-django-RESTFramework-page3</link>
+        <guid isPermaLink="true">https://hby0202.github.io/it2024-django-RESTFramework-page3</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>django -REST Framework(2) - django 앱 생성</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Django REST Framework 강좌는 django 글에서 이어서 작성합니다.&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-django-RESTFramework-page1&quot;&gt;django -REST Framework(1) - Dhango 설치 및 DRF 라이브러리 설치&lt;/a&gt;&lt;/li&gt;및 데이터 저장&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Fri, 21 Jun 2024 00:00:00 +0000</pubDate>
+        <link>
+        https://hby0202.github.io/it2024-django-RESTFramework-page2</link>
+        <guid isPermaLink="true">https://hby0202.github.io/it2024-django-RESTFramework-page2</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>django -REST Framework(1) - Dhango 설치 및 DRF 라이브러리 설치</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Django REST Framework 강좌는 django 글에서 이어서 작성합니다.&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-django-RESTFramework-page1&quot;&gt;django -REST Framework(1) - Dhango 설치 및 DRF 라이브러리 설치&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-django-page2&quot;&gt;django(2) - django 앱 생성&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-django-page3&quot;&gt;django(3) - django css 꾸미기&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./it2024-django-page4&quot;&gt;django(4) - POST, GET 통신 / DB 연결 및 데이터 저장&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Fri, 21 Jun 2024 00:00:00 +0000</pubDate>
+        <link>
+        https://hby0202.github.io/it2024-django-RESTFramework-page1</link>
+        <guid isPermaLink="true">https://hby0202.github.io/it2024-django-RESTFramework-page1</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>Python을 뿌셔보자 - 기본기</title>
         
           <description>&lt;blockquote&gt;
